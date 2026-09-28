@@ -24,7 +24,7 @@ advance. Nothing the model writes is run as code.
 ### Get the project
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/demaabukwaik-dev/ai-data-analyst.git
 cd ai-data-analyst
 ```
 

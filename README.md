@@ -100,6 +100,7 @@ with the file uploader in the sidebar, like any other CSV. It is not in the repo
 
 Any other CSV file works too, as long as it uses commas between columns,
 has a header row with unique column names and at least 30 rows, and is not mostly empty or duplicated. A file that fails a check is rejected with a message that says why.
+
 ---
 
 ## Example usage

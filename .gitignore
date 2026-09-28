@@ -1,0 +1,22 @@
+.streamlit/secrets.toml
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# test runs saved to files
+*.log
+run.txt
+
+# the full dataset is downloaded separately (see README)
+data/amazon_sales.csv

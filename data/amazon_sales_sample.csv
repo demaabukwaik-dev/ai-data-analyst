@@ -1,0 +1,2001 @@
+order_id,order_date,product_id,product_category,price,discount_percent,quantity_sold,customer_region,payment_method,rating,review_count,discounted_price,total_revenue
+1,2022-04-13,2637,Books,128.75,10,4,North America,UPI,3.5,443,115.88,463.52
+2,2023-03-12,2300,Fashion,302.6,20,5,Asia,Credit Card,3.7,475,242.08,1210.4
+3,2022-09-28,3670,Sports,495.8,20,2,Europe,UPI,4.4,183,396.64,793.28
+4,2022-04-17,2522,Books,371.95,15,4,Middle East,UPI,5.0,212,316.16,1264.64
+5,2022-03-13,1717,Beauty,201.68,0,4,Middle East,UPI,4.6,308,201.68,806.72
+6,2023-12-02,1777,Sports,385.17,30,3,Asia,Wallet,3.8,489,269.62,808.86
+7,2022-01-21,4068,Books,15.78,0,5,Asia,UPI,1.6,415,15.78,78.9
+8,2023-09-07,3537,Fashion,111.59,30,4,Middle East,UPI,3.4,143,78.11,312.44
+9,2022-05-02,3262,Books,373.62,0,4,Asia,Wallet,2.8,497,373.62,1494.48
+10,2023-04-12,4174,Sports,134.81,15,2,Middle East,Cash on Delivery,2.0,25,114.59,229.18
+11,2022-08-03,4878,Electronics,67.43,20,4,Europe,Debit Card,4.3,426,53.94,215.76
+12,2022-11-27,3637,Books,150.19,0,1,North America,Cash on Delivery,4.4,279,150.19,150.19
+13,2023-04-04,3222,Electronics,89.81,0,3,Europe,UPI,3.6,151,89.81,269.43
+14,2022-03-29,4925,Home & Kitchen,213.22,0,3,Europe,Credit Card,1.4,239,213.22,639.66
+15,2023-01-08,1051,Beauty,66.65,10,2,North America,Debit Card,4.6,262,59.99,119.98
+16,2022-04-10,3344,Electronics,419.66,0,3,Middle East,Credit Card,2.7,46,419.66,1258.98
+17,2023-10-26,3011,Sports,391.09,5,3,Middle East,Credit Card,3.7,51,371.54,1114.62
+18,2022-05-11,3222,Home & Kitchen,156.95,30,3,Middle East,Cash on Delivery,2.9,354,109.86,329.58
+19,2023-10-24,1968,Home & Kitchen,262.36,10,1,Asia,Wallet,4.6,473,236.12,236.12
+20,2022-11-05,3390,Fashion,428.24,30,3,Middle East,Wallet,1.2,331,299.77,899.31
+21,2022-12-10,2734,Home & Kitchen,464.87,10,3,North America,Wallet,3.8,490,418.38,1255.14
+22,2023-05-07,1599,Beauty,50.09,0,1,Europe,UPI,4.3,34,50.09,50.09
+23,2023-02-18,1170,Beauty,362.4,15,2,North America,Debit Card,2.4,318,308.04,616.08
+24,2023-01-21,4108,Beauty,72.05,20,2,Middle East,Debit Card,4.4,129,57.64,115.28
+25,2022-07-11,2658,Beauty,14.92,15,1,Middle East,Wallet,1.0,498,12.68,12.68
+26,2022-10-04,4272,Fashion,44.08,15,1,Europe,Debit Card,1.1,303,37.47,37.47
+27,2022-06-10,2087,Books,290.06,20,5,Asia,Credit Card,4.1,35,232.05,1160.25
+28,2023-04-05,4557,Sports,191.67,10,5,Asia,Cash on Delivery,4.3,106,172.5,862.5
+29,2022-11-10,1454,Sports,63.74,10,1,Europe,Cash on Delivery,4.1,318,57.37,57.37
+30,2022-01-22,4771,Electronics,239.79,15,5,North America,Credit Card,2.8,150,203.82,1019.1
+31,2022-09-10,1726,Fashion,256.57,20,2,North America,Credit Card,3.6,269,205.26,410.52
+32,2023-07-15,2432,Sports,394.76,10,3,North America,UPI,3.7,382,355.28,1065.84
+33,2023-04-20,1886,Fashion,333.51,0,5,Europe,Wallet,4.1,196,333.51,1667.55
+34,2022-02-28,4053,Electronics,235.65,5,3,North America,Cash on Delivery,4.3,448,223.87,671.61
+35,2023-05-26,3802,Sports,165.55,5,2,North America,Wallet,5.0,149,157.27,314.54
+36,2023-11-13,3197,Electronics,5.99,20,2,North America,UPI,4.5,89,4.79,9.58
+37,2023-04-21,2525,Books,416.86,10,3,Europe,Credit Card,1.9,484,375.17,1125.51
+38,2023-12-01,1635,Books,137.16,15,3,North America,UPI,1.3,86,116.59,349.77
+39,2022-07-09,4014,Beauty,110.54,30,4,Europe,Credit Card,3.5,4,77.38,309.52
+40,2023-11-18,3757,Sports,368.63,0,4,Asia,Debit Card,3.9,405,368.63,1474.52
+41,2023-07-17,2571,Books,40.47,15,1,Middle East,Credit Card,3.7,418,34.4,34.4
+42,2023-07-21,4885,Books,135.0,30,5,Europe,Cash on Delivery,3.9,469,94.5,472.5
+43,2022-09-01,3325,Electronics,220.35,15,5,North America,Cash on Delivery,3.1,146,187.3,936.5
+44,2023-05-20,3082,Home & Kitchen,223.58,5,3,Middle East,Wallet,3.5,238,212.4,637.2
+45,2022-05-11,4696,Beauty,83.13,20,1,Middle East,Wallet,2.6,71,66.5,66.5
+46,2023-04-30,1174,Beauty,24.86,5,5,Middle East,Debit Card,4.0,224,23.62,118.1
+47,2023-10-09,2056,Fashion,237.91,20,3,North America,Cash on Delivery,2.1,366,190.33,570.99
+48,2022-01-21,2748,Books,181.94,5,2,Asia,Credit Card,4.2,5,172.84,345.68
+49,2022-06-16,3762,Books,146.0,15,2,Asia,Debit Card,4.5,157,124.1,248.2
+50,2022-10-01,4468,Electronics,138.96,20,1,Middle East,Cash on Delivery,3.4,451,111.17,111.17
+51,2023-01-23,3301,Books,254.57,15,3,Middle East,Cash on Delivery,2.5,361,216.38,649.14
+52,2023-08-24,1567,Fashion,15.72,20,2,Asia,Debit Card,3.3,429,12.58,25.16
+53,2022-11-12,1322,Electronics,57.51,5,3,Asia,Cash on Delivery,2.0,178,54.63,163.89
+54,2022-01-14,3060,Beauty,165.98,5,1,Asia,UPI,3.6,348,157.68,157.68
+55,2022-08-30,3097,Books,242.51,5,2,Asia,Cash on Delivery,4.1,201,230.38,460.76
+56,2022-12-12,2783,Books,348.44,20,4,North America,Cash on Delivery,1.2,57,278.75,1115.0
+57,2023-07-19,4304,Fashion,150.09,10,4,Europe,Cash on Delivery,2.3,363,135.08,540.32
+58,2022-12-06,4000,Sports,335.19,0,4,Middle East,Wallet,3.1,389,335.19,1340.76
+59,2022-04-02,4041,Fashion,196.64,20,2,Asia,Credit Card,2.1,206,157.31,314.62
+60,2023-01-02,4611,Electronics,388.49,20,5,North America,Wallet,1.3,220,310.79,1553.95
+61,2023-03-31,3663,Beauty,242.91,10,2,Asia,Wallet,3.2,286,218.62,437.24
+62,2023-03-04,3913,Sports,272.99,30,1,Middle East,Cash on Delivery,4.6,389,191.09,191.09
+63,2023-05-24,3143,Sports,220.36,5,4,Middle East,Cash on Delivery,3.9,208,209.34,837.36
+64,2022-02-04,1342,Fashion,70.78,15,1,Europe,UPI,2.4,486,60.16,60.16
+65,2022-07-25,3903,Fashion,89.73,0,5,Asia,Cash on Delivery,4.3,399,89.73,448.65
+66,2022-03-22,3240,Beauty,203.24,10,3,North America,Wallet,4.0,412,182.92,548.76
+67,2023-07-16,4991,Home & Kitchen,53.92,15,1,North America,UPI,2.1,286,45.83,45.83
+68,2023-01-23,3558,Electronics,74.39,15,3,Middle East,Credit Card,5.0,384,63.23,189.69
+69,2022-01-02,2474,Sports,313.75,20,2,Asia,Cash on Delivery,3.4,25,251.0,502.0
+70,2023-01-25,2148,Home & Kitchen,318.45,0,5,Asia,UPI,1.1,337,318.45,1592.25
+71,2023-07-20,4152,Beauty,68.08,0,4,Asia,Cash on Delivery,4.0,0,68.08,272.32
+72,2022-04-16,1006,Sports,427.64,0,4,Middle East,Debit Card,3.5,178,427.64,1710.56
+73,2023-04-22,1329,Sports,429.08,30,4,North America,Credit Card,3.7,70,300.36,1201.44
+74,2023-12-04,1082,Books,192.97,10,1,North America,Wallet,4.3,88,173.67,173.67
+75,2023-02-06,2559,Sports,251.49,10,1,Europe,Cash on Delivery,1.7,212,226.34,226.34
+76,2023-12-31,3952,Electronics,401.77,20,2,North America,UPI,4.6,38,321.42,642.84
+77,2023-07-10,3673,Beauty,382.54,0,4,Europe,Cash on Delivery,3.7,92,382.54,1530.16
+78,2022-06-11,1526,Beauty,184.56,15,2,Asia,Credit Card,2.5,261,156.88,313.76
+79,2022-07-21,2136,Sports,161.96,5,5,Middle East,Cash on Delivery,2.2,3,153.86,769.3
+80,2022-09-27,3487,Electronics,333.85,20,3,Middle East,Cash on Delivery,1.2,405,267.08,801.24
+81,2022-09-28,1889,Home & Kitchen,184.94,5,2,North America,Wallet,3.9,479,175.69,351.38
+82,2023-04-01,4925,Books,346.28,5,4,Europe,Cash on Delivery,4.2,477,328.97,1315.88
+83,2023-04-07,1761,Home & Kitchen,69.16,20,1,North America,Credit Card,3.0,492,55.33,55.33
+84,2023-12-28,2023,Fashion,337.66,0,2,Asia,Cash on Delivery,2.6,316,337.66,675.32
+85,2022-09-09,2680,Home & Kitchen,393.65,10,3,Middle East,Cash on Delivery,1.2,112,354.28,1062.84
+86,2023-12-03,3066,Fashion,452.78,20,5,North America,UPI,2.4,102,362.22,1811.1
+87,2022-10-23,3056,Electronics,230.81,15,2,Middle East,Credit Card,4.7,313,196.19,392.38
+88,2023-12-26,2855,Sports,282.35,15,2,North America,Credit Card,2.5,3,240.0,480.0
+89,2023-12-21,4256,Fashion,148.01,20,2,Asia,UPI,3.2,295,118.41,236.82
+90,2022-12-04,2061,Beauty,79.49,20,3,Middle East,Wallet,4.4,472,63.59,190.77
+91,2022-02-22,3770,Sports,90.69,30,5,North America,Wallet,3.1,376,63.48,317.4
+92,2022-08-05,1903,Sports,423.06,30,5,Europe,UPI,2.0,312,296.14,1480.7
+93,2022-07-07,1133,Sports,273.03,5,4,North America,Debit Card,3.0,361,259.38,1037.52
+94,2023-01-15,2968,Fashion,191.27,10,2,Europe,Cash on Delivery,1.5,294,172.14,344.28
+95,2023-05-08,2125,Beauty,432.66,0,4,Middle East,Wallet,3.4,252,432.66,1730.64
+96,2022-02-10,2964,Beauty,61.33,15,3,Middle East,Credit Card,4.1,418,52.13,156.39
+97,2022-06-06,2172,Home & Kitchen,299.14,30,5,Europe,Credit Card,1.9,223,209.4,1047.0
+98,2022-01-15,3039,Sports,396.42,10,3,North America,UPI,2.2,213,356.78,1070.34
+99,2022-03-06,1092,Sports,66.83,30,3,Middle East,Debit Card,4.6,54,46.78,140.34
+100,2023-06-05,3849,Books,64.67,5,2,North America,Cash on Delivery,4.3,438,61.44,122.88
+101,2022-12-10,4211,Sports,21.52,10,1,Asia,UPI,1.1,300,19.37,19.37
+102,2022-05-09,4366,Home & Kitchen,471.27,0,3,Europe,UPI,1.7,178,471.27,1413.81
+103,2023-10-10,3911,Home & Kitchen,347.63,20,5,Europe,Wallet,1.2,19,278.1,1390.5
+104,2023-04-17,1773,Beauty,40.36,20,2,Middle East,Debit Card,1.1,322,32.29,64.58
+105,2022-03-04,4664,Books,337.27,20,2,Middle East,UPI,3.9,107,269.82,539.64
+106,2022-05-19,3591,Beauty,155.29,5,2,Middle East,Wallet,3.5,249,147.53,295.06
+107,2023-05-14,1187,Sports,59.12,0,4,Middle East,Debit Card,3.4,433,59.12,236.48
+108,2023-08-16,3183,Books,496.15,10,3,North America,Cash on Delivery,2.0,422,446.54,1339.62
+109,2023-01-27,1165,Fashion,94.04,15,5,Middle East,Debit Card,2.8,200,79.93,399.65
+110,2023-11-06,4548,Beauty,400.28,5,2,Middle East,Cash on Delivery,3.9,328,380.27,760.54
+111,2023-02-23,4038,Home & Kitchen,441.29,0,3,Europe,Cash on Delivery,3.0,447,441.29,1323.87
+112,2022-10-16,4218,Beauty,267.51,15,3,North America,Debit Card,1.3,358,227.38,682.14
+113,2023-01-14,1244,Electronics,488.12,20,2,North America,Debit Card,4.3,120,390.5,781.0
+114,2023-05-05,2206,Electronics,64.33,0,1,Europe,Debit Card,3.2,91,64.33,64.33
+115,2022-08-19,2032,Electronics,480.63,10,4,Middle East,Debit Card,4.8,176,432.57,1730.28
+116,2022-02-10,2459,Home & Kitchen,39.98,5,2,North America,Credit Card,1.6,216,37.98,75.96
+117,2022-01-28,2179,Home & Kitchen,241.28,0,1,Middle East,Credit Card,1.1,456,241.28,241.28
+118,2022-05-15,1829,Electronics,428.24,30,5,Middle East,Credit Card,4.3,110,299.77,1498.85
+119,2022-07-20,3735,Sports,278.83,20,1,Europe,Credit Card,4.3,172,223.06,223.06
+120,2022-02-02,3161,Home & Kitchen,293.81,30,4,North America,UPI,1.5,342,205.67,822.68
+121,2022-02-17,2778,Sports,84.69,5,3,North America,UPI,4.4,173,80.46,241.38
+122,2023-05-18,3214,Home & Kitchen,492.25,15,2,Asia,Cash on Delivery,3.0,364,418.41,836.82
+123,2023-02-11,3535,Home & Kitchen,119.41,20,4,Asia,Cash on Delivery,1.9,328,95.53,382.12
+124,2023-07-28,1436,Electronics,430.17,15,1,Asia,Wallet,1.2,172,365.64,365.64
+125,2023-12-29,3270,Fashion,478.5,20,4,North America,Credit Card,1.8,26,382.8,1531.2
+126,2022-04-09,3238,Sports,143.99,10,4,Middle East,UPI,4.4,278,129.59,518.36
+127,2023-11-15,2810,Sports,366.6,5,3,North America,Cash on Delivery,4.0,346,348.27,1044.81
+128,2023-12-27,2824,Fashion,44.79,0,3,North America,Debit Card,4.5,176,44.79,134.37
+129,2023-07-01,3623,Books,372.02,15,1,Europe,Wallet,5.0,354,316.22,316.22
+130,2023-09-05,1793,Beauty,244.75,15,3,Middle East,Credit Card,4.5,276,208.04,624.12
+131,2023-04-07,1172,Fashion,63.38,15,1,Middle East,Debit Card,4.7,1,53.87,53.87
+132,2023-10-05,2280,Books,447.85,10,3,Middle East,Wallet,4.7,399,403.07,1209.21
+133,2022-01-05,2738,Fashion,341.04,10,4,Middle East,Credit Card,2.2,203,306.94,1227.76
+134,2022-08-06,1449,Electronics,88.45,30,1,Asia,Credit Card,2.4,397,61.92,61.92
+135,2023-05-18,4572,Books,268.74,10,1,Middle East,UPI,3.4,115,241.87,241.87
+136,2023-02-02,2954,Electronics,166.31,20,1,Europe,Cash on Delivery,2.0,391,133.05,133.05
+137,2023-01-28,3124,Electronics,356.73,30,1,North America,Credit Card,2.0,25,249.71,249.71
+138,2022-07-26,1614,Books,315.59,30,2,North America,Wallet,3.9,311,220.91,441.82
+139,2022-01-15,1225,Sports,98.82,10,1,Europe,UPI,2.0,442,88.94,88.94
+140,2023-07-08,4297,Sports,124.85,30,5,North America,Debit Card,3.7,248,87.4,437.0
+141,2023-04-06,1738,Books,353.75,30,1,Asia,Cash on Delivery,4.6,25,247.62,247.62
+142,2023-11-22,2631,Fashion,339.21,5,3,Middle East,Wallet,1.4,330,322.25,966.75
+143,2023-07-29,1940,Fashion,159.56,5,4,North America,Debit Card,3.0,482,151.58,606.32
+144,2022-08-29,1075,Beauty,241.73,30,3,Asia,Wallet,3.6,364,169.21,507.63
+145,2023-07-18,4104,Fashion,236.26,20,5,Asia,UPI,1.5,117,189.01,945.05
+146,2022-04-06,4665,Sports,66.6,15,2,Europe,UPI,1.6,390,56.61,113.22
+147,2023-04-30,1068,Books,312.42,10,3,Middle East,UPI,1.4,213,281.18,843.54
+148,2023-02-11,2874,Fashion,135.9,10,4,Europe,Debit Card,4.4,302,122.31,489.24
+149,2022-08-19,3462,Books,232.65,10,4,Middle East,Debit Card,1.8,125,209.39,837.56
+150,2023-10-17,3778,Beauty,40.52,15,4,Europe,Credit Card,3.3,232,34.44,137.76
+151,2022-06-20,4519,Books,308.95,5,5,Asia,Credit Card,3.5,100,293.5,1467.5
+152,2023-06-25,3409,Beauty,420.6,15,1,Middle East,Debit Card,3.5,263,357.51,357.51
+153,2022-02-05,1869,Beauty,286.95,5,2,Middle East,UPI,3.7,217,272.6,545.2
+154,2023-06-09,2393,Beauty,300.42,15,5,Asia,Debit Card,2.6,7,255.36,1276.8
+155,2022-06-09,4470,Electronics,338.29,20,5,Europe,Credit Card,2.0,291,270.63,1353.15
+156,2023-11-30,2837,Sports,102.19,15,5,North America,Credit Card,1.9,435,86.86,434.3
+157,2022-08-31,4191,Home & Kitchen,39.05,30,4,Asia,Credit Card,1.4,374,27.33,109.32
+158,2022-03-27,4119,Sports,427.73,30,3,Europe,Cash on Delivery,3.2,459,299.41,898.23
+159,2023-08-01,3115,Books,424.07,0,2,North America,Wallet,3.8,383,424.07,848.14
+160,2023-11-13,4410,Sports,274.6,15,2,Europe,UPI,1.1,317,233.41,466.82
+161,2023-07-11,4156,Fashion,102.55,10,4,Middle East,UPI,3.2,148,92.3,369.2
+162,2023-07-28,4965,Home & Kitchen,409.54,5,2,Middle East,Debit Card,3.2,294,389.06,778.12
+163,2023-10-08,3983,Sports,114.02,15,3,Europe,Debit Card,1.9,493,96.92,290.76
+164,2022-01-28,1376,Home & Kitchen,431.15,5,1,Middle East,Credit Card,3.3,267,409.59,409.59
+165,2023-09-12,2408,Sports,214.77,0,2,Asia,Cash on Delivery,3.7,135,214.77,429.54
+166,2023-07-10,3323,Electronics,33.46,30,4,Europe,UPI,4.7,8,23.42,93.68
+167,2022-12-06,3815,Books,409.35,0,4,Middle East,Cash on Delivery,2.3,62,409.35,1637.4
+168,2022-11-27,2941,Books,282.51,0,5,Europe,UPI,2.3,412,282.51,1412.55
+169,2023-10-02,3997,Fashion,162.59,15,2,North America,Credit Card,3.0,252,138.2,276.4
+170,2023-05-21,1204,Electronics,229.2,10,1,Europe,Wallet,2.5,487,206.28,206.28
+171,2022-12-14,1744,Sports,443.67,0,3,North America,UPI,1.4,40,443.67,1331.01
+172,2023-04-18,4136,Sports,105.56,10,4,Middle East,Debit Card,2.7,390,95.0,380.0
+173,2022-08-19,3958,Sports,56.38,30,2,North America,Cash on Delivery,3.5,460,39.47,78.94
+174,2022-07-09,2852,Sports,393.47,30,4,Asia,UPI,2.4,155,275.43,1101.72
+175,2022-08-13,4150,Home & Kitchen,312.73,10,4,North America,UPI,2.3,92,281.46,1125.84
+176,2023-01-20,2549,Sports,435.63,15,3,Europe,Wallet,5.0,50,370.29,1110.87
+177,2023-01-12,1324,Books,160.14,0,4,Middle East,Debit Card,4.5,394,160.14,640.56
+178,2022-10-10,3425,Electronics,282.82,0,2,Europe,Wallet,3.8,104,282.82,565.64
+179,2023-09-25,3864,Beauty,26.0,5,4,North America,Debit Card,2.4,342,24.7,98.8
+180,2023-09-20,4973,Books,424.11,15,2,Europe,Credit Card,2.8,443,360.49,720.98
+181,2022-09-16,1680,Sports,99.64,30,2,North America,Cash on Delivery,4.8,362,69.75,139.5
+182,2022-12-25,1670,Home & Kitchen,61.74,10,4,North America,Debit Card,3.4,64,55.57,222.28
+183,2023-12-11,3675,Beauty,244.85,30,4,Middle East,Debit Card,1.8,259,171.4,685.6
+184,2023-04-01,4417,Beauty,373.73,0,4,Middle East,Credit Card,3.5,411,373.73,1494.92
+185,2023-02-15,4065,Sports,108.83,15,4,Middle East,Cash on Delivery,2.3,64,92.51,370.04
+186,2023-10-11,2727,Beauty,120.57,5,2,Asia,Wallet,1.1,465,114.54,229.08
+187,2022-11-14,2880,Sports,161.22,5,2,North America,Credit Card,2.1,46,153.16,306.32
+188,2023-11-08,3482,Home & Kitchen,406.49,10,1,Middle East,Debit Card,5.0,299,365.84,365.84
+189,2022-08-13,4766,Electronics,374.94,10,3,Middle East,UPI,1.5,146,337.45,1012.35
+190,2022-08-22,3932,Books,138.58,0,2,North America,Wallet,1.5,26,138.58,277.16
+191,2023-11-15,4449,Electronics,131.29,0,2,Europe,Credit Card,3.7,70,131.29,262.58
+192,2023-10-26,2968,Sports,453.69,5,4,Europe,UPI,4.2,163,431.01,1724.04
+193,2023-01-09,4814,Home & Kitchen,309.33,0,2,Middle East,UPI,3.7,136,309.33,618.66
+194,2023-11-03,2703,Fashion,116.37,30,4,Europe,Credit Card,2.5,140,81.46,325.84
+195,2023-08-31,4086,Sports,74.49,15,1,North America,UPI,4.3,383,63.32,63.32
+196,2023-04-17,4525,Books,37.75,10,4,Europe,UPI,2.7,303,33.98,135.92
+197,2022-08-21,4264,Books,126.94,5,5,North America,Cash on Delivery,2.2,494,120.59,602.95
+198,2023-11-23,2256,Sports,361.42,0,2,Middle East,Cash on Delivery,1.2,4,361.42,722.84
+199,2022-04-23,4334,Fashion,188.97,30,3,Asia,Credit Card,2.1,231,132.28,396.84
+200,2023-05-12,1445,Beauty,482.69,15,5,Europe,UPI,4.4,125,410.29,2051.45
+201,2023-03-18,1053,Books,165.51,0,2,Middle East,Debit Card,1.8,342,165.51,331.02
+202,2023-07-18,1691,Books,79.35,20,4,Middle East,UPI,1.4,156,63.48,253.92
+203,2022-09-25,2970,Sports,92.41,10,4,Middle East,Debit Card,3.9,457,83.17,332.68
+204,2023-05-25,1003,Books,246.78,5,4,Asia,Cash on Delivery,4.3,355,234.44,937.76
+205,2023-01-21,1256,Home & Kitchen,469.04,5,5,North America,UPI,1.8,87,445.59,2227.95
+206,2023-01-22,4432,Fashion,450.64,5,1,North America,Credit Card,3.4,191,428.11,428.11
+207,2022-04-23,1833,Books,95.74,5,4,North America,Wallet,1.1,76,90.95,363.8
+208,2023-09-05,4311,Sports,378.47,15,4,Asia,Debit Card,3.6,349,321.7,1286.8
+209,2023-09-17,3529,Fashion,377.43,20,1,Middle East,Cash on Delivery,1.1,81,301.94,301.94
+210,2022-03-22,2698,Beauty,86.82,10,2,Asia,UPI,1.7,53,78.14,156.28
+211,2023-11-30,3508,Books,152.61,10,1,Middle East,Cash on Delivery,2.3,381,137.35,137.35
+212,2022-04-23,3896,Electronics,42.64,0,5,Middle East,Cash on Delivery,3.7,374,42.64,213.2
+213,2022-01-02,2161,Sports,42.06,30,4,Asia,Wallet,4.8,269,29.44,117.76
+214,2023-10-04,4522,Electronics,223.84,0,1,Middle East,Wallet,2.5,360,223.84,223.84
+215,2022-08-08,2347,Sports,244.59,5,4,Asia,Credit Card,4.1,169,232.36,929.44
+216,2023-07-20,1472,Electronics,21.21,0,4,North America,Cash on Delivery,2.9,220,21.21,84.84
+217,2022-08-13,2764,Electronics,483.28,0,5,Asia,UPI,2.4,190,483.28,2416.4
+218,2023-01-20,3026,Sports,245.72,5,2,Europe,Wallet,3.2,122,233.43,466.86
+219,2023-02-07,2637,Home & Kitchen,394.98,30,5,Asia,UPI,4.7,8,276.49,1382.45
+220,2023-09-30,4548,Sports,319.29,5,4,Middle East,Credit Card,2.1,244,303.33,1213.32
+221,2022-05-10,3240,Beauty,311.56,30,5,Asia,Debit Card,1.7,203,218.09,1090.45
+222,2022-02-22,3354,Books,155.05,0,4,Middle East,Credit Card,3.9,69,155.05,620.2
+223,2023-11-15,4613,Beauty,444.12,10,3,Europe,UPI,1.2,62,399.71,1199.13
+224,2023-12-31,4878,Sports,153.37,10,1,Middle East,UPI,2.7,18,138.03,138.03
+225,2023-11-03,1758,Electronics,476.0,0,4,Middle East,UPI,2.4,238,476.0,1904.0
+226,2023-12-11,1905,Sports,24.51,15,5,North America,Credit Card,2.1,464,20.83,104.15
+227,2023-02-20,3268,Beauty,61.78,30,2,Europe,Wallet,3.4,18,43.25,86.5
+228,2022-09-04,3219,Beauty,364.65,30,2,Asia,Credit Card,2.9,77,255.25,510.5
+229,2023-03-15,2183,Home & Kitchen,306.31,20,4,North America,Cash on Delivery,3.6,93,245.05,980.2
+230,2022-07-22,3219,Sports,359.95,10,2,Europe,Wallet,4.2,296,323.96,647.92
+231,2022-07-03,2086,Electronics,322.6,0,1,North America,Wallet,4.9,496,322.6,322.6
+232,2022-05-03,4644,Fashion,265.97,30,4,Asia,Cash on Delivery,2.0,307,186.18,744.72
+233,2023-02-05,2088,Beauty,20.44,5,1,Europe,Wallet,4.6,127,19.42,19.42
+234,2022-10-21,2192,Sports,405.41,20,4,North America,UPI,4.0,250,324.33,1297.32
+235,2022-10-07,3128,Beauty,257.52,10,1,Middle East,UPI,1.8,245,231.77,231.77
+236,2023-09-02,3806,Electronics,57.38,15,4,Middle East,Cash on Delivery,1.7,17,48.77,195.08
+237,2022-07-17,2291,Home & Kitchen,100.28,20,4,North America,UPI,3.2,115,80.22,320.88
+238,2023-05-26,4451,Sports,332.69,0,2,Asia,Cash on Delivery,4.2,408,332.69,665.38
+239,2022-05-24,4841,Books,43.12,15,1,Asia,Cash on Delivery,3.1,359,36.65,36.65
+240,2023-09-01,3120,Electronics,435.39,15,4,North America,Debit Card,2.5,357,370.08,1480.32
+241,2022-07-20,1331,Sports,396.41,20,5,Asia,UPI,5.0,54,317.13,1585.65
+242,2022-05-04,2211,Books,156.63,10,2,Europe,Cash on Delivery,1.8,364,140.97,281.94
+243,2022-07-06,2048,Fashion,442.34,30,4,Europe,Debit Card,3.7,106,309.64,1238.56
+244,2022-11-22,3275,Books,443.16,5,4,Asia,UPI,3.3,128,421.0,1684.0
+245,2023-04-09,2141,Beauty,419.73,0,1,Middle East,UPI,2.4,383,419.73,419.73
+246,2022-12-15,4516,Home & Kitchen,157.29,5,2,Middle East,UPI,3.5,113,149.43,298.86
+247,2023-10-22,2131,Sports,329.65,0,2,Middle East,Credit Card,3.6,354,329.65,659.3
+248,2023-02-07,3289,Sports,228.45,30,5,North America,Wallet,4.9,49,159.92,799.6
+249,2022-12-12,2634,Fashion,271.75,15,1,Middle East,UPI,3.7,75,230.99,230.99
+250,2023-05-26,4605,Home & Kitchen,207.8,15,3,Asia,UPI,1.7,169,176.63,529.89
+251,2022-05-27,4552,Sports,6.97,0,1,Middle East,Wallet,1.7,375,6.97,6.97
+252,2022-05-28,1502,Home & Kitchen,9.94,15,1,Middle East,Credit Card,2.9,107,8.45,8.45
+253,2023-12-12,4569,Sports,387.56,20,3,North America,Credit Card,1.5,472,310.05,930.15
+254,2023-05-04,2079,Books,473.46,20,5,North America,UPI,2.4,290,378.77,1893.85
+255,2023-10-02,4220,Sports,118.65,30,4,Middle East,Cash on Delivery,4.7,110,83.06,332.24
+256,2023-07-05,2334,Home & Kitchen,274.44,5,2,Middle East,Cash on Delivery,1.4,258,260.72,521.44
+257,2022-12-04,1551,Fashion,156.49,10,5,Europe,Credit Card,3.2,438,140.84,704.2
+258,2023-10-03,4733,Home & Kitchen,241.38,10,1,Middle East,UPI,3.6,418,217.24,217.24
+259,2023-04-18,1923,Fashion,63.48,5,5,Asia,Wallet,3.3,409,60.31,301.55
+260,2022-05-31,1120,Beauty,364.08,5,5,North America,Credit Card,3.5,226,345.88,1729.4
+261,2023-02-19,2795,Sports,260.55,20,2,Asia,Debit Card,1.5,174,208.44,416.88
+262,2022-10-25,3073,Beauty,157.82,0,5,North America,Debit Card,1.1,109,157.82,789.1
+263,2023-09-03,2135,Books,333.47,20,5,Asia,Debit Card,4.1,123,266.78,1333.9
+264,2022-09-20,3558,Electronics,258.07,10,2,Asia,Credit Card,2.3,237,232.26,464.52
+265,2022-05-24,3928,Sports,205.12,10,4,Middle East,Wallet,2.8,305,184.61,738.44
+266,2022-12-12,1022,Beauty,268.93,5,1,Middle East,Debit Card,4.6,457,255.48,255.48
+267,2023-09-16,4752,Sports,477.07,20,2,Europe,Wallet,4.4,345,381.66,763.32
+268,2023-07-26,2849,Electronics,39.29,5,2,Asia,Cash on Delivery,3.6,60,37.33,74.66
+269,2022-01-02,4335,Fashion,462.37,20,1,North America,UPI,2.5,444,369.9,369.9
+270,2022-10-31,3163,Sports,67.53,15,5,Middle East,Wallet,2.3,139,57.4,287.0
+271,2022-09-11,1479,Electronics,107.15,20,4,Asia,Debit Card,3.0,432,85.72,342.88
+272,2023-10-14,3354,Home & Kitchen,489.69,15,3,Asia,Credit Card,1.5,86,416.24,1248.72
+273,2023-03-29,3278,Fashion,405.97,30,3,North America,Credit Card,3.4,97,284.18,852.54
+274,2022-02-06,3748,Home & Kitchen,179.1,20,5,North America,Debit Card,4.4,464,143.28,716.4
+275,2022-06-09,3539,Electronics,205.34,0,4,Middle East,Cash on Delivery,4.2,299,205.34,821.36
+276,2022-01-09,1768,Home & Kitchen,153.06,10,1,Middle East,Debit Card,3.1,252,137.75,137.75
+277,2022-08-21,2143,Fashion,116.46,5,5,Asia,Credit Card,3.5,173,110.64,553.2
+278,2022-04-09,3333,Sports,35.13,0,3,Asia,Debit Card,2.1,484,35.13,105.39
+279,2023-10-21,1987,Home & Kitchen,21.67,10,5,Asia,Debit Card,4.2,460,19.5,97.5
+280,2022-07-27,4856,Electronics,253.29,15,1,North America,UPI,1.8,268,215.3,215.3
+281,2022-05-11,4478,Home & Kitchen,267.4,5,5,Asia,UPI,4.1,76,254.03,1270.15
+282,2023-02-08,2381,Home & Kitchen,381.97,10,5,North America,Cash on Delivery,2.9,202,343.77,1718.85
+283,2022-06-01,3937,Books,52.09,5,1,Middle East,Debit Card,3.1,112,49.49,49.49
+284,2022-02-23,2175,Fashion,259.78,0,2,North America,Debit Card,4.1,127,259.78,519.56
+285,2022-04-30,3645,Books,462.61,30,1,North America,UPI,4.2,229,323.83,323.83
+286,2023-11-04,2348,Electronics,427.07,10,4,Europe,UPI,2.7,328,384.36,1537.44
+287,2023-09-20,3904,Beauty,269.61,5,5,North America,Credit Card,4.6,18,256.13,1280.65
+288,2023-08-10,2971,Electronics,71.15,15,2,Europe,Wallet,3.2,291,60.48,120.96
+289,2023-09-17,1838,Electronics,82.25,15,1,Middle East,Debit Card,4.4,141,69.91,69.91
+290,2023-02-24,4317,Electronics,241.28,20,3,North America,UPI,1.6,52,193.02,579.06
+291,2023-02-26,2849,Electronics,310.59,20,4,Asia,Debit Card,1.9,127,248.47,993.88
+292,2022-04-14,1917,Books,489.42,5,5,Asia,Debit Card,2.2,494,464.95,2324.75
+293,2022-09-11,4386,Electronics,416.49,15,2,Europe,Wallet,3.6,460,354.02,708.04
+294,2022-08-15,1939,Home & Kitchen,210.11,10,4,Europe,Debit Card,1.0,369,189.1,756.4
+295,2022-04-22,3852,Electronics,178.33,30,5,Middle East,UPI,2.6,456,124.83,624.15
+296,2023-05-25,3209,Beauty,11.68,10,4,North America,Wallet,1.1,384,10.51,42.04
+297,2023-04-18,3659,Fashion,8.82,0,4,Europe,Cash on Delivery,2.6,48,8.82,35.28
+298,2022-04-09,2392,Books,239.85,20,1,North America,Wallet,2.4,193,191.88,191.88
+299,2022-06-02,4256,Books,39.3,15,1,Middle East,Wallet,1.6,183,33.4,33.4
+300,2022-12-04,1952,Books,82.4,0,1,Asia,Cash on Delivery,3.5,437,82.4,82.4
+301,2023-12-07,2959,Books,490.29,5,5,Middle East,UPI,1.9,429,465.78,2328.9
+302,2022-06-12,1275,Electronics,360.04,20,1,Middle East,Debit Card,1.8,389,288.03,288.03
+303,2023-12-21,4044,Beauty,228.86,15,4,Middle East,Credit Card,4.4,61,194.53,778.12
+304,2023-11-12,1528,Sports,429.65,15,4,Asia,Debit Card,4.5,66,365.2,1460.8
+305,2022-06-10,2459,Electronics,92.82,5,5,Europe,Debit Card,2.9,477,88.18,440.9
+306,2023-08-03,4331,Fashion,197.71,15,5,Middle East,Debit Card,1.3,210,168.05,840.25
+307,2023-02-02,1958,Fashion,150.9,0,3,North America,Credit Card,3.0,168,150.9,452.7
+308,2022-10-04,4316,Electronics,497.75,20,1,Europe,Debit Card,2.7,192,398.2,398.2
+309,2023-05-19,2841,Electronics,451.05,0,3,Europe,Credit Card,4.1,364,451.05,1353.15
+310,2023-01-27,4409,Electronics,265.41,30,5,Europe,Debit Card,1.7,321,185.79,928.95
+311,2022-05-15,1049,Beauty,214.9,10,5,Europe,UPI,1.4,484,193.41,967.05
+312,2022-07-14,4343,Books,499.06,15,1,Europe,Debit Card,2.0,405,424.2,424.2
+313,2023-02-05,2258,Fashion,107.13,15,3,Middle East,Credit Card,1.7,66,91.06,273.18
+314,2023-10-02,3631,Fashion,206.9,15,2,Asia,UPI,4.4,120,175.86,351.72
+315,2022-02-02,2852,Books,357.33,5,1,North America,Wallet,2.1,449,339.46,339.46
+316,2023-11-19,2579,Sports,353.4,10,2,North America,Debit Card,3.7,285,318.06,636.12
+317,2023-04-05,3961,Books,289.25,10,1,Asia,Cash on Delivery,1.5,184,260.32,260.32
+318,2023-04-15,4377,Fashion,476.19,0,4,North America,Credit Card,4.3,70,476.19,1904.76
+319,2023-01-10,3524,Fashion,127.15,15,4,Middle East,Wallet,2.8,484,108.08,432.32
+320,2022-01-22,1487,Beauty,286.47,5,2,Europe,Wallet,4.4,377,272.15,544.3
+321,2023-11-01,3127,Fashion,406.19,0,5,North America,Cash on Delivery,2.1,402,406.19,2030.95
+322,2022-02-07,2309,Electronics,120.07,15,3,Asia,UPI,3.2,64,102.06,306.18
+323,2022-08-18,3608,Electronics,436.22,30,1,Asia,Wallet,3.5,160,305.35,305.35
+324,2022-12-31,4169,Books,321.37,10,4,Middle East,Wallet,3.0,365,289.23,1156.92
+325,2023-07-17,2501,Books,193.63,30,1,Asia,Debit Card,2.0,250,135.54,135.54
+326,2023-03-14,2940,Electronics,325.61,15,4,Europe,Credit Card,4.1,114,276.77,1107.08
+327,2022-10-10,3453,Books,464.39,15,4,Asia,Credit Card,1.3,156,394.73,1578.92
+328,2022-01-27,3584,Electronics,494.15,30,5,North America,Credit Card,1.6,327,345.9,1729.5
+329,2022-08-14,4797,Beauty,144.31,10,5,Europe,UPI,1.3,238,129.88,649.4
+330,2022-10-04,4639,Books,454.99,15,3,Middle East,Credit Card,2.2,327,386.74,1160.22
+331,2023-09-01,1254,Home & Kitchen,24.1,10,1,Middle East,Cash on Delivery,4.9,89,21.69,21.69
+332,2022-10-11,1959,Sports,8.6,0,4,Europe,Credit Card,1.5,274,8.6,34.4
+333,2023-04-26,4739,Fashion,302.8,20,4,Asia,UPI,4.9,465,242.24,968.96
+334,2023-03-29,3534,Electronics,243.41,10,2,North America,Cash on Delivery,1.2,99,219.07,438.14
+335,2023-10-21,2696,Sports,237.25,0,3,Europe,Wallet,4.5,177,237.25,711.75
+336,2023-05-31,4265,Fashion,120.86,5,2,Asia,UPI,3.8,344,114.82,229.64
+337,2023-07-01,3563,Fashion,300.74,0,1,North America,Credit Card,2.9,74,300.74,300.74
+338,2022-07-11,1463,Books,13.39,10,5,Asia,UPI,4.4,495,12.05,60.25
+339,2022-02-18,3827,Fashion,219.74,15,3,Middle East,Debit Card,2.2,208,186.78,560.34
+340,2023-05-27,2936,Home & Kitchen,186.63,10,4,Asia,Credit Card,2.8,235,167.97,671.88
+341,2022-01-17,4575,Books,100.56,0,2,North America,Wallet,2.2,8,100.56,201.12
+342,2022-06-21,1035,Sports,257.82,30,4,Europe,Debit Card,5.0,116,180.47,721.88
+343,2022-08-08,1015,Electronics,346.68,0,1,North America,Cash on Delivery,3.3,433,346.68,346.68
+344,2022-06-07,1918,Fashion,407.42,5,5,Middle East,Cash on Delivery,4.1,444,387.05,1935.25
+345,2023-04-22,2991,Fashion,233.81,20,1,Asia,UPI,2.2,291,187.05,187.05
+346,2022-02-15,2912,Beauty,123.75,0,1,Europe,Credit Card,1.2,190,123.75,123.75
+347,2023-01-08,3696,Sports,108.9,0,2,Asia,Debit Card,4.6,209,108.9,217.8
+348,2023-06-02,2613,Electronics,291.7,10,2,Europe,Wallet,2.5,73,262.53,525.06
+349,2022-04-09,1822,Beauty,197.68,5,3,Asia,Wallet,3.2,371,187.8,563.4
+350,2022-02-06,3120,Electronics,162.19,5,5,Europe,Wallet,2.9,1,154.08,770.4
+351,2022-10-07,4391,Fashion,263.87,15,5,Middle East,Cash on Delivery,2.1,236,224.29,1121.45
+352,2022-12-15,2966,Fashion,280.43,0,5,Asia,Wallet,1.7,139,280.43,1402.15
+353,2023-05-12,4316,Home & Kitchen,120.75,0,5,Asia,Debit Card,4.5,366,120.75,603.75
+354,2022-10-29,2881,Books,192.26,30,5,Asia,Debit Card,4.8,359,134.58,672.9
+355,2022-06-30,1739,Home & Kitchen,355.31,30,4,North America,Wallet,4.6,334,248.72,994.88
+356,2023-08-30,4266,Electronics,196.76,20,1,Middle East,Wallet,3.1,215,157.41,157.41
+357,2022-04-09,1757,Electronics,224.83,10,2,North America,Debit Card,3.6,152,202.35,404.7
+358,2023-12-01,1905,Electronics,321.81,0,5,Middle East,Wallet,1.6,276,321.81,1609.05
+359,2022-04-26,4066,Sports,99.45,20,5,Asia,Credit Card,2.4,373,79.56,397.8
+360,2022-07-10,4160,Electronics,434.06,5,2,Asia,Wallet,1.0,74,412.36,824.72
+361,2022-09-10,4843,Books,172.51,10,3,Asia,UPI,3.1,208,155.26,465.78
+362,2022-06-10,1797,Fashion,345.39,0,4,Asia,Credit Card,2.7,24,345.39,1381.56
+363,2022-09-13,3033,Home & Kitchen,152.12,0,1,Europe,Cash on Delivery,3.5,73,152.12,152.12
+364,2022-11-19,4210,Fashion,325.83,30,3,Europe,Debit Card,2.2,382,228.08,684.24
+365,2022-05-08,2586,Sports,142.29,10,1,Asia,Wallet,2.5,451,128.06,128.06
+366,2022-01-18,4730,Beauty,375.28,30,4,Asia,Wallet,3.7,80,262.7,1050.8
+367,2023-07-20,2777,Home & Kitchen,56.9,20,4,Asia,Cash on Delivery,1.6,23,45.52,182.08
+368,2023-07-24,2420,Sports,157.21,5,3,Asia,Debit Card,3.5,353,149.35,448.05
+369,2022-11-19,4000,Electronics,285.92,20,4,North America,Wallet,4.6,492,228.74,914.96
+370,2023-11-17,3531,Electronics,318.43,15,2,Asia,Cash on Delivery,3.4,48,270.67,541.34
+371,2023-09-18,3434,Beauty,73.39,0,4,North America,UPI,1.6,230,73.39,293.56
+372,2022-10-15,2391,Home & Kitchen,163.17,15,5,Middle East,Wallet,1.1,354,138.69,693.45
+373,2023-10-25,4917,Books,55.39,10,1,Europe,UPI,3.6,34,49.85,49.85
+374,2023-10-01,1457,Books,418.0,30,4,Europe,Credit Card,4.5,121,292.6,1170.4
+375,2022-06-04,3469,Electronics,491.91,30,3,Middle East,Cash on Delivery,3.0,1,344.34,1033.02
+376,2023-05-05,3279,Electronics,145.48,0,2,Asia,Wallet,1.2,196,145.48,290.96
+377,2023-01-21,3586,Electronics,244.14,0,2,North America,Credit Card,4.8,417,244.14,488.28
+378,2022-04-14,2367,Sports,255.73,10,4,Middle East,Cash on Delivery,2.7,312,230.16,920.64
+379,2023-01-28,3767,Beauty,86.4,15,3,North America,UPI,4.3,372,73.44,220.32
+380,2022-09-03,4209,Beauty,335.47,20,4,Europe,Debit Card,1.9,290,268.38,1073.52
+381,2022-06-25,2397,Fashion,260.81,15,5,Europe,Wallet,4.0,212,221.69,1108.45
+382,2022-02-08,2460,Beauty,259.36,5,3,North America,Cash on Delivery,3.4,418,246.39,739.17
+383,2023-04-22,1154,Home & Kitchen,34.0,15,5,Europe,Debit Card,2.5,97,28.9,144.5
+384,2023-11-13,3566,Beauty,44.56,30,4,North America,Debit Card,3.1,100,31.19,124.76
+385,2023-06-22,4186,Home & Kitchen,482.32,20,1,Middle East,Debit Card,3.5,246,385.86,385.86
+386,2023-02-12,2115,Books,470.16,5,2,Middle East,Credit Card,4.8,384,446.65,893.3
+387,2023-06-09,2369,Fashion,14.02,10,4,Asia,Cash on Delivery,3.9,466,12.62,50.48
+388,2023-05-21,4665,Beauty,272.53,0,4,North America,Debit Card,2.8,435,272.53,1090.12
+389,2022-02-05,4596,Books,37.1,30,5,North America,Debit Card,2.2,415,25.97,129.85
+390,2023-11-16,3631,Home & Kitchen,397.61,5,4,North America,Cash on Delivery,1.8,353,377.73,1510.92
+391,2022-01-20,2114,Fashion,29.38,5,5,Asia,Wallet,4.3,313,27.91,139.55
+392,2022-11-17,1699,Books,276.91,5,4,Europe,Credit Card,4.5,377,263.06,1052.24
+393,2023-05-27,4469,Home & Kitchen,311.54,30,2,Middle East,UPI,4.4,240,218.08,436.16
+394,2023-02-04,1104,Fashion,52.55,0,2,Europe,UPI,1.6,274,52.55,105.1
+395,2023-10-16,3859,Electronics,299.21,20,3,Asia,Credit Card,3.2,483,239.37,718.11
+396,2023-04-16,4013,Beauty,471.13,5,3,North America,Wallet,3.9,325,447.57,1342.71
+397,2022-05-23,1595,Electronics,53.18,10,4,Europe,Debit Card,3.6,436,47.86,191.44
+398,2022-04-02,2013,Electronics,343.91,20,2,Europe,Debit Card,2.0,74,275.13,550.26
+399,2022-12-20,1539,Electronics,139.27,10,5,North America,Credit Card,4.4,233,125.34,626.7
+400,2023-12-28,4350,Books,140.44,0,4,Europe,Debit Card,1.3,220,140.44,561.76
+401,2022-02-20,1011,Electronics,274.34,30,1,Asia,Debit Card,4.3,274,192.04,192.04
+402,2023-10-27,2943,Sports,464.28,10,3,Middle East,Wallet,2.7,446,417.85,1253.55
+403,2023-11-29,4378,Electronics,119.21,15,3,North America,Cash on Delivery,3.2,412,101.33,303.99
+404,2023-07-29,1363,Books,496.7,15,3,Asia,UPI,1.1,72,422.2,1266.6
+405,2022-07-09,1661,Beauty,50.27,30,5,Europe,UPI,4.9,452,35.19,175.95
+406,2022-05-05,2341,Sports,470.39,30,3,North America,Credit Card,3.6,491,329.27,987.81
+407,2022-05-30,1537,Fashion,13.83,0,2,North America,Credit Card,4.4,110,13.83,27.66
+408,2022-11-10,4285,Fashion,85.28,30,3,Asia,Credit Card,2.3,62,59.7,179.1
+409,2023-07-24,1313,Beauty,488.31,20,5,North America,Wallet,1.3,413,390.65,1953.25
+410,2022-12-08,2478,Books,136.73,0,4,North America,Credit Card,1.5,83,136.73,546.92
+411,2022-11-01,2422,Electronics,8.52,20,1,Middle East,Credit Card,4.7,360,6.82,6.82
+412,2023-11-23,2775,Fashion,443.11,15,4,Asia,Debit Card,3.5,242,376.64,1506.56
+413,2023-11-13,2245,Beauty,457.42,15,4,Middle East,Credit Card,1.9,379,388.81,1555.24
+414,2022-02-23,1579,Beauty,373.48,15,3,Europe,Debit Card,3.5,311,317.46,952.38
+415,2023-03-20,1261,Electronics,470.08,5,4,Europe,Cash on Delivery,4.0,114,446.58,1786.32
+416,2023-09-05,1495,Beauty,136.51,15,1,North America,Wallet,4.2,6,116.03,116.03
+417,2022-09-21,3670,Books,324.42,10,3,Europe,Cash on Delivery,1.1,431,291.98,875.94
+418,2022-02-22,1129,Books,372.46,0,2,Europe,Wallet,4.2,172,372.46,744.92
+419,2023-07-26,2182,Sports,486.93,30,4,Europe,Credit Card,3.6,127,340.85,1363.4
+420,2023-09-12,1791,Fashion,449.58,20,3,North America,Cash on Delivery,3.8,296,359.66,1078.98
+421,2022-01-05,4362,Home & Kitchen,34.24,30,5,North America,Debit Card,3.3,308,23.97,119.85
+422,2022-04-13,2838,Beauty,172.83,15,5,Asia,UPI,4.7,275,146.91,734.55
+423,2022-07-15,2566,Books,309.49,30,4,Asia,UPI,3.2,427,216.64,866.56
+424,2022-12-16,3136,Electronics,428.42,0,1,Asia,Debit Card,2.1,352,428.42,428.42
+425,2022-02-16,1967,Electronics,143.43,5,2,North America,Cash on Delivery,4.4,308,136.26,272.52
+426,2023-10-18,2355,Home & Kitchen,8.99,15,2,Asia,Cash on Delivery,4.4,363,7.64,15.28
+427,2022-09-26,1629,Home & Kitchen,97.54,0,3,Middle East,UPI,4.4,340,97.54,292.62
+428,2023-01-05,1505,Home & Kitchen,215.54,20,2,Middle East,UPI,2.7,5,172.43,344.86
+429,2023-09-28,4201,Electronics,35.27,15,5,Asia,Debit Card,2.3,418,29.98,149.9
+430,2022-04-16,1206,Beauty,25.95,10,2,Asia,Wallet,2.4,92,23.36,46.72
+431,2023-11-01,4431,Books,203.8,30,4,Asia,Credit Card,4.3,457,142.66,570.64
+432,2023-10-21,4130,Electronics,325.7,15,1,Europe,Debit Card,1.6,464,276.84,276.84
+433,2023-10-19,4167,Books,356.7,0,5,North America,Wallet,4.6,495,356.7,1783.5
+434,2022-04-30,2854,Home & Kitchen,268.74,5,2,Middle East,UPI,3.8,373,255.3,510.6
+435,2023-08-27,2269,Sports,220.76,15,2,Europe,Wallet,4.5,313,187.65,375.3
+436,2022-02-27,2482,Fashion,14.33,30,3,Middle East,Credit Card,3.3,225,10.03,30.09
+437,2022-12-12,2168,Beauty,134.98,10,4,Asia,Debit Card,4.5,220,121.48,485.92
+438,2023-04-19,4381,Sports,336.59,5,5,Asia,Wallet,3.6,121,319.76,1598.8
+439,2022-04-27,2660,Home & Kitchen,227.53,10,3,Europe,Debit Card,3.5,498,204.78,614.34
+440,2022-05-07,4988,Home & Kitchen,135.74,5,2,Asia,UPI,3.7,111,128.95,257.9
+441,2023-01-28,3581,Books,118.56,15,4,Europe,Cash on Delivery,2.2,30,100.78,403.12
+442,2023-10-03,4452,Electronics,13.55,0,3,Asia,Credit Card,2.4,134,13.55,40.65
+443,2022-02-27,4424,Fashion,413.41,5,1,Asia,Debit Card,4.5,29,392.74,392.74
+444,2023-09-26,1883,Beauty,439.63,5,2,Middle East,Credit Card,3.6,162,417.65,835.3
+445,2023-05-28,1950,Fashion,186.01,20,4,Middle East,Wallet,2.2,186,148.81,595.24
+446,2022-04-06,1284,Home & Kitchen,352.12,15,1,Middle East,Cash on Delivery,3.6,360,299.3,299.3
+447,2023-09-30,1718,Fashion,37.16,30,4,North America,Cash on Delivery,4.7,446,26.01,104.04
+448,2022-04-28,4988,Beauty,444.92,15,4,North America,Cash on Delivery,3.5,167,378.18,1512.72
+449,2023-07-14,1501,Home & Kitchen,453.86,10,5,Asia,Debit Card,4.1,420,408.47,2042.35
+450,2023-08-24,1257,Beauty,82.64,30,4,Europe,Wallet,1.8,1,57.85,231.4
+451,2023-05-03,3039,Fashion,391.4,0,3,North America,UPI,1.7,462,391.4,1174.2
+452,2022-08-25,1809,Sports,239.26,0,2,Europe,Wallet,1.4,231,239.26,478.52
+453,2022-09-29,3099,Home & Kitchen,342.1,15,4,North America,Wallet,3.7,34,290.79,1163.16
+454,2022-07-08,3597,Home & Kitchen,239.97,20,1,North America,UPI,3.3,453,191.98,191.98
+455,2023-12-05,2922,Sports,43.94,0,4,Europe,Cash on Delivery,1.1,372,43.94,175.76
+456,2023-03-23,3712,Beauty,420.82,10,5,Middle East,UPI,1.8,305,378.74,1893.7
+457,2023-08-04,4916,Electronics,47.44,15,5,Middle East,Cash on Delivery,4.2,242,40.32,201.6
+458,2022-09-04,2239,Home & Kitchen,183.28,20,5,Europe,Wallet,3.3,412,146.62,733.1
+459,2022-03-17,4517,Beauty,493.05,30,1,North America,Credit Card,1.9,205,345.14,345.14
+460,2022-06-03,4294,Beauty,216.21,0,5,North America,Cash on Delivery,2.1,4,216.21,1081.05
+461,2023-10-18,3702,Beauty,411.04,20,4,North America,Wallet,1.9,14,328.83,1315.32
+462,2023-03-11,4013,Electronics,88.62,5,5,Middle East,UPI,4.4,33,84.19,420.95
+463,2022-03-27,2128,Sports,415.88,20,2,Europe,UPI,1.8,305,332.7,665.4
+464,2023-11-28,1521,Sports,233.3,5,2,North America,Credit Card,1.2,203,221.64,443.28
+465,2022-10-12,1968,Books,257.42,10,2,Asia,Cash on Delivery,4.5,59,231.68,463.36
+466,2022-08-08,2777,Sports,484.48,0,4,North America,Credit Card,2.7,362,484.48,1937.92
+467,2022-03-10,2000,Home & Kitchen,443.64,5,5,North America,Wallet,1.3,166,421.46,2107.3
+468,2022-02-16,1887,Fashion,177.15,5,4,North America,UPI,2.4,150,168.29,673.16
+469,2022-04-04,4454,Beauty,474.96,15,1,North America,Credit Card,2.8,322,403.72,403.72
+470,2023-03-29,4185,Fashion,56.05,0,2,Middle East,Debit Card,3.5,207,56.05,112.1
+471,2022-07-23,1744,Beauty,17.96,0,3,Europe,Cash on Delivery,1.7,189,17.96,53.88
+472,2022-08-06,4140,Beauty,268.66,5,3,North America,Debit Card,3.8,126,255.23,765.69
+473,2023-04-19,4436,Sports,386.1,30,2,Asia,Wallet,1.2,119,270.27,540.54
+474,2023-03-08,2067,Home & Kitchen,114.37,5,4,Europe,Debit Card,1.7,25,108.65,434.6
+475,2022-12-07,2704,Electronics,44.75,15,3,Asia,Cash on Delivery,1.5,492,38.04,114.12
+476,2023-07-05,1210,Electronics,423.53,5,4,North America,Credit Card,2.9,50,402.35,1609.4
+477,2023-09-04,3323,Fashion,493.23,10,5,Middle East,UPI,2.7,319,443.91,2219.55
+478,2022-10-16,2130,Books,348.69,15,1,Middle East,Debit Card,4.2,82,296.39,296.39
+479,2022-09-11,2956,Electronics,487.76,30,4,Asia,Wallet,2.4,497,341.43,1365.72
+480,2022-12-23,3526,Electronics,417.17,15,3,Asia,Debit Card,4.3,58,354.59,1063.77
+481,2022-01-23,2702,Sports,129.67,5,4,Middle East,Cash on Delivery,4.5,333,123.19,492.76
+482,2023-06-06,3252,Books,59.34,20,4,Europe,UPI,4.8,311,47.47,189.88
+483,2022-04-10,1118,Electronics,405.42,5,5,Middle East,Debit Card,5.0,51,385.15,1925.75
+484,2022-06-29,1485,Home & Kitchen,331.5,5,5,Asia,UPI,3.6,300,314.92,1574.6
+485,2022-08-11,3156,Home & Kitchen,407.38,5,3,Middle East,Debit Card,4.0,260,387.01,1161.03
+486,2023-10-21,3501,Fashion,360.59,10,3,Asia,Credit Card,3.6,340,324.53,973.59
+487,2023-03-18,4310,Sports,255.05,20,1,Europe,Cash on Delivery,2.8,439,204.04,204.04
+488,2023-08-31,2031,Fashion,470.71,20,4,North America,Wallet,1.4,381,376.57,1506.28
+489,2022-11-21,1511,Fashion,378.01,15,2,North America,Credit Card,3.2,317,321.31,642.62
+490,2023-05-31,2066,Sports,9.22,10,3,Middle East,UPI,1.8,485,8.3,24.9
+491,2022-01-16,4465,Home & Kitchen,353.61,0,3,Asia,UPI,2.8,121,353.61,1060.83
+492,2022-12-02,2832,Fashion,274.35,0,5,Europe,Credit Card,1.6,401,274.35,1371.75
+493,2022-09-15,1131,Fashion,73.46,10,4,Europe,UPI,1.1,224,66.11,264.44
+494,2023-05-12,4789,Home & Kitchen,220.39,5,1,Middle East,UPI,3.9,487,209.37,209.37
+495,2022-06-09,2923,Sports,264.46,0,2,Asia,UPI,4.5,336,264.46,528.92
+496,2023-04-20,2815,Books,236.88,5,3,Europe,UPI,3.7,285,225.04,675.12
+497,2023-10-26,3798,Fashion,220.02,10,5,Asia,UPI,3.1,312,198.02,990.1
+498,2023-11-21,4860,Electronics,317.44,5,1,Europe,Credit Card,4.0,153,301.57,301.57
+499,2023-11-06,3441,Home & Kitchen,331.01,10,1,Middle East,Debit Card,1.6,191,297.91,297.91
+500,2023-01-15,4629,Books,350.28,30,4,North America,Debit Card,1.2,51,245.2,980.8
+501,2023-06-29,1197,Electronics,381.91,15,2,Middle East,Credit Card,4.5,307,324.62,649.24
+502,2023-11-22,4535,Electronics,417.41,0,1,North America,UPI,1.7,117,417.41,417.41
+503,2023-03-03,4192,Beauty,289.21,5,5,Middle East,Wallet,2.4,20,274.75,1373.75
+504,2023-09-05,4371,Books,41.1,30,4,North America,Cash on Delivery,3.9,483,28.77,115.08
+505,2022-09-25,1219,Beauty,185.56,15,5,Middle East,Credit Card,2.5,273,157.73,788.65
+506,2023-07-31,1867,Home & Kitchen,6.88,0,5,North America,Wallet,1.7,194,6.88,34.4
+507,2023-02-21,4872,Books,299.63,10,5,Europe,UPI,4.1,240,269.67,1348.35
+508,2022-06-17,3141,Beauty,487.65,10,2,Middle East,UPI,2.1,304,438.88,877.76
+509,2022-02-12,2315,Home & Kitchen,414.41,10,1,Europe,Debit Card,4.5,452,372.97,372.97
+510,2023-07-10,3200,Fashion,245.69,0,5,North America,Debit Card,2.6,295,245.69,1228.45
+511,2022-10-12,3572,Electronics,355.56,15,3,Asia,Cash on Delivery,4.7,132,302.23,906.69
+512,2023-02-01,3766,Home & Kitchen,372.23,10,3,North America,UPI,2.2,24,335.01,1005.03
+513,2022-01-12,1766,Books,299.44,20,3,North America,UPI,1.9,351,239.55,718.65
+514,2023-08-30,2445,Electronics,443.36,15,5,Middle East,Credit Card,3.9,18,376.86,1884.3
+515,2022-10-29,2181,Electronics,164.31,10,5,Europe,Debit Card,4.3,66,147.88,739.4
+516,2022-09-10,4341,Home & Kitchen,338.32,15,4,Asia,Wallet,5.0,398,287.57,1150.28
+517,2023-05-14,3865,Fashion,37.0,10,3,Middle East,Credit Card,1.2,414,33.3,99.9
+518,2022-02-04,4651,Home & Kitchen,73.43,0,2,Asia,Credit Card,3.6,435,73.43,146.86
+519,2023-12-28,1256,Sports,469.54,30,2,Asia,UPI,4.2,418,328.68,657.36
+520,2022-03-31,3748,Beauty,273.82,20,3,Asia,Cash on Delivery,4.5,298,219.06,657.18
+521,2023-08-28,3562,Beauty,378.42,5,1,Europe,Debit Card,2.9,352,359.5,359.5
+522,2023-08-25,4308,Sports,435.3,10,2,Europe,Cash on Delivery,4.8,457,391.77,783.54
+523,2023-02-22,2969,Beauty,467.4,0,2,Asia,Cash on Delivery,1.3,315,467.4,934.8
+524,2022-04-25,3492,Sports,49.43,15,1,North America,Credit Card,4.1,468,42.02,42.02
+525,2023-09-09,2955,Books,352.4,10,1,Europe,Cash on Delivery,4.2,483,317.16,317.16
+526,2022-07-15,2667,Home & Kitchen,316.77,5,2,North America,Credit Card,2.6,309,300.93,601.86
+527,2023-05-16,3218,Electronics,302.07,20,1,Asia,Cash on Delivery,2.5,185,241.66,241.66
+528,2023-09-18,3317,Books,76.99,5,1,Europe,Credit Card,1.5,346,73.14,73.14
+529,2023-05-08,3648,Beauty,387.73,20,4,Asia,Debit Card,4.4,396,310.18,1240.72
+530,2022-03-16,2638,Books,161.21,5,1,North America,Cash on Delivery,2.2,130,153.15,153.15
+531,2023-02-17,1636,Electronics,114.99,15,2,North America,Credit Card,4.3,1,97.74,195.48
+532,2023-01-11,3114,Books,355.1,20,4,Middle East,UPI,1.4,452,284.08,1136.32
+533,2023-02-24,3822,Fashion,111.6,10,2,North America,Cash on Delivery,1.2,206,100.44,200.88
+534,2023-12-30,1007,Beauty,251.87,30,5,North America,Credit Card,4.7,406,176.31,881.55
+535,2022-10-04,2579,Home & Kitchen,162.17,30,1,Middle East,Cash on Delivery,3.5,12,113.52,113.52
+536,2023-11-07,4519,Sports,412.62,15,1,Middle East,UPI,3.0,138,350.73,350.73
+537,2023-01-29,1134,Beauty,477.42,15,2,Asia,UPI,4.1,434,405.81,811.62
+538,2023-04-02,4831,Beauty,413.19,30,5,Middle East,Debit Card,2.7,181,289.23,1446.15
+539,2022-07-11,3863,Home & Kitchen,201.46,0,2,North America,Wallet,4.5,365,201.46,402.92
+540,2023-11-20,1829,Home & Kitchen,85.58,15,4,Europe,Cash on Delivery,4.3,52,72.74,290.96
+541,2022-04-09,1024,Electronics,350.69,10,2,Asia,UPI,3.5,388,315.62,631.24
+542,2023-07-02,3512,Electronics,452.33,30,3,North America,Credit Card,2.4,164,316.63,949.89
+543,2022-04-06,3009,Fashion,203.73,20,2,Europe,UPI,2.9,458,162.98,325.96
+544,2023-10-26,1373,Books,25.18,5,4,North America,Credit Card,4.8,336,23.92,95.68
+545,2023-10-25,3243,Books,66.55,5,2,Europe,Wallet,4.5,13,63.22,126.44
+546,2022-07-09,3751,Books,194.42,0,1,Middle East,Debit Card,1.9,12,194.42,194.42
+547,2022-02-06,4952,Sports,252.14,5,1,Asia,UPI,4.0,421,239.53,239.53
+548,2023-01-04,3449,Beauty,148.83,0,4,Europe,Wallet,1.1,92,148.83,595.32
+549,2023-11-26,3169,Beauty,246.31,0,2,Asia,UPI,5.0,423,246.31,492.62
+550,2023-06-09,1771,Home & Kitchen,479.61,15,1,Europe,Credit Card,2.8,169,407.67,407.67
+551,2022-10-06,2936,Sports,43.14,15,5,Middle East,Wallet,2.7,278,36.67,183.35
+552,2022-08-05,1558,Fashion,402.74,15,2,Asia,UPI,2.3,464,342.33,684.66
+553,2022-09-30,4957,Fashion,230.39,0,1,Asia,Wallet,1.7,304,230.39,230.39
+554,2022-03-03,2232,Books,328.58,20,4,Middle East,UPI,2.8,82,262.86,1051.44
+555,2023-08-19,4372,Home & Kitchen,484.84,5,5,Middle East,Wallet,4.7,341,460.6,2303.0
+556,2023-12-30,2624,Books,232.48,5,4,Asia,Cash on Delivery,2.7,226,220.86,883.44
+557,2022-12-08,1953,Beauty,52.54,20,4,Asia,UPI,2.3,223,42.03,168.12
+558,2023-02-01,2538,Home & Kitchen,414.82,15,3,Asia,Cash on Delivery,4.2,351,352.6,1057.8
+559,2023-11-30,1907,Sports,136.03,5,3,Middle East,Cash on Delivery,4.4,406,129.23,387.69
+560,2022-01-19,2680,Books,453.08,5,1,Asia,Credit Card,3.8,195,430.43,430.43
+561,2022-06-26,2909,Fashion,45.56,10,2,Asia,Cash on Delivery,2.2,367,41.0,82.0
+562,2023-09-04,2557,Electronics,117.85,15,1,North America,UPI,1.5,59,100.17,100.17
+563,2023-01-31,2062,Sports,484.19,5,4,North America,Wallet,2.0,474,459.98,1839.92
+564,2023-03-21,2830,Beauty,440.73,20,5,Europe,UPI,4.4,431,352.58,1762.9
+565,2022-08-21,1618,Books,113.32,0,3,Europe,UPI,3.3,390,113.32,339.96
+566,2022-03-17,4683,Home & Kitchen,389.35,20,3,Europe,UPI,2.7,407,311.48,934.44
+567,2022-09-22,2807,Home & Kitchen,47.71,0,3,Middle East,Wallet,3.4,313,47.71,143.13
+568,2023-03-31,3788,Books,83.14,15,2,Middle East,Wallet,2.3,386,70.67,141.34
+569,2023-12-19,3994,Sports,95.23,20,1,Europe,UPI,1.2,309,76.18,76.18
+570,2023-01-19,2909,Fashion,26.38,10,4,Middle East,UPI,3.4,79,23.74,94.96
+571,2023-07-18,3844,Books,244.87,30,5,Asia,Wallet,4.0,463,171.41,857.05
+572,2023-05-21,1205,Beauty,198.37,5,2,Asia,Credit Card,4.9,348,188.45,376.9
+573,2023-01-02,1582,Home & Kitchen,296.85,30,2,North America,Debit Card,4.0,292,207.8,415.6
+574,2022-05-24,2704,Beauty,345.92,30,2,North America,UPI,4.6,449,242.14,484.28
+575,2022-03-10,1696,Sports,299.69,10,3,Europe,Debit Card,1.0,251,269.72,809.16
+576,2022-04-09,3459,Sports,142.84,20,2,Europe,Cash on Delivery,4.0,112,114.27,228.54
+577,2023-01-31,4404,Electronics,45.91,30,1,Asia,Wallet,3.6,458,32.14,32.14
+578,2022-01-25,1207,Fashion,367.35,0,3,North America,Cash on Delivery,4.9,351,367.35,1102.05
+579,2023-04-14,1404,Books,158.01,30,5,Middle East,Cash on Delivery,3.4,367,110.61,553.05
+580,2023-04-29,3435,Books,127.29,10,3,North America,Wallet,3.1,351,114.56,343.68
+581,2023-07-19,2510,Fashion,346.8,10,1,Asia,Wallet,3.2,391,312.12,312.12
+582,2022-05-31,4453,Home & Kitchen,223.73,30,3,Europe,Cash on Delivery,3.6,272,156.61,469.83
+583,2022-05-24,1866,Books,106.24,0,2,North America,Credit Card,1.3,319,106.24,212.48
+584,2023-07-23,2907,Fashion,384.44,30,4,Europe,Credit Card,1.7,295,269.11,1076.44
+585,2022-02-08,3318,Books,404.16,5,5,Asia,Credit Card,3.1,329,383.95,1919.75
+586,2022-04-19,3484,Home & Kitchen,492.72,15,3,Europe,Debit Card,3.2,40,418.81,1256.43
+587,2023-11-24,1857,Fashion,236.65,20,3,Middle East,Credit Card,3.7,171,189.32,567.96
+588,2022-02-11,4501,Home & Kitchen,23.15,15,4,Middle East,Wallet,3.7,168,19.68,78.72
+589,2022-07-05,4718,Books,261.04,10,1,Middle East,Debit Card,1.5,372,234.94,234.94
+590,2023-02-02,4729,Fashion,16.51,5,4,North America,Debit Card,2.7,490,15.68,62.72
+591,2022-08-11,3392,Electronics,474.05,10,3,Asia,Credit Card,2.4,92,426.65,1279.95
+592,2023-09-26,3196,Books,91.53,20,1,Asia,Credit Card,2.9,37,73.22,73.22
+593,2022-05-13,3675,Fashion,463.07,30,3,North America,Wallet,1.3,366,324.15,972.45
+594,2022-06-12,4463,Electronics,475.26,30,3,Middle East,UPI,1.3,293,332.68,998.04
+595,2022-08-03,1186,Fashion,388.85,30,2,Middle East,Wallet,2.5,362,272.2,544.4
+596,2022-08-23,1019,Beauty,48.22,20,2,Asia,Debit Card,1.5,378,38.58,77.16
+597,2023-10-20,2361,Beauty,281.39,5,1,Middle East,Wallet,1.1,460,267.32,267.32
+598,2023-08-11,3420,Fashion,180.36,20,5,Asia,UPI,2.9,286,144.29,721.45
+599,2022-01-09,4026,Fashion,411.01,0,2,Asia,Credit Card,3.7,48,411.01,822.02
+600,2022-03-15,4827,Beauty,154.6,20,2,Middle East,Debit Card,2.2,123,123.68,247.36
+601,2023-05-07,1066,Books,228.37,30,4,Asia,UPI,4.3,75,159.86,639.44
+602,2022-09-10,2462,Beauty,288.98,10,3,Asia,Cash on Delivery,1.1,278,260.08,780.24
+603,2022-08-18,4133,Beauty,22.48,5,5,Asia,Cash on Delivery,4.2,345,21.36,106.8
+604,2023-06-03,4557,Sports,306.4,20,5,North America,Debit Card,2.9,256,245.12,1225.6
+605,2022-06-23,1785,Beauty,175.41,5,5,Europe,Debit Card,3.4,244,166.64,833.2
+606,2023-10-15,4930,Home & Kitchen,266.94,10,4,Middle East,Wallet,4.9,335,240.25,961.0
+607,2022-06-17,2998,Books,66.79,15,1,Asia,Cash on Delivery,2.4,325,56.77,56.77
+608,2022-06-19,3669,Home & Kitchen,171.23,20,2,Middle East,Credit Card,3.0,285,136.98,273.96
+609,2023-01-28,4639,Books,292.99,5,2,North America,Credit Card,3.3,140,278.34,556.68
+610,2023-09-26,3132,Home & Kitchen,287.93,20,4,North America,Debit Card,1.7,208,230.34,921.36
+611,2022-07-13,2429,Sports,83.19,15,4,Asia,Credit Card,3.6,299,70.71,282.84
+612,2023-06-01,4847,Home & Kitchen,210.28,10,3,Asia,Cash on Delivery,1.4,414,189.25,567.75
+613,2022-01-29,2418,Fashion,262.15,15,3,Europe,UPI,1.6,326,222.83,668.49
+614,2022-06-14,4690,Beauty,45.21,20,2,Europe,Cash on Delivery,4.0,330,36.17,72.34
+615,2023-02-26,2547,Sports,301.69,5,3,Europe,Debit Card,1.3,416,286.61,859.83
+616,2022-12-05,1175,Sports,119.7,10,2,Asia,Wallet,1.4,82,107.73,215.46
+617,2023-10-10,1358,Fashion,460.5,30,2,Europe,Debit Card,4.2,113,322.35,644.7
+618,2023-05-11,3878,Fashion,137.93,30,4,Europe,Cash on Delivery,3.7,136,96.55,386.2
+619,2022-12-31,2562,Fashion,394.74,30,4,Europe,Wallet,2.4,134,276.32,1105.28
+620,2022-12-08,1290,Electronics,293.17,0,2,Asia,Wallet,4.1,90,293.17,586.34
+621,2023-05-15,3177,Sports,344.25,15,3,Europe,Wallet,2.4,425,292.61,877.83
+622,2023-10-19,4810,Books,451.37,10,5,North America,Cash on Delivery,3.7,340,406.23,2031.15
+623,2023-05-26,1478,Fashion,424.67,5,2,Asia,Credit Card,3.1,422,403.44,806.88
+624,2022-11-23,1647,Fashion,68.23,5,5,Europe,Cash on Delivery,1.8,350,64.82,324.1
+625,2022-08-05,3579,Electronics,467.2,20,1,North America,UPI,3.1,23,373.76,373.76
+626,2022-10-28,1263,Electronics,73.64,0,3,Middle East,Debit Card,2.0,461,73.64,220.92
+627,2022-05-12,4006,Beauty,161.61,20,5,Middle East,Wallet,3.6,435,129.29,646.45
+628,2022-03-11,4907,Fashion,263.95,30,4,North America,Wallet,1.4,36,184.76,739.04
+629,2022-09-09,4742,Books,467.01,15,4,North America,Wallet,1.5,203,396.96,1587.84
+630,2023-02-19,3550,Fashion,315.46,5,2,Middle East,Wallet,1.9,367,299.69,599.38
+631,2023-03-21,4231,Beauty,438.1,10,4,Asia,Wallet,3.6,447,394.29,1577.16
+632,2022-07-01,3956,Sports,471.15,15,2,Europe,Wallet,1.8,202,400.48,800.96
+633,2022-06-16,4925,Fashion,375.5,5,4,Middle East,Credit Card,4.4,113,356.72,1426.88
+634,2022-04-01,2561,Electronics,243.54,0,3,North America,Cash on Delivery,2.6,320,243.54,730.62
+635,2023-12-15,2104,Electronics,197.07,15,2,Asia,Debit Card,1.1,150,167.51,335.02
+636,2023-06-15,2436,Beauty,141.21,5,2,North America,Debit Card,4.9,346,134.15,268.3
+637,2022-02-08,3522,Beauty,255.76,10,3,Middle East,Credit Card,5.0,46,230.18,690.54
+638,2022-05-06,3935,Electronics,28.78,15,3,North America,Debit Card,1.6,481,24.46,73.38
+639,2023-03-27,3005,Electronics,117.93,20,4,Asia,UPI,4.0,54,94.34,377.36
+640,2022-06-22,3065,Fashion,182.37,15,2,North America,Wallet,4.5,193,155.01,310.02
+641,2023-10-15,4140,Beauty,427.42,15,3,Europe,Credit Card,1.5,327,363.31,1089.93
+642,2022-08-08,1907,Sports,191.17,15,3,Middle East,Cash on Delivery,3.7,269,162.49,487.47
+643,2023-09-30,1129,Fashion,123.56,20,2,Asia,Wallet,4.6,435,98.85,197.7
+644,2022-02-27,1937,Electronics,392.43,5,5,Europe,UPI,1.0,395,372.81,1864.05
+645,2023-10-22,4718,Books,471.86,5,2,North America,UPI,4.1,226,448.27,896.54
+646,2023-04-21,1814,Beauty,388.52,5,1,North America,Cash on Delivery,2.3,335,369.09,369.09
+647,2023-04-01,4962,Fashion,67.26,5,2,North America,Wallet,2.8,437,63.9,127.8
+648,2022-12-27,2753,Beauty,163.56,15,3,North America,Debit Card,4.8,112,139.03,417.09
+649,2022-01-01,4381,Books,303.43,10,1,Europe,Wallet,3.7,7,273.09,273.09
+650,2023-01-22,2510,Sports,102.03,15,2,Middle East,Debit Card,4.0,86,86.73,173.46
+651,2022-12-14,1014,Home & Kitchen,320.11,5,5,Europe,UPI,4.9,439,304.1,1520.5
+652,2022-07-09,2519,Electronics,121.83,5,2,Europe,Credit Card,3.4,59,115.74,231.48
+653,2023-05-20,3037,Books,273.64,20,2,North America,Debit Card,4.0,294,218.91,437.82
+654,2022-07-10,2209,Home & Kitchen,354.85,15,2,Middle East,Cash on Delivery,4.8,463,301.62,603.24
+655,2023-05-23,4488,Fashion,394.47,5,3,North America,Cash on Delivery,4.5,129,374.75,1124.25
+656,2023-01-04,2006,Books,401.28,15,1,Asia,UPI,1.9,78,341.09,341.09
+657,2023-02-13,1706,Home & Kitchen,388.5,30,3,Europe,UPI,4.9,191,271.95,815.85
+658,2022-04-27,1702,Books,72.87,0,2,Europe,Cash on Delivery,1.4,359,72.87,145.74
+659,2022-05-14,1745,Home & Kitchen,494.72,0,2,North America,Credit Card,3.7,10,494.72,989.44
+660,2022-02-27,3479,Fashion,387.22,10,3,North America,UPI,2.5,197,348.5,1045.5
+661,2023-07-10,4137,Fashion,56.55,10,3,Europe,Credit Card,3.5,320,50.9,152.7
+662,2023-11-16,4152,Fashion,350.3,10,1,Asia,Wallet,3.1,419,315.27,315.27
+663,2023-11-03,2984,Fashion,237.65,30,3,Europe,UPI,2.0,318,166.36,499.08
+664,2022-06-22,1035,Fashion,216.84,0,3,North America,Wallet,1.2,487,216.84,650.52
+665,2022-05-29,1746,Sports,339.92,20,3,Europe,Debit Card,4.9,216,271.94,815.82
+666,2022-03-21,3064,Home & Kitchen,88.11,15,4,Middle East,Credit Card,1.5,62,74.89,299.56
+667,2022-08-01,3561,Fashion,499.72,30,3,Middle East,Credit Card,2.1,142,349.8,1049.4
+668,2022-07-22,3080,Books,274.52,10,4,Middle East,Wallet,2.1,61,247.07,988.28
+669,2022-08-17,3396,Books,299.34,15,4,Middle East,Cash on Delivery,2.3,55,254.44,1017.76
+670,2023-11-07,2403,Fashion,215.47,5,3,North America,Cash on Delivery,3.0,22,204.7,614.1
+671,2022-08-15,3555,Books,304.93,5,4,Europe,Wallet,4.1,42,289.68,1158.72
+672,2023-10-21,1645,Fashion,333.69,30,3,Middle East,Credit Card,1.2,30,233.58,700.74
+673,2023-06-16,3986,Sports,176.02,10,2,Middle East,Wallet,3.8,130,158.42,316.84
+674,2023-03-17,4939,Books,233.73,0,2,North America,Wallet,4.5,78,233.73,467.46
+675,2023-02-06,1855,Beauty,131.52,15,1,Middle East,UPI,1.8,419,111.79,111.79
+676,2022-02-16,4338,Electronics,387.12,30,3,North America,Debit Card,4.1,330,270.98,812.94
+677,2022-08-21,1516,Books,370.0,5,3,Europe,UPI,2.6,196,351.5,1054.5
+678,2022-11-01,1797,Books,406.41,30,5,Middle East,UPI,1.1,91,284.49,1422.45
+679,2023-06-10,2929,Sports,352.9,5,5,Asia,UPI,3.6,63,335.25,1676.25
+680,2022-05-23,1484,Electronics,14.95,20,3,Middle East,Debit Card,3.8,253,11.96,35.88
+681,2023-02-19,4418,Beauty,99.62,15,3,North America,Wallet,4.9,66,84.68,254.04
+682,2023-05-28,4674,Electronics,197.36,20,2,Europe,Cash on Delivery,5.0,303,157.89,315.78
+683,2023-01-08,3711,Books,120.92,15,1,Middle East,Debit Card,3.1,299,102.78,102.78
+684,2023-07-20,1442,Fashion,268.19,10,5,Europe,Debit Card,4.9,199,241.37,1206.85
+685,2022-09-16,3425,Beauty,449.57,10,2,Europe,Credit Card,4.9,63,404.61,809.22
+686,2023-10-18,2653,Books,370.34,30,4,Europe,Cash on Delivery,4.5,125,259.24,1036.96
+687,2023-04-16,2013,Fashion,136.94,5,1,Asia,Credit Card,1.5,83,130.09,130.09
+688,2022-01-12,1962,Fashion,201.8,15,2,Middle East,Cash on Delivery,4.4,73,171.53,343.06
+689,2022-11-26,1572,Sports,30.72,5,2,Middle East,Wallet,1.4,492,29.18,58.36
+690,2022-12-24,1357,Beauty,8.09,10,4,Asia,UPI,5.0,47,7.28,29.12
+691,2023-02-12,3585,Books,215.44,15,3,Middle East,UPI,3.8,226,183.12,549.36
+692,2023-10-30,1620,Home & Kitchen,365.33,10,4,Middle East,Wallet,2.2,180,328.8,1315.2
+693,2023-01-08,2903,Fashion,431.1,10,1,Middle East,Credit Card,3.0,381,387.99,387.99
+694,2022-01-08,2830,Sports,218.58,0,5,Asia,Credit Card,1.6,467,218.58,1092.9
+695,2022-05-02,4281,Electronics,94.23,30,4,North America,Credit Card,4.8,466,65.96,263.84
+696,2022-12-14,4842,Home & Kitchen,134.38,15,5,Asia,Debit Card,4.0,120,114.22,571.1
+697,2023-11-07,1805,Sports,225.51,15,4,Europe,Debit Card,3.1,293,191.68,766.72
+698,2022-03-31,2065,Electronics,326.55,20,2,Europe,Credit Card,1.9,298,261.24,522.48
+699,2023-10-10,1815,Beauty,273.7,5,1,North America,Wallet,1.3,434,260.02,260.02
+700,2023-11-29,3060,Sports,421.1,15,1,Middle East,Cash on Delivery,2.3,376,357.94,357.94
+701,2022-11-12,2624,Fashion,14.17,20,5,Middle East,Debit Card,4.1,489,11.34,56.7
+702,2022-06-27,4671,Fashion,496.1,20,2,Asia,Credit Card,2.2,49,396.88,793.76
+703,2023-06-24,3871,Beauty,464.96,15,2,North America,Credit Card,1.4,141,395.22,790.44
+704,2022-02-10,3536,Fashion,79.07,10,3,Middle East,Wallet,1.4,7,71.16,213.48
+705,2023-12-05,2210,Sports,28.84,5,5,North America,UPI,2.8,337,27.4,137.0
+706,2023-05-17,4134,Home & Kitchen,310.74,15,3,Middle East,Cash on Delivery,2.3,377,264.13,792.39
+707,2022-05-25,2359,Sports,362.09,30,2,Europe,Debit Card,2.7,246,253.46,506.92
+708,2022-07-20,1554,Home & Kitchen,240.26,30,1,Europe,Debit Card,2.9,210,168.18,168.18
+709,2023-12-25,3792,Sports,142.74,20,4,Asia,UPI,1.5,79,114.19,456.76
+710,2023-04-06,2769,Beauty,321.38,10,2,Asia,Wallet,1.7,13,289.24,578.48
+711,2023-07-12,3122,Sports,319.74,10,4,Middle East,Wallet,1.8,258,287.77,1151.08
+712,2023-07-01,3812,Books,78.42,30,4,Europe,Wallet,2.6,292,54.89,219.56
+713,2022-09-10,1824,Fashion,400.75,5,3,Asia,UPI,4.6,23,380.71,1142.13
+714,2023-01-25,2172,Sports,376.01,10,2,North America,UPI,3.7,202,338.41,676.82
+715,2023-08-17,4765,Sports,46.99,20,1,Middle East,Debit Card,3.3,161,37.59,37.59
+716,2022-09-13,1206,Home & Kitchen,233.92,30,4,Asia,Debit Card,4.1,104,163.74,654.96
+717,2023-12-10,3740,Electronics,199.74,15,3,Middle East,Cash on Delivery,1.9,28,169.78,509.34
+718,2023-03-26,4756,Fashion,233.92,5,4,Middle East,Credit Card,4.4,100,222.22,888.88
+719,2022-01-10,2264,Home & Kitchen,233.34,30,3,Europe,Credit Card,1.3,237,163.34,490.02
+720,2022-08-30,3723,Home & Kitchen,264.4,15,3,Middle East,Cash on Delivery,1.6,291,224.74,674.22
+721,2022-09-08,3622,Home & Kitchen,142.22,10,2,Middle East,Credit Card,4.9,470,128.0,256.0
+722,2022-01-05,1893,Books,237.47,10,5,Asia,Wallet,4.5,399,213.72,1068.6
+723,2022-04-29,4306,Beauty,54.25,30,1,Middle East,Debit Card,4.0,75,37.97,37.97
+724,2023-01-09,3172,Books,92.46,30,2,North America,Wallet,4.5,78,64.72,129.44
+725,2022-03-06,3304,Sports,48.58,15,5,Europe,Debit Card,1.5,118,41.29,206.45
+726,2022-05-26,4163,Electronics,97.16,10,5,Europe,Credit Card,2.3,191,87.44,437.2
+727,2022-08-12,1736,Electronics,7.14,20,1,North America,Cash on Delivery,4.6,418,5.71,5.71
+728,2022-08-27,4778,Beauty,23.73,15,2,Middle East,Debit Card,2.9,177,20.17,40.34
+729,2022-06-26,4958,Sports,399.33,20,5,Asia,Cash on Delivery,4.8,422,319.46,1597.3
+730,2022-10-09,4278,Beauty,103.57,10,5,North America,Credit Card,2.1,87,93.21,466.05
+731,2022-03-04,2440,Home & Kitchen,262.39,5,2,Middle East,Cash on Delivery,4.9,380,249.27,498.54
+732,2022-08-05,1287,Electronics,188.33,20,1,North America,Debit Card,3.0,396,150.66,150.66
+733,2023-11-20,2238,Home & Kitchen,167.87,30,1,North America,Debit Card,1.8,199,117.51,117.51
+734,2023-04-06,4769,Beauty,429.27,10,5,Asia,Debit Card,4.2,250,386.34,1931.7
+735,2023-09-02,3685,Electronics,245.68,0,5,North America,Wallet,1.5,90,245.68,1228.4
+736,2022-04-15,2817,Home & Kitchen,260.82,10,1,Middle East,Credit Card,4.0,315,234.74,234.74
+737,2022-04-09,1766,Fashion,232.26,20,3,North America,UPI,2.9,155,185.81,557.43
+738,2023-05-26,3559,Sports,138.12,0,5,Europe,Credit Card,1.5,198,138.12,690.6
+739,2023-01-20,1572,Fashion,343.21,5,5,Europe,Credit Card,3.3,94,326.05,1630.25
+740,2023-02-09,1367,Home & Kitchen,28.35,30,1,Europe,Debit Card,2.5,67,19.84,19.84
+741,2023-06-02,2424,Books,144.33,0,5,Europe,Wallet,2.2,177,144.33,721.65
+742,2023-04-21,2224,Home & Kitchen,332.45,10,5,North America,UPI,1.5,459,299.2,1496.0
+743,2023-12-10,4652,Electronics,21.54,10,4,Asia,UPI,2.0,54,19.39,77.56
+744,2023-10-07,3332,Beauty,17.73,20,4,North America,Wallet,1.5,451,14.18,56.72
+745,2023-03-13,3110,Home & Kitchen,189.52,15,3,Europe,Cash on Delivery,1.1,2,161.09,483.27
+746,2022-01-23,1645,Electronics,129.33,20,2,Asia,Wallet,3.7,53,103.46,206.92
+747,2023-07-19,1750,Electronics,351.98,5,2,Europe,Debit Card,2.3,54,334.38,668.76
+748,2023-11-08,3811,Fashion,379.19,30,1,Middle East,Debit Card,1.7,149,265.43,265.43
+749,2023-12-15,1360,Home & Kitchen,22.94,20,3,Europe,UPI,2.8,133,18.35,55.05
+750,2023-04-03,4258,Sports,221.02,30,1,Asia,Credit Card,3.9,112,154.71,154.71
+751,2022-03-24,4554,Books,471.89,10,1,Europe,Cash on Delivery,1.7,224,424.7,424.7
+752,2022-05-25,3418,Books,159.92,0,1,Europe,Credit Card,2.6,459,159.92,159.92
+753,2022-03-26,2044,Beauty,102.49,15,4,Asia,Wallet,2.7,239,87.12,348.48
+754,2022-03-19,1940,Beauty,263.04,15,5,Middle East,Wallet,1.1,2,223.58,1117.9
+755,2023-04-02,3988,Fashion,228.2,15,5,North America,Wallet,1.2,264,193.97,969.85
+756,2022-01-01,1854,Home & Kitchen,113.66,10,1,Europe,Debit Card,1.8,361,102.29,102.29
+757,2022-02-20,3850,Beauty,117.25,20,3,Asia,UPI,3.3,412,93.8,281.4
+758,2023-11-16,4379,Home & Kitchen,344.92,10,1,North America,UPI,3.0,288,310.43,310.43
+759,2023-12-18,3093,Sports,164.85,15,2,Middle East,Cash on Delivery,2.2,309,140.12,280.24
+760,2023-03-22,1193,Books,493.08,30,1,Europe,Wallet,2.1,451,345.16,345.16
+761,2023-03-25,2080,Electronics,148.45,0,3,Europe,Wallet,1.4,216,148.45,445.35
+762,2023-05-03,2577,Books,276.21,30,5,Middle East,Wallet,4.4,290,193.35,966.75
+763,2022-02-03,2480,Fashion,41.2,10,1,Middle East,Debit Card,3.5,291,37.08,37.08
+764,2022-12-14,1332,Home & Kitchen,271.72,20,4,Asia,Wallet,1.0,199,217.38,869.52
+765,2022-04-05,1746,Electronics,233.0,5,1,Europe,Cash on Delivery,4.6,33,221.35,221.35
+766,2022-03-13,1865,Electronics,177.93,5,2,North America,Cash on Delivery,4.0,426,169.03,338.06
+767,2023-07-05,4087,Fashion,217.66,5,1,Europe,Cash on Delivery,4.4,412,206.78,206.78
+768,2022-06-03,1644,Electronics,93.34,10,2,Europe,UPI,1.1,33,84.01,168.02
+769,2022-09-07,2536,Home & Kitchen,411.01,5,3,North America,Debit Card,2.4,439,390.46,1171.38
+770,2023-11-05,3791,Books,461.29,10,2,Middle East,Wallet,2.6,278,415.16,830.32
+771,2023-03-14,1149,Home & Kitchen,419.56,10,5,Middle East,Debit Card,1.8,448,377.6,1888.0
+772,2022-04-28,4887,Beauty,403.41,30,4,Europe,Credit Card,4.4,1,282.39,1129.56
+773,2022-11-02,4053,Electronics,276.45,30,5,Europe,Debit Card,4.3,85,193.52,967.6
+774,2022-09-25,2657,Electronics,170.16,5,4,Asia,UPI,1.8,227,161.65,646.6
+775,2022-02-23,4865,Home & Kitchen,90.11,0,2,Middle East,Wallet,3.7,463,90.11,180.22
+776,2022-08-24,1801,Sports,410.77,10,5,Europe,UPI,4.6,205,369.69,1848.45
+777,2023-01-24,1881,Fashion,26.51,15,5,Middle East,UPI,3.3,324,22.53,112.65
+778,2023-02-05,3873,Sports,94.6,15,5,Asia,Wallet,1.4,267,80.41,402.05
+779,2023-09-16,2236,Home & Kitchen,203.86,20,1,Asia,Wallet,3.6,449,163.09,163.09
+780,2022-10-30,3438,Books,101.34,30,2,Asia,Wallet,2.1,179,70.94,141.88
+781,2022-07-26,3328,Fashion,293.58,10,1,Middle East,Credit Card,3.7,430,264.22,264.22
+782,2022-08-17,2675,Electronics,363.46,5,5,North America,Cash on Delivery,3.1,161,345.29,1726.45
+783,2023-08-01,2694,Sports,455.0,20,5,North America,Debit Card,4.1,444,364.0,1820.0
+784,2022-03-16,3586,Sports,109.17,20,5,Asia,Wallet,1.0,366,87.34,436.7
+785,2023-03-11,3389,Electronics,143.41,0,1,Middle East,Wallet,1.2,181,143.41,143.41
+786,2022-04-13,1673,Fashion,359.78,0,4,Middle East,Credit Card,2.1,486,359.78,1439.12
+787,2023-02-26,4701,Fashion,112.44,0,4,Asia,UPI,1.7,81,112.44,449.76
+788,2023-12-05,2360,Fashion,194.99,10,3,North America,UPI,3.6,197,175.49,526.47
+789,2022-11-02,4066,Electronics,377.96,20,5,North America,Cash on Delivery,1.8,459,302.37,1511.85
+790,2022-04-08,4146,Electronics,191.04,10,3,Middle East,UPI,4.7,411,171.94,515.82
+791,2022-12-01,3140,Sports,77.43,0,3,Europe,UPI,3.8,62,77.43,232.29
+792,2023-03-11,4617,Sports,138.38,30,3,North America,UPI,3.4,235,96.87,290.61
+793,2023-03-23,4067,Electronics,45.03,0,3,Asia,Cash on Delivery,4.9,326,45.03,135.09
+794,2022-11-04,3162,Electronics,338.71,15,3,Asia,Credit Card,3.0,183,287.9,863.7
+795,2022-09-06,2444,Electronics,27.68,0,3,North America,Cash on Delivery,4.3,42,27.68,83.04
+796,2022-06-15,3160,Home & Kitchen,289.16,0,5,Middle East,UPI,2.4,37,289.16,1445.8
+797,2023-04-26,2391,Home & Kitchen,475.28,15,2,Asia,Debit Card,3.6,392,403.99,807.98
+798,2022-12-01,2083,Home & Kitchen,430.64,10,2,Europe,UPI,3.0,360,387.58,775.16
+799,2023-06-26,4353,Fashion,41.11,5,1,Asia,UPI,3.9,429,39.05,39.05
+800,2022-04-16,3284,Electronics,358.67,30,3,Middle East,Wallet,3.2,275,251.07,753.21
+801,2023-07-17,3685,Sports,346.6,10,4,North America,UPI,1.8,11,311.94,1247.76
+802,2022-03-22,2964,Sports,152.7,0,5,Middle East,UPI,4.2,110,152.7,763.5
+803,2022-05-13,4116,Home & Kitchen,59.11,30,3,Middle East,UPI,2.8,80,41.38,124.14
+804,2022-05-18,2823,Fashion,427.77,10,5,Asia,Cash on Delivery,1.1,291,384.99,1924.95
+805,2022-07-03,2764,Books,279.38,20,2,Europe,Wallet,4.4,128,223.5,447.0
+806,2023-02-05,4268,Beauty,350.71,20,2,Europe,UPI,3.2,369,280.57,561.14
+807,2022-11-26,1723,Books,231.61,10,2,Middle East,UPI,1.7,431,208.45,416.9
+808,2023-05-23,3546,Books,115.07,5,5,Middle East,Credit Card,1.2,247,109.32,546.6
+809,2022-03-10,2606,Beauty,133.87,20,1,Middle East,UPI,2.0,107,107.1,107.1
+810,2023-06-30,2770,Sports,269.74,20,4,Europe,Wallet,3.9,204,215.79,863.16
+811,2022-02-22,2814,Fashion,121.1,0,1,Middle East,Wallet,3.4,21,121.1,121.1
+812,2023-03-26,1448,Beauty,202.34,0,4,Middle East,UPI,3.5,489,202.34,809.36
+813,2022-07-24,2702,Fashion,41.83,5,2,Asia,Cash on Delivery,4.2,440,39.74,79.48
+814,2022-05-06,1194,Books,497.77,5,5,Middle East,UPI,2.5,178,472.88,2364.4
+815,2022-02-12,2708,Beauty,310.26,5,5,Asia,UPI,1.6,457,294.75,1473.75
+816,2022-04-21,2218,Books,77.3,30,1,Europe,Cash on Delivery,4.7,190,54.11,54.11
+817,2023-10-25,1574,Beauty,69.4,20,4,Middle East,UPI,4.8,273,55.52,222.08
+818,2022-07-02,3629,Beauty,244.23,30,2,Europe,Cash on Delivery,1.7,330,170.96,341.92
+819,2022-04-05,2758,Electronics,17.26,5,5,Europe,Debit Card,1.6,305,16.4,82.0
+820,2023-01-09,3357,Home & Kitchen,208.96,20,2,Europe,UPI,3.1,58,167.17,334.34
+821,2023-06-04,2818,Home & Kitchen,472.73,10,1,Middle East,Wallet,4.9,232,425.46,425.46
+822,2022-12-26,2884,Books,412.56,0,2,Asia,Debit Card,1.4,391,412.56,825.12
+823,2023-11-27,1590,Books,465.33,5,2,North America,UPI,2.3,318,442.06,884.12
+824,2022-10-08,1547,Books,60.0,20,2,Middle East,Debit Card,3.5,290,48.0,96.0
+825,2022-07-14,1388,Electronics,188.55,5,4,Middle East,Wallet,2.1,99,179.12,716.48
+826,2022-07-14,4778,Electronics,279.72,30,2,Middle East,Credit Card,2.1,383,195.8,391.6
+827,2023-10-29,2458,Books,361.53,10,5,Middle East,UPI,2.9,154,325.38,1626.9
+828,2022-04-03,2752,Electronics,199.27,15,5,North America,Wallet,4.8,462,169.38,846.9
+829,2023-11-03,3847,Beauty,162.88,30,3,Middle East,UPI,4.6,449,114.02,342.06
+830,2022-03-02,1660,Beauty,156.01,15,4,Asia,Wallet,2.3,359,132.61,530.44
+831,2023-09-26,2519,Beauty,395.78,5,1,Europe,Wallet,4.5,324,375.99,375.99
+832,2022-02-20,3832,Home & Kitchen,194.0,5,5,Asia,Wallet,1.2,464,184.3,921.5
+833,2023-02-07,4272,Beauty,13.07,30,4,Europe,UPI,2.6,266,9.15,36.6
+834,2022-01-05,2689,Home & Kitchen,386.26,20,3,Middle East,Debit Card,2.3,160,309.01,927.03
+835,2023-04-11,1533,Beauty,84.86,0,4,Europe,Debit Card,1.2,125,84.86,339.44
+836,2023-08-27,1296,Books,315.96,30,3,North America,Wallet,3.8,37,221.17,663.51
+837,2023-11-13,2517,Home & Kitchen,19.59,30,1,Middle East,UPI,1.7,120,13.71,13.71
+838,2023-06-18,3874,Electronics,196.56,15,1,Europe,Debit Card,4.4,407,167.08,167.08
+839,2023-02-09,3774,Sports,230.69,15,5,Europe,Wallet,2.4,36,196.09,980.45
+840,2023-05-28,1330,Home & Kitchen,486.68,15,1,Asia,UPI,2.7,304,413.68,413.68
+841,2023-10-07,3681,Fashion,48.64,0,1,Asia,UPI,2.8,197,48.64,48.64
+842,2022-08-21,4849,Home & Kitchen,377.0,15,5,Middle East,Wallet,1.2,367,320.45,1602.25
+843,2023-06-08,1854,Beauty,482.55,0,1,Europe,Wallet,2.4,30,482.55,482.55
+844,2022-12-12,2284,Beauty,142.07,15,4,Middle East,Cash on Delivery,1.6,10,120.76,483.04
+845,2022-02-15,2078,Beauty,116.7,30,5,North America,Wallet,1.2,1,81.69,408.45
+846,2023-06-30,2305,Electronics,476.27,30,1,Asia,Cash on Delivery,4.4,29,333.39,333.39
+847,2022-03-19,3819,Books,247.33,15,1,Middle East,Debit Card,1.9,33,210.23,210.23
+848,2023-12-31,1874,Home & Kitchen,412.18,30,5,Asia,Cash on Delivery,1.8,341,288.53,1442.65
+849,2022-03-14,4866,Electronics,398.34,20,1,Europe,Credit Card,2.2,367,318.67,318.67
+850,2022-09-06,1741,Fashion,166.37,20,2,North America,Debit Card,2.8,362,133.1,266.2
+851,2022-02-16,3017,Home & Kitchen,97.8,10,4,Middle East,UPI,2.3,384,88.02,352.08
+852,2022-05-01,3685,Sports,352.93,20,3,Asia,Credit Card,3.3,100,282.34,847.02
+853,2022-08-02,3489,Beauty,253.15,15,3,North America,Credit Card,1.2,386,215.18,645.54
+854,2022-08-27,4330,Electronics,247.8,15,5,Europe,UPI,3.4,431,210.63,1053.15
+855,2022-02-25,2585,Electronics,275.37,10,1,Asia,UPI,1.2,126,247.83,247.83
+856,2022-12-16,4807,Home & Kitchen,17.7,10,5,North America,Cash on Delivery,3.4,198,15.93,79.65
+857,2022-04-17,3940,Sports,7.51,5,3,Asia,UPI,2.1,168,7.13,21.39
+858,2022-02-17,2817,Electronics,160.49,20,1,Asia,Cash on Delivery,1.3,150,128.39,128.39
+859,2023-07-27,3193,Electronics,165.22,0,2,Europe,UPI,1.2,101,165.22,330.44
+860,2022-12-03,1390,Electronics,360.77,0,2,Europe,Wallet,2.3,107,360.77,721.54
+861,2022-01-26,1372,Home & Kitchen,166.2,5,5,Asia,Credit Card,4.1,10,157.89,789.45
+862,2022-09-14,4116,Beauty,182.98,30,5,North America,Cash on Delivery,3.9,3,128.09,640.45
+863,2022-01-08,2420,Sports,277.03,0,4,Middle East,UPI,2.0,363,277.03,1108.12
+864,2023-09-17,3309,Electronics,297.85,5,4,Europe,Cash on Delivery,3.6,64,282.96,1131.84
+865,2022-09-10,1930,Electronics,169.98,10,3,Europe,Debit Card,4.0,271,152.98,458.94
+866,2023-11-23,2502,Books,281.26,15,3,Asia,Credit Card,3.4,169,239.07,717.21
+867,2023-12-20,1745,Sports,310.82,10,4,Middle East,Wallet,2.8,47,279.74,1118.96
+868,2022-10-30,3612,Sports,134.32,0,1,Asia,Credit Card,4.7,421,134.32,134.32
+869,2023-10-01,2508,Fashion,121.69,20,5,Asia,UPI,1.4,8,97.35,486.75
+870,2022-02-25,2770,Books,445.76,30,1,Middle East,Debit Card,3.3,11,312.03,312.03
+871,2023-12-27,4779,Beauty,325.49,0,4,North America,UPI,3.9,49,325.49,1301.96
+872,2023-06-10,2961,Books,158.98,20,1,North America,Wallet,3.8,136,127.18,127.18
+873,2023-04-19,3563,Home & Kitchen,277.63,0,2,Asia,Wallet,2.9,400,277.63,555.26
+874,2022-01-28,2595,Books,355.17,0,3,Middle East,Debit Card,1.4,443,355.17,1065.51
+875,2022-03-19,1684,Home & Kitchen,16.2,5,2,Middle East,UPI,1.5,185,15.39,30.78
+876,2022-08-04,4655,Books,460.32,30,4,Asia,UPI,4.6,81,322.22,1288.88
+877,2023-01-21,3533,Books,360.03,0,4,Asia,Wallet,2.0,361,360.03,1440.12
+878,2022-12-31,4658,Fashion,199.17,30,5,Asia,Cash on Delivery,2.6,488,139.42,697.1
+879,2023-10-28,3881,Sports,466.47,0,3,Asia,Credit Card,4.2,368,466.47,1399.41
+880,2023-06-10,3513,Home & Kitchen,32.64,20,2,Europe,Wallet,3.3,345,26.11,52.22
+881,2023-11-30,1465,Beauty,378.32,10,4,Europe,Debit Card,1.8,343,340.49,1361.96
+882,2022-11-08,3069,Sports,265.51,5,2,North America,Cash on Delivery,3.7,209,252.23,504.46
+883,2022-01-07,3443,Electronics,334.07,10,3,Europe,UPI,2.2,372,300.66,901.98
+884,2022-01-03,2232,Beauty,238.34,10,5,Asia,Wallet,3.6,497,214.51,1072.55
+885,2023-09-15,2586,Books,77.88,30,5,Middle East,Cash on Delivery,3.3,327,54.52,272.6
+886,2022-12-29,1144,Beauty,134.09,0,5,North America,Credit Card,1.7,60,134.09,670.45
+887,2023-05-23,3467,Books,234.21,20,2,North America,Cash on Delivery,2.8,344,187.37,374.74
+888,2022-10-01,4420,Books,459.83,30,2,Asia,Wallet,1.7,99,321.88,643.76
+889,2023-05-21,3352,Electronics,38.82,15,2,North America,Credit Card,1.4,105,33.0,66.0
+890,2022-01-15,2807,Fashion,56.83,10,3,Asia,Wallet,3.6,270,51.15,153.45
+891,2022-07-11,4048,Fashion,80.59,0,2,Middle East,Wallet,4.4,423,80.59,161.18
+892,2023-09-23,1043,Electronics,317.9,10,1,North America,UPI,4.9,188,286.11,286.11
+893,2023-04-30,1106,Beauty,186.32,30,3,Asia,Cash on Delivery,1.1,340,130.42,391.26
+894,2022-01-28,3028,Home & Kitchen,78.88,10,3,Asia,Wallet,1.4,361,70.99,212.97
+895,2023-12-15,1149,Electronics,65.37,0,4,Europe,Cash on Delivery,3.3,355,65.37,261.48
+896,2022-02-08,4677,Sports,338.71,20,3,North America,Cash on Delivery,3.6,153,270.97,812.91
+897,2022-09-30,2287,Books,233.98,10,4,Asia,Debit Card,1.7,483,210.58,842.32
+898,2022-08-19,1109,Sports,437.01,30,2,North America,Credit Card,4.4,376,305.91,611.82
+899,2022-03-27,2041,Fashion,204.99,10,1,North America,UPI,1.9,264,184.49,184.49
+900,2023-04-19,1749,Fashion,329.59,10,3,Asia,Cash on Delivery,1.7,383,296.63,889.89
+901,2022-05-06,4407,Beauty,398.94,0,3,Asia,UPI,3.2,194,398.94,1196.82
+902,2023-06-21,3286,Home & Kitchen,477.07,15,4,Europe,Cash on Delivery,1.0,445,405.51,1622.04
+903,2022-05-25,4957,Sports,435.3,30,1,Europe,Wallet,1.3,72,304.71,304.71
+904,2023-06-09,1723,Electronics,388.78,15,2,Middle East,Cash on Delivery,3.7,27,330.46,660.92
+905,2022-07-31,3790,Books,209.38,5,1,Europe,Debit Card,3.6,6,198.91,198.91
+906,2022-01-25,1327,Sports,491.49,5,4,Asia,Debit Card,2.7,331,466.92,1867.68
+907,2023-08-03,1861,Books,136.04,15,2,Asia,Credit Card,2.9,371,115.63,231.26
+908,2023-01-29,2317,Home & Kitchen,332.34,20,3,Europe,Debit Card,2.5,140,265.87,797.61
+909,2022-03-08,2436,Beauty,69.66,10,5,North America,Wallet,2.8,216,62.69,313.45
+910,2022-08-21,1460,Sports,304.93,15,1,Asia,Wallet,1.2,155,259.19,259.19
+911,2022-04-19,2104,Home & Kitchen,346.49,20,5,North America,Credit Card,1.2,426,277.19,1385.95
+912,2022-05-26,2278,Beauty,49.7,10,4,Middle East,Cash on Delivery,4.0,363,44.73,178.92
+913,2022-04-21,1743,Beauty,151.0,30,2,Middle East,Cash on Delivery,1.3,40,105.7,211.4
+914,2022-08-16,3410,Sports,322.55,20,4,Asia,Cash on Delivery,3.7,254,258.04,1032.16
+915,2022-04-21,4792,Electronics,303.06,15,3,Middle East,Credit Card,2.7,238,257.6,772.8
+916,2023-04-15,2480,Electronics,335.76,30,5,Asia,Cash on Delivery,4.6,35,235.03,1175.15
+917,2022-02-03,1897,Books,66.6,20,4,North America,Wallet,4.3,238,53.28,213.12
+918,2023-09-15,1442,Fashion,260.08,20,3,Asia,Wallet,4.8,228,208.06,624.18
+919,2023-01-04,2833,Sports,464.17,15,4,Europe,UPI,3.6,249,394.54,1578.16
+920,2023-08-18,1885,Beauty,477.12,10,4,North America,Cash on Delivery,1.2,478,429.41,1717.64
+921,2023-07-08,4031,Books,67.73,5,5,Europe,Credit Card,1.3,498,64.34,321.7
+922,2023-03-01,4604,Sports,447.73,10,5,Europe,Wallet,3.4,400,402.96,2014.8
+923,2023-09-05,2261,Fashion,290.36,30,1,North America,Cash on Delivery,4.8,152,203.25,203.25
+924,2023-06-02,4969,Books,377.69,0,5,Asia,UPI,4.0,153,377.69,1888.45
+925,2023-11-23,1260,Beauty,79.57,30,1,Europe,Credit Card,3.3,442,55.7,55.7
+926,2022-10-09,2296,Fashion,370.24,30,3,North America,Wallet,1.1,321,259.17,777.51
+927,2022-11-16,1279,Home & Kitchen,40.18,5,4,North America,Debit Card,4.2,338,38.17,152.68
+928,2023-03-19,4975,Electronics,318.34,30,1,Asia,Cash on Delivery,2.5,34,222.84,222.84
+929,2022-11-11,3973,Electronics,335.69,5,4,Europe,Credit Card,4.4,7,318.91,1275.64
+930,2023-01-12,3993,Fashion,334.04,5,5,Europe,Credit Card,2.2,173,317.34,1586.7
+931,2022-10-16,4221,Sports,34.04,0,3,Asia,Credit Card,4.7,117,34.04,102.12
+932,2023-03-13,2850,Fashion,195.17,0,2,North America,Debit Card,4.0,213,195.17,390.34
+933,2023-10-24,1151,Beauty,373.48,0,2,North America,UPI,3.5,124,373.48,746.96
+934,2022-10-04,3841,Fashion,399.42,30,3,Asia,Credit Card,4.1,19,279.59,838.77
+935,2023-12-11,2596,Sports,210.68,5,2,Asia,Wallet,3.2,304,200.15,400.3
+936,2023-08-05,2671,Electronics,85.2,15,1,North America,UPI,2.5,412,72.42,72.42
+937,2023-05-18,4083,Beauty,252.23,15,3,Asia,UPI,1.2,72,214.4,643.2
+938,2023-09-16,3061,Sports,326.88,10,5,North America,Debit Card,3.3,119,294.19,1470.95
+939,2023-05-31,2534,Books,460.6,0,2,Asia,Wallet,2.6,490,460.6,921.2
+940,2022-12-16,2565,Electronics,342.27,0,3,Europe,UPI,2.1,102,342.27,1026.81
+941,2023-03-22,1950,Home & Kitchen,412.22,5,4,Asia,UPI,1.2,73,391.61,1566.44
+942,2022-12-16,3914,Beauty,136.05,15,3,Middle East,Credit Card,4.9,266,115.64,346.92
+943,2023-08-30,3492,Home & Kitchen,417.45,10,5,Europe,UPI,4.7,41,375.7,1878.5
+944,2023-10-26,2341,Fashion,307.93,30,2,North America,UPI,3.9,373,215.55,431.1
+945,2022-05-17,3846,Books,276.75,15,4,Europe,Cash on Delivery,2.3,245,235.24,940.96
+946,2022-08-31,1731,Fashion,137.1,30,5,Asia,Wallet,4.6,171,95.97,479.85
+947,2023-06-27,1237,Electronics,105.93,30,1,Europe,Cash on Delivery,1.6,376,74.15,74.15
+948,2022-02-09,1538,Books,274.22,0,3,Middle East,Credit Card,5.0,97,274.22,822.66
+949,2022-08-17,1768,Sports,446.26,20,4,North America,Credit Card,1.6,353,357.01,1428.04
+950,2023-07-02,3856,Electronics,121.51,20,4,Middle East,Wallet,2.1,136,97.21,388.84
+951,2022-08-11,4725,Books,142.95,20,4,Asia,Credit Card,1.2,407,114.36,457.44
+952,2022-01-06,3809,Home & Kitchen,474.22,10,1,Europe,Credit Card,1.5,15,426.8,426.8
+953,2022-11-18,3121,Electronics,18.17,20,1,North America,Wallet,4.2,497,14.54,14.54
+954,2023-04-13,2457,Sports,245.27,5,5,Asia,UPI,4.3,185,233.01,1165.05
+955,2022-03-16,4369,Electronics,266.74,10,4,Middle East,Wallet,2.0,298,240.07,960.28
+956,2022-01-04,2734,Fashion,339.48,20,1,Middle East,Credit Card,1.1,106,271.58,271.58
+957,2023-10-08,1295,Sports,101.02,20,3,Europe,UPI,2.0,231,80.82,242.46
+958,2022-04-28,1013,Beauty,287.85,0,5,Asia,Wallet,1.5,411,287.85,1439.25
+959,2023-08-29,1611,Sports,59.19,30,2,Middle East,Wallet,3.9,323,41.43,82.86
+960,2023-05-19,4674,Electronics,137.17,0,2,Europe,Credit Card,1.6,312,137.17,274.34
+961,2023-07-28,1394,Sports,12.48,10,1,Middle East,Cash on Delivery,1.9,171,11.23,11.23
+962,2023-03-17,1190,Books,229.44,10,5,Europe,Debit Card,1.5,221,206.5,1032.5
+963,2022-07-13,2897,Fashion,91.68,10,4,Europe,Wallet,3.0,49,82.51,330.04
+964,2023-12-16,3864,Beauty,52.89,10,4,North America,Wallet,2.3,164,47.6,190.4
+965,2023-01-27,4492,Electronics,175.43,0,4,Asia,Cash on Delivery,2.5,30,175.43,701.72
+966,2022-01-26,3153,Home & Kitchen,44.21,20,2,North America,Debit Card,4.8,118,35.37,70.74
+967,2023-03-11,4465,Sports,333.88,15,3,Asia,Debit Card,3.9,171,283.8,851.4
+968,2022-06-22,4509,Fashion,104.43,10,4,Europe,Debit Card,3.3,101,93.99,375.96
+969,2022-10-27,1006,Sports,356.59,30,4,Asia,Cash on Delivery,2.2,17,249.61,998.44
+970,2023-10-07,2104,Home & Kitchen,420.73,5,5,Middle East,Debit Card,3.6,49,399.69,1998.45
+971,2022-11-22,3812,Books,371.94,30,2,North America,Cash on Delivery,1.4,154,260.36,520.72
+972,2023-02-14,3035,Fashion,382.61,10,2,Europe,UPI,4.6,49,344.35,688.7
+973,2022-04-28,1651,Fashion,323.66,30,2,North America,Cash on Delivery,4.7,9,226.56,453.12
+974,2023-12-25,3532,Fashion,191.27,20,4,Europe,Credit Card,4.9,487,153.02,612.08
+975,2022-08-13,2380,Beauty,177.53,10,5,Asia,UPI,4.6,237,159.78,798.9
+976,2023-06-16,2334,Sports,286.63,30,3,Asia,Debit Card,2.3,152,200.64,601.92
+977,2022-04-23,3979,Beauty,127.78,20,1,Middle East,Debit Card,4.2,309,102.22,102.22
+978,2022-05-20,3553,Electronics,175.6,5,3,Middle East,Credit Card,1.7,426,166.82,500.46
+979,2023-07-13,3566,Home & Kitchen,81.87,15,1,Middle East,Cash on Delivery,2.4,414,69.59,69.59
+980,2022-01-01,4735,Sports,391.17,20,1,Europe,Debit Card,1.8,358,312.94,312.94
+981,2022-03-31,1801,Sports,369.13,20,3,Europe,Credit Card,2.9,165,295.3,885.9
+982,2023-10-16,4709,Electronics,254.11,10,2,Europe,Debit Card,1.7,339,228.7,457.4
+983,2022-11-16,1448,Home & Kitchen,187.94,20,4,North America,Debit Card,2.3,19,150.35,601.4
+984,2023-07-04,3332,Electronics,349.85,20,5,North America,Debit Card,4.3,20,279.88,1399.4
+985,2022-05-19,4353,Fashion,46.92,20,4,Middle East,Debit Card,1.6,346,37.54,150.16
+986,2023-05-26,3121,Fashion,28.64,30,3,Europe,Credit Card,4.9,29,20.05,60.15
+987,2022-09-16,2984,Home & Kitchen,351.38,5,2,Middle East,Wallet,3.7,62,333.81,667.62
+988,2023-11-04,1044,Fashion,277.28,5,3,Asia,Cash on Delivery,2.8,216,263.42,790.26
+989,2023-11-21,2552,Electronics,367.95,20,3,Middle East,UPI,3.7,70,294.36,883.08
+990,2022-01-10,3792,Beauty,143.39,15,2,Middle East,UPI,4.3,154,121.88,243.76
+991,2022-09-18,3723,Books,58.61,0,2,Middle East,Debit Card,1.2,119,58.61,117.22
+992,2023-10-12,2480,Sports,217.83,5,5,Asia,Cash on Delivery,1.3,82,206.94,1034.7
+993,2022-06-21,3022,Sports,216.21,20,4,North America,Credit Card,4.0,362,172.97,691.88
+994,2022-01-13,1574,Electronics,380.73,0,1,Asia,Credit Card,3.2,255,380.73,380.73
+995,2022-06-17,2430,Home & Kitchen,65.46,0,5,North America,UPI,3.1,0,65.46,327.3
+996,2023-10-04,1092,Fashion,473.31,30,3,Asia,UPI,3.6,202,331.32,993.96
+997,2023-08-19,3369,Books,32.72,10,5,Middle East,Wallet,3.5,70,29.45,147.25
+998,2022-11-17,3513,Books,159.9,15,2,Middle East,Debit Card,3.3,76,135.92,271.84
+999,2022-11-15,1603,Fashion,352.99,10,3,Asia,Cash on Delivery,4.7,156,317.69,953.07
+1000,2023-09-05,3932,Electronics,360.14,20,5,Europe,Credit Card,1.4,68,288.11,1440.55
+1001,2022-11-25,4054,Fashion,285.69,0,5,Europe,Credit Card,1.4,11,285.69,1428.45
+1002,2023-07-04,3601,Beauty,40.12,30,2,Europe,UPI,4.2,428,28.08,56.16
+1003,2023-02-23,3800,Home & Kitchen,428.9,0,3,Europe,UPI,2.3,314,428.9,1286.7
+1004,2023-08-29,1326,Sports,319.19,0,5,Asia,Cash on Delivery,2.7,465,319.19,1595.95
+1005,2022-04-05,4838,Fashion,380.62,10,3,Europe,Wallet,3.9,260,342.56,1027.68
+1006,2023-08-04,2866,Electronics,196.18,5,2,North America,Credit Card,1.7,29,186.37,372.74
+1007,2022-11-14,4654,Beauty,125.47,15,2,Middle East,Credit Card,4.6,487,106.65,213.3
+1008,2022-08-24,4882,Sports,361.45,0,4,Middle East,Debit Card,4.0,39,361.45,1445.8
+1009,2022-11-30,3775,Beauty,408.68,15,3,North America,Credit Card,1.0,201,347.38,1042.14
+1010,2023-01-11,2846,Electronics,407.2,30,2,Europe,Wallet,3.8,114,285.04,570.08
+1011,2023-04-04,4639,Home & Kitchen,360.0,0,3,Middle East,UPI,2.3,271,360.0,1080.0
+1012,2022-05-17,1590,Books,73.78,10,3,Europe,Wallet,1.1,324,66.4,199.2
+1013,2023-08-11,2438,Beauty,114.79,20,3,North America,Cash on Delivery,3.7,50,91.83,275.49
+1014,2023-07-01,4570,Sports,252.72,5,3,Middle East,Debit Card,4.4,482,240.08,720.24
+1015,2023-05-28,1850,Electronics,256.14,20,1,Europe,Credit Card,4.1,352,204.91,204.91
+1016,2022-10-23,1439,Sports,246.83,10,2,Asia,Credit Card,3.9,220,222.15,444.3
+1017,2022-11-16,4704,Sports,413.89,0,5,Asia,Credit Card,2.7,381,413.89,2069.45
+1018,2023-07-26,3761,Beauty,67.06,30,5,Asia,Cash on Delivery,2.0,413,46.94,234.7
+1019,2022-12-15,3479,Sports,397.17,15,4,Middle East,Cash on Delivery,2.1,60,337.59,1350.36
+1020,2022-08-17,3995,Books,16.05,30,2,Middle East,Cash on Delivery,1.7,358,11.24,22.48
+1021,2022-09-27,1327,Sports,164.92,10,4,North America,Credit Card,2.4,2,148.43,593.72
+1022,2022-10-18,2280,Electronics,102.27,30,2,Asia,UPI,4.0,150,71.59,143.18
+1023,2023-12-26,2665,Beauty,265.69,20,1,North America,Credit Card,2.0,256,212.55,212.55
+1024,2022-06-14,3908,Electronics,264.33,20,4,North America,Credit Card,4.3,339,211.46,845.84
+1025,2022-01-05,2577,Sports,255.74,20,2,Middle East,Wallet,4.4,414,204.59,409.18
+1026,2023-01-14,2097,Electronics,147.96,30,3,Europe,Debit Card,2.9,452,103.57,310.71
+1027,2022-03-19,2257,Books,263.29,0,2,Asia,Credit Card,2.9,154,263.29,526.58
+1028,2023-02-14,2544,Electronics,354.36,20,2,Asia,UPI,4.0,154,283.49,566.98
+1029,2023-07-28,2905,Sports,199.92,20,1,North America,Debit Card,4.6,126,159.94,159.94
+1030,2022-05-12,2566,Home & Kitchen,464.68,0,4,Europe,Wallet,3.1,462,464.68,1858.72
+1031,2023-08-24,4679,Beauty,38.89,0,3,Asia,Credit Card,1.2,65,38.89,116.67
+1032,2022-02-11,4329,Fashion,493.61,10,1,North America,Wallet,2.9,301,444.25,444.25
+1033,2022-03-30,2815,Home & Kitchen,381.89,0,2,North America,Cash on Delivery,4.2,370,381.89,763.78
+1034,2023-02-06,3276,Home & Kitchen,298.62,30,1,Asia,Credit Card,1.5,123,209.03,209.03
+1035,2022-10-23,4316,Electronics,105.66,15,5,Middle East,Cash on Delivery,1.7,173,89.81,449.05
+1036,2022-10-22,2450,Home & Kitchen,315.52,15,5,Europe,Debit Card,2.6,14,268.19,1340.95
+1037,2023-09-08,4781,Home & Kitchen,402.03,5,5,North America,Cash on Delivery,3.4,406,381.93,1909.65
+1038,2023-06-10,4527,Home & Kitchen,130.55,0,5,North America,Cash on Delivery,1.6,215,130.55,652.75
+1039,2023-11-22,3047,Electronics,24.75,20,3,Asia,Debit Card,4.0,70,19.8,59.4
+1040,2023-09-29,1743,Sports,224.16,5,5,Asia,Wallet,1.8,499,212.95,1064.75
+1041,2023-02-26,4544,Home & Kitchen,155.7,15,2,Middle East,Debit Card,2.1,154,132.34,264.68
+1042,2022-01-23,4049,Fashion,146.64,30,2,Middle East,Debit Card,3.6,332,102.65,205.3
+1043,2023-07-29,1810,Home & Kitchen,363.78,10,2,Europe,Debit Card,4.0,23,327.4,654.8
+1044,2022-05-23,4634,Electronics,78.28,30,3,Middle East,Wallet,4.1,196,54.8,164.4
+1045,2023-10-27,2752,Sports,327.21,30,1,North America,Wallet,4.6,360,229.05,229.05
+1046,2022-05-25,1173,Electronics,35.33,30,1,North America,Cash on Delivery,4.3,361,24.73,24.73
+1047,2022-08-13,2098,Books,460.34,30,3,Middle East,UPI,2.7,359,322.24,966.72
+1048,2023-05-18,2122,Books,295.11,10,2,Asia,Wallet,2.2,278,265.6,531.2
+1049,2023-09-08,3560,Sports,465.84,5,2,Middle East,UPI,3.9,419,442.55,885.1
+1050,2022-04-14,4195,Sports,434.6,20,4,Middle East,Wallet,2.0,478,347.68,1390.72
+1051,2022-02-08,3042,Fashion,435.57,0,5,Middle East,Cash on Delivery,3.2,360,435.57,2177.85
+1052,2022-07-17,4188,Sports,64.28,10,5,Asia,UPI,3.6,254,57.85,289.25
+1053,2023-10-08,4414,Beauty,349.46,20,3,Asia,Debit Card,1.2,194,279.57,838.71
+1054,2023-08-02,4778,Books,203.2,0,2,North America,UPI,4.0,452,203.2,406.4
+1055,2023-01-26,2256,Home & Kitchen,232.26,5,3,Asia,Debit Card,3.4,142,220.65,661.95
+1056,2022-06-28,3176,Electronics,143.15,0,4,North America,Debit Card,3.6,37,143.15,572.6
+1057,2023-07-08,3421,Books,74.22,15,4,Asia,UPI,1.9,282,63.09,252.36
+1058,2023-03-24,4646,Sports,156.63,20,4,North America,Credit Card,3.7,391,125.3,501.2
+1059,2023-05-15,1235,Electronics,277.02,10,2,Middle East,Credit Card,1.1,68,249.32,498.64
+1060,2022-01-15,2867,Home & Kitchen,207.97,20,1,Middle East,Cash on Delivery,4.9,401,166.38,166.38
+1061,2023-09-15,1741,Electronics,353.43,20,3,Asia,Wallet,4.0,355,282.74,848.22
+1062,2023-10-31,3237,Electronics,420.32,10,1,Middle East,Wallet,4.0,465,378.29,378.29
+1063,2022-10-16,4772,Books,109.3,5,1,Europe,UPI,2.9,121,103.84,103.84
+1064,2023-04-23,3215,Electronics,32.86,5,4,North America,Debit Card,4.1,60,31.22,124.88
+1065,2022-08-19,4678,Home & Kitchen,495.47,0,3,Europe,Cash on Delivery,1.5,242,495.47,1486.41
+1066,2023-02-24,2692,Fashion,441.91,20,5,Europe,Cash on Delivery,1.7,283,353.53,1767.65
+1067,2022-06-06,1290,Electronics,136.23,5,3,Middle East,UPI,2.1,141,129.42,388.26
+1068,2023-07-04,4931,Sports,85.5,30,1,Middle East,Credit Card,1.7,253,59.85,59.85
+1069,2023-03-17,4412,Electronics,475.76,5,1,Asia,Credit Card,1.3,42,451.97,451.97
+1070,2022-04-07,2418,Home & Kitchen,120.06,15,2,Middle East,Wallet,4.1,456,102.05,204.1
+1071,2023-02-15,2497,Beauty,114.84,30,4,North America,UPI,4.0,498,80.39,321.56
+1072,2022-10-16,3186,Home & Kitchen,59.37,0,2,Asia,UPI,4.8,45,59.37,118.74
+1073,2022-09-11,2214,Books,147.51,20,1,Asia,Debit Card,3.3,98,118.01,118.01
+1074,2022-07-15,2988,Books,421.3,20,5,North America,Debit Card,1.9,296,337.04,1685.2
+1075,2023-08-21,1567,Fashion,287.07,10,2,Asia,Cash on Delivery,2.1,131,258.36,516.72
+1076,2023-06-06,2542,Electronics,50.53,10,5,North America,UPI,2.8,321,45.48,227.4
+1077,2023-06-01,2074,Fashion,483.87,0,5,North America,Debit Card,2.3,355,483.87,2419.35
+1078,2023-09-27,4038,Sports,272.05,15,3,Europe,Debit Card,3.9,31,231.24,693.72
+1079,2022-04-28,4622,Sports,211.27,15,4,Middle East,Wallet,3.6,104,179.58,718.32
+1080,2022-06-08,3345,Fashion,393.2,5,2,Asia,Credit Card,3.5,215,373.54,747.08
+1081,2022-08-16,4143,Electronics,282.37,5,3,North America,Cash on Delivery,2.6,282,268.25,804.75
+1082,2022-08-04,3303,Electronics,448.41,20,4,Europe,Credit Card,2.7,404,358.73,1434.92
+1083,2023-11-27,1308,Home & Kitchen,352.66,30,3,Middle East,Cash on Delivery,3.4,234,246.86,740.58
+1084,2022-01-15,3138,Fashion,335.78,20,4,Middle East,Credit Card,1.5,487,268.62,1074.48
+1085,2022-06-06,3196,Fashion,172.18,15,5,North America,Credit Card,2.6,450,146.35,731.75
+1086,2023-10-10,4101,Books,494.96,30,2,Middle East,UPI,1.6,442,346.47,692.94
+1087,2022-09-18,1461,Sports,327.7,30,1,North America,Wallet,1.2,380,229.39,229.39
+1088,2022-06-06,1634,Fashion,223.73,30,5,Europe,Cash on Delivery,5.0,425,156.61,783.05
+1089,2022-02-16,4456,Sports,78.02,0,1,North America,UPI,2.1,496,78.02,78.02
+1090,2022-11-20,4820,Home & Kitchen,280.04,15,1,Asia,Credit Card,1.2,458,238.03,238.03
+1091,2023-11-16,4863,Sports,334.79,5,1,Europe,Debit Card,2.2,61,318.05,318.05
+1092,2022-05-10,1636,Beauty,188.88,30,1,Middle East,Credit Card,2.2,126,132.22,132.22
+1093,2023-02-15,1645,Fashion,36.97,20,5,Asia,Wallet,2.7,246,29.58,147.9
+1094,2022-04-05,1517,Home & Kitchen,400.21,15,5,Asia,Credit Card,1.4,112,340.18,1700.9
+1095,2023-09-19,2918,Home & Kitchen,328.72,15,4,North America,Credit Card,1.4,385,279.41,1117.64
+1096,2022-10-19,2396,Beauty,343.86,30,3,Middle East,Debit Card,1.4,227,240.7,722.1
+1097,2022-10-10,4268,Home & Kitchen,126.3,0,2,Europe,Debit Card,3.0,88,126.3,252.6
+1098,2022-03-10,1189,Books,69.7,20,4,Asia,Wallet,3.9,76,55.76,223.04
+1099,2023-10-22,4874,Beauty,228.78,5,5,Europe,Credit Card,4.9,215,217.34,1086.7
+1100,2022-01-11,4967,Sports,124.44,0,4,Europe,Wallet,2.3,135,124.44,497.76
+1101,2022-09-11,4819,Sports,391.58,15,3,Europe,Credit Card,1.7,422,332.84,998.52
+1102,2023-07-04,1078,Sports,268.32,10,1,North America,Debit Card,2.3,169,241.49,241.49
+1103,2022-05-14,2570,Sports,70.36,15,1,Middle East,Wallet,4.5,318,59.81,59.81
+1104,2023-12-13,1815,Sports,102.15,30,5,Europe,UPI,2.4,344,71.5,357.5
+1105,2022-01-23,2905,Sports,443.99,15,5,North America,Wallet,1.7,51,377.39,1886.95
+1106,2022-12-12,4944,Books,317.65,30,4,North America,UPI,3.8,110,222.35,889.4
+1107,2022-10-29,1071,Fashion,203.28,30,3,Asia,UPI,2.9,296,142.3,426.9
+1108,2022-12-29,3090,Fashion,361.78,5,1,Asia,Debit Card,1.3,324,343.69,343.69
+1109,2023-01-31,1802,Home & Kitchen,405.39,20,4,Asia,Cash on Delivery,4.2,37,324.31,1297.24
+1110,2022-08-06,4204,Home & Kitchen,61.64,20,1,Middle East,Wallet,4.0,181,49.31,49.31
+1111,2022-05-21,4870,Sports,421.78,30,3,Middle East,Cash on Delivery,1.8,63,295.25,885.75
+1112,2023-09-08,2129,Beauty,473.54,15,4,North America,Debit Card,2.5,138,402.51,1610.04
+1113,2022-07-29,2694,Sports,49.56,10,5,Asia,UPI,3.9,109,44.6,223.0
+1114,2023-09-15,3404,Fashion,165.42,20,2,Europe,Credit Card,3.7,391,132.34,264.68
+1115,2023-09-08,3055,Electronics,88.13,0,3,Middle East,Debit Card,1.2,229,88.13,264.39
+1116,2023-11-14,2797,Home & Kitchen,217.83,20,1,Asia,UPI,1.6,494,174.26,174.26
+1117,2023-04-05,4414,Beauty,113.96,30,2,Europe,Cash on Delivery,4.7,81,79.77,159.54
+1118,2022-12-22,3484,Home & Kitchen,184.38,15,3,North America,Credit Card,4.5,137,156.72,470.16
+1119,2022-11-20,3127,Beauty,124.77,15,1,Europe,Debit Card,2.6,399,106.05,106.05
+1120,2022-05-13,4627,Fashion,6.78,15,2,Asia,Debit Card,2.9,378,5.76,11.52
+1121,2022-05-07,1688,Home & Kitchen,14.43,10,1,Asia,UPI,2.3,123,12.99,12.99
+1122,2022-04-16,4463,Sports,259.88,20,1,Europe,Wallet,1.7,327,207.9,207.9
+1123,2023-08-27,1575,Home & Kitchen,259.22,30,2,Asia,Cash on Delivery,1.2,103,181.45,362.9
+1124,2023-01-13,1899,Electronics,22.86,10,4,North America,Cash on Delivery,4.2,215,20.57,82.28
+1125,2022-02-20,3335,Fashion,351.23,0,3,North America,Cash on Delivery,3.7,143,351.23,1053.69
+1126,2022-01-29,4892,Beauty,18.31,5,4,Europe,Credit Card,4.9,408,17.39,69.56
+1127,2023-04-07,2136,Electronics,245.85,10,1,Middle East,UPI,1.1,202,221.26,221.26
+1128,2022-10-23,4010,Beauty,200.63,10,2,Asia,Credit Card,1.5,336,180.57,361.14
+1129,2022-10-24,4902,Home & Kitchen,442.09,0,3,Middle East,Debit Card,3.8,7,442.09,1326.27
+1130,2023-12-27,2905,Books,290.35,20,5,Asia,Credit Card,4.2,273,232.28,1161.4
+1131,2023-02-11,1719,Home & Kitchen,412.1,5,3,Europe,Credit Card,3.3,49,391.5,1174.5
+1132,2023-09-05,4003,Fashion,499.18,30,4,Asia,Debit Card,2.9,446,349.43,1397.72
+1133,2023-02-09,1225,Sports,92.81,10,2,North America,Wallet,2.4,461,83.53,167.06
+1134,2022-12-12,2356,Beauty,36.06,10,4,North America,Wallet,3.8,159,32.45,129.8
+1135,2023-09-14,2440,Electronics,388.37,20,1,Asia,UPI,3.8,349,310.7,310.7
+1136,2023-02-24,3325,Home & Kitchen,317.64,15,3,Middle East,UPI,2.3,63,269.99,809.97
+1137,2022-07-01,3942,Beauty,318.9,30,4,North America,Credit Card,5.0,437,223.23,892.92
+1138,2022-01-01,4870,Electronics,161.55,20,5,Asia,UPI,4.2,485,129.24,646.2
+1139,2023-07-21,3839,Home & Kitchen,55.71,20,4,Europe,Credit Card,2.6,47,44.57,178.28
+1140,2023-01-06,4074,Books,362.0,20,1,North America,UPI,2.4,319,289.6,289.6
+1141,2023-10-23,1544,Books,273.95,5,4,Europe,UPI,1.6,91,260.25,1041.0
+1142,2023-03-07,3525,Sports,253.24,5,3,Europe,UPI,4.8,207,240.58,721.74
+1143,2022-11-05,4481,Home & Kitchen,369.31,5,3,Asia,Debit Card,2.1,402,350.84,1052.52
+1144,2022-05-17,3017,Fashion,494.37,30,2,North America,Credit Card,4.9,174,346.06,692.12
+1145,2022-07-21,4378,Books,371.41,15,1,Europe,Debit Card,4.8,458,315.7,315.7
+1146,2023-03-12,4285,Beauty,467.62,30,2,Europe,Wallet,4.8,408,327.33,654.66
+1147,2022-11-09,4101,Fashion,202.27,5,3,North America,Debit Card,3.0,303,192.16,576.48
+1148,2022-04-27,1418,Fashion,449.55,10,4,Asia,Credit Card,1.3,334,404.6,1618.4
+1149,2023-10-28,4608,Home & Kitchen,365.04,15,4,North America,UPI,1.9,8,310.28,1241.12
+1150,2023-07-29,2051,Beauty,188.98,30,5,Europe,Debit Card,1.7,211,132.29,661.45
+1151,2022-09-01,1608,Beauty,256.92,10,1,North America,Wallet,3.8,58,231.23,231.23
+1152,2023-06-21,1086,Electronics,105.19,10,3,Middle East,Debit Card,2.2,131,94.67,284.01
+1153,2023-08-25,4097,Books,45.26,30,2,Middle East,Debit Card,4.0,264,31.68,63.36
+1154,2022-03-16,3167,Books,236.38,5,3,Asia,UPI,3.9,481,224.56,673.68
+1155,2023-01-21,1712,Fashion,496.64,0,5,Asia,Wallet,1.0,406,496.64,2483.2
+1156,2022-07-29,3439,Fashion,435.87,15,3,Middle East,Credit Card,1.8,482,370.49,1111.47
+1157,2023-04-20,4428,Home & Kitchen,13.22,30,2,Asia,Wallet,1.6,89,9.25,18.5
+1158,2023-02-22,3400,Beauty,485.07,5,4,Asia,Wallet,3.0,364,460.82,1843.28
+1159,2022-12-13,3062,Books,237.12,10,2,Middle East,Cash on Delivery,1.6,259,213.41,426.82
+1160,2023-06-13,3352,Electronics,93.56,30,1,Europe,Credit Card,4.6,425,65.49,65.49
+1161,2023-10-02,2277,Books,457.87,10,5,Europe,Cash on Delivery,3.6,495,412.08,2060.4
+1162,2022-06-28,3670,Books,462.8,30,2,Middle East,Cash on Delivery,1.2,54,323.96,647.92
+1163,2022-07-01,1519,Sports,424.23,10,4,Asia,UPI,4.4,40,381.81,1527.24
+1164,2023-10-26,2974,Sports,312.54,10,1,Middle East,Wallet,2.5,260,281.29,281.29
+1165,2022-01-25,3900,Books,122.11,30,2,Europe,Wallet,2.0,494,85.48,170.96
+1166,2022-06-29,3687,Fashion,124.28,15,5,Asia,UPI,4.5,226,105.64,528.2
+1167,2023-12-11,4257,Beauty,482.96,0,4,Europe,UPI,1.2,264,482.96,1931.84
+1168,2023-05-16,1386,Beauty,143.01,20,5,North America,Credit Card,1.1,18,114.41,572.05
+1169,2022-06-10,3952,Books,214.13,30,3,Europe,Debit Card,4.8,274,149.89,449.67
+1170,2022-06-26,4571,Beauty,377.65,5,2,North America,Debit Card,1.6,197,358.77,717.54
+1171,2022-10-12,1013,Home & Kitchen,412.63,15,1,Europe,Cash on Delivery,2.8,7,350.74,350.74
+1172,2022-03-04,4301,Fashion,208.64,30,5,Asia,Wallet,2.0,168,146.05,730.25
+1173,2023-10-24,1090,Fashion,200.84,20,5,Europe,Debit Card,3.1,404,160.67,803.35
+1174,2023-10-28,4475,Beauty,181.71,30,2,Europe,Debit Card,3.9,357,127.2,254.4
+1175,2022-06-05,4576,Books,197.25,30,2,Europe,Cash on Delivery,1.9,123,138.07,276.14
+1176,2023-04-14,1003,Books,380.36,15,4,North America,Cash on Delivery,3.4,117,323.31,1293.24
+1177,2022-02-18,4069,Sports,35.66,15,2,Middle East,Credit Card,3.5,287,30.31,60.62
+1178,2022-03-25,4735,Books,401.08,20,2,Middle East,Debit Card,4.5,243,320.86,641.72
+1179,2022-12-27,4290,Beauty,111.34,15,1,Europe,Debit Card,2.4,163,94.64,94.64
+1180,2023-11-20,4659,Books,84.93,10,3,Europe,Credit Card,1.6,33,76.44,229.32
+1181,2022-05-28,1795,Sports,64.78,30,5,Europe,Wallet,4.4,5,45.35,226.75
+1182,2023-09-22,4938,Sports,121.61,15,2,Asia,Cash on Delivery,2.4,10,103.37,206.74
+1183,2022-12-08,1215,Beauty,417.77,15,2,Europe,Wallet,2.8,178,355.1,710.2
+1184,2023-04-21,2182,Electronics,271.3,20,2,Asia,Wallet,4.1,6,217.04,434.08
+1185,2022-03-04,4834,Sports,138.14,5,2,Europe,Wallet,2.2,455,131.23,262.46
+1186,2023-12-02,2602,Beauty,97.04,15,1,Middle East,Cash on Delivery,3.9,308,82.48,82.48
+1187,2022-12-26,2757,Home & Kitchen,385.92,5,3,Asia,UPI,1.4,84,366.62,1099.86
+1188,2023-07-15,1703,Books,255.22,0,3,Europe,Wallet,2.6,432,255.22,765.66
+1189,2022-11-23,1730,Books,64.54,0,2,Middle East,UPI,1.8,240,64.54,129.08
+1190,2022-05-21,4444,Fashion,190.73,10,3,Asia,UPI,3.6,182,171.66,514.98
+1191,2022-08-03,3064,Sports,225.26,10,4,North America,UPI,3.0,95,202.73,810.92
+1192,2023-03-11,4973,Beauty,180.21,20,2,Middle East,Debit Card,4.9,351,144.17,288.34
+1193,2023-12-24,3542,Electronics,136.27,30,4,Europe,Credit Card,4.8,169,95.39,381.56
+1194,2022-11-14,2642,Books,167.87,10,2,Asia,UPI,1.6,21,151.08,302.16
+1195,2022-02-01,2489,Fashion,370.79,15,4,Asia,Debit Card,3.8,196,315.17,1260.68
+1196,2023-11-01,3491,Beauty,476.76,5,3,Asia,UPI,1.3,126,452.92,1358.76
+1197,2022-10-12,2762,Fashion,17.79,15,2,Middle East,UPI,5.0,43,15.12,30.24
+1198,2022-11-01,2104,Electronics,315.28,15,5,North America,UPI,1.9,232,267.99,1339.95
+1199,2023-03-05,3826,Beauty,41.03,20,2,Asia,UPI,4.9,415,32.82,65.64
+1200,2023-04-22,3213,Books,105.08,10,4,Middle East,Credit Card,3.6,244,94.57,378.28
+1201,2022-10-13,3404,Beauty,274.48,30,3,Middle East,Wallet,3.6,29,192.14,576.42
+1202,2022-05-24,3281,Books,397.99,15,5,Middle East,Cash on Delivery,2.9,237,338.29,1691.45
+1203,2023-02-28,4233,Home & Kitchen,220.61,20,2,Asia,UPI,3.4,499,176.49,352.98
+1204,2022-01-19,3222,Books,440.34,15,4,North America,UPI,2.0,103,374.29,1497.16
+1205,2022-01-18,2695,Fashion,359.3,0,4,North America,Debit Card,3.2,256,359.3,1437.2
+1206,2023-08-13,2386,Electronics,100.9,20,1,Middle East,Wallet,4.4,30,80.72,80.72
+1207,2023-01-06,4447,Beauty,344.67,0,4,Europe,Debit Card,3.7,104,344.67,1378.68
+1208,2022-06-24,1696,Home & Kitchen,162.6,20,3,Middle East,Credit Card,2.5,239,130.08,390.24
+1209,2022-07-13,2197,Home & Kitchen,384.52,30,4,Europe,Cash on Delivery,3.0,89,269.16,1076.64
+1210,2023-05-17,3285,Home & Kitchen,119.15,10,4,Middle East,Credit Card,2.4,178,107.24,428.96
+1211,2022-04-23,4234,Fashion,76.53,30,3,Asia,Cash on Delivery,3.3,6,53.57,160.71
+1212,2022-04-24,1987,Books,320.68,5,1,North America,Cash on Delivery,2.9,230,304.65,304.65
+1213,2022-08-10,2013,Home & Kitchen,310.23,5,4,North America,UPI,2.2,181,294.72,1178.88
+1214,2023-11-09,4989,Electronics,288.89,5,3,Europe,Credit Card,2.6,247,274.45,823.35
+1215,2023-10-06,3959,Electronics,125.38,15,1,Asia,Cash on Delivery,3.8,170,106.57,106.57
+1216,2022-09-21,2261,Beauty,106.96,0,3,Europe,Debit Card,1.9,79,106.96,320.88
+1217,2022-02-24,2641,Electronics,456.66,5,4,Asia,Credit Card,2.8,449,433.83,1735.32
+1218,2023-10-05,1629,Books,268.67,5,1,Asia,Cash on Delivery,3.5,42,255.24,255.24
+1219,2023-04-03,2255,Books,206.24,5,5,Middle East,UPI,2.1,233,195.93,979.65
+1220,2022-06-11,1587,Home & Kitchen,410.63,5,3,Asia,Cash on Delivery,1.5,308,390.1,1170.3
+1221,2023-01-15,2540,Books,30.14,30,3,Asia,UPI,1.0,451,21.1,63.3
+1222,2022-03-28,4801,Books,339.62,0,1,Europe,Credit Card,1.8,483,339.62,339.62
+1223,2022-02-24,1793,Home & Kitchen,77.97,0,3,Europe,Wallet,2.1,388,77.97,233.91
+1224,2023-04-21,4916,Beauty,116.94,30,1,Middle East,Wallet,4.2,384,81.86,81.86
+1225,2022-06-27,3967,Books,321.53,10,2,Middle East,UPI,1.5,224,289.38,578.76
+1226,2023-01-26,2259,Books,143.45,15,3,Asia,Cash on Delivery,3.9,343,121.93,365.79
+1227,2022-12-15,4394,Fashion,390.13,20,3,Europe,Wallet,1.4,13,312.1,936.3
+1228,2022-01-08,2567,Beauty,261.7,10,4,North America,Wallet,2.1,214,235.53,942.12
+1229,2022-11-09,3454,Home & Kitchen,164.88,5,4,Asia,Credit Card,1.6,140,156.64,626.56
+1230,2023-03-19,3224,Fashion,432.99,5,3,Middle East,UPI,4.1,148,411.34,1234.02
+1231,2022-11-24,4571,Sports,316.27,0,3,Middle East,Credit Card,2.7,353,316.27,948.81
+1232,2022-02-23,3020,Fashion,213.52,20,3,Middle East,Wallet,3.5,40,170.82,512.46
+1233,2022-08-27,1118,Beauty,229.44,30,3,Europe,UPI,4.2,163,160.61,481.83
+1234,2022-08-17,2213,Books,137.94,0,3,Middle East,Credit Card,4.1,462,137.94,413.82
+1235,2023-08-02,1613,Home & Kitchen,58.7,15,4,North America,Wallet,2.4,482,49.9,199.6
+1236,2022-02-20,3412,Beauty,154.78,0,4,Asia,Cash on Delivery,3.0,43,154.78,619.12
+1237,2023-09-01,1485,Fashion,135.83,15,2,Europe,Cash on Delivery,1.3,54,115.46,230.92
+1238,2023-08-27,2996,Electronics,171.17,10,3,North America,Debit Card,2.6,493,154.05,462.15
+1239,2022-09-21,2102,Home & Kitchen,237.24,15,3,North America,UPI,1.9,93,201.65,604.95
+1240,2023-02-22,1321,Electronics,36.2,20,5,North America,Cash on Delivery,1.4,102,28.96,144.8
+1241,2022-04-06,1138,Sports,57.47,30,5,Middle East,UPI,3.5,382,40.23,201.15
+1242,2022-03-29,4407,Sports,366.07,5,3,Asia,Credit Card,3.9,126,347.77,1043.31
+1243,2022-03-19,4473,Books,95.78,0,5,Asia,Credit Card,3.1,448,95.78,478.9
+1244,2022-10-15,4297,Beauty,172.79,10,2,Europe,Debit Card,1.1,385,155.51,311.02
+1245,2022-04-30,2289,Books,320.29,30,3,Asia,Debit Card,4.2,248,224.2,672.6
+1246,2023-05-06,3380,Beauty,488.59,30,4,North America,Debit Card,3.7,162,342.01,1368.04
+1247,2023-03-28,1223,Fashion,70.83,0,5,Middle East,Wallet,3.8,283,70.83,354.15
+1248,2023-05-15,1571,Books,379.9,10,2,North America,Cash on Delivery,3.4,215,341.91,683.82
+1249,2022-06-14,3823,Electronics,248.18,30,3,North America,Cash on Delivery,2.7,269,173.73,521.19
+1250,2022-07-01,4014,Fashion,51.41,5,4,Asia,Credit Card,2.4,425,48.84,195.36
+1251,2023-04-14,2583,Beauty,88.65,30,5,Middle East,Debit Card,4.9,155,62.06,310.3
+1252,2022-01-07,3640,Fashion,348.65,30,3,North America,Cash on Delivery,4.2,398,244.05,732.15
+1253,2022-11-26,1808,Electronics,440.33,20,4,Asia,Debit Card,5.0,154,352.26,1409.04
+1254,2023-11-04,1986,Home & Kitchen,11.0,20,4,North America,Debit Card,4.7,445,8.8,35.2
+1255,2022-05-31,2914,Beauty,115.3,30,1,Europe,Cash on Delivery,3.8,108,80.71,80.71
+1256,2022-03-26,2023,Home & Kitchen,182.19,15,1,Middle East,Credit Card,2.1,71,154.86,154.86
+1257,2022-05-27,2543,Fashion,494.46,15,1,North America,UPI,2.5,353,420.29,420.29
+1258,2023-09-16,3908,Sports,327.84,0,5,Middle East,UPI,1.9,334,327.84,1639.2
+1259,2023-01-16,2272,Sports,183.61,15,1,Asia,UPI,3.7,186,156.07,156.07
+1260,2023-07-02,2779,Books,104.83,20,2,North America,Debit Card,2.9,185,83.86,167.72
+1261,2022-10-12,2700,Sports,117.25,30,3,Asia,UPI,4.6,289,82.07,246.21
+1262,2023-12-01,4930,Beauty,29.49,0,2,Europe,UPI,3.4,191,29.49,58.98
+1263,2022-03-23,4492,Fashion,497.36,30,5,Middle East,Debit Card,3.5,52,348.15,1740.75
+1264,2023-05-29,4903,Beauty,491.21,5,2,Asia,Credit Card,2.7,17,466.65,933.3
+1265,2023-12-10,3234,Electronics,10.54,5,5,Asia,Cash on Delivery,2.4,231,10.01,50.05
+1266,2023-06-07,1248,Fashion,139.05,5,4,Asia,Wallet,2.0,419,132.1,528.4
+1267,2023-01-21,4198,Books,15.12,5,3,North America,Cash on Delivery,4.2,58,14.36,43.08
+1268,2023-12-08,4159,Beauty,154.36,10,5,Middle East,Cash on Delivery,2.0,242,138.92,694.6
+1269,2023-04-16,4116,Sports,451.12,30,3,Middle East,Cash on Delivery,4.3,383,315.78,947.34
+1270,2022-04-29,4983,Books,438.01,20,2,Europe,Credit Card,5.0,113,350.41,700.82
+1271,2023-01-31,2817,Books,344.05,0,5,Europe,UPI,2.5,406,344.05,1720.25
+1272,2023-06-16,2023,Electronics,493.64,10,5,Europe,Cash on Delivery,4.8,495,444.28,2221.4
+1273,2022-09-18,3293,Sports,374.28,10,3,Asia,Cash on Delivery,2.1,356,336.85,1010.55
+1274,2022-09-13,3974,Home & Kitchen,124.5,5,1,Europe,Credit Card,1.3,459,118.28,118.28
+1275,2022-08-14,4482,Fashion,418.3,5,5,North America,Credit Card,3.8,193,397.38,1986.9
+1276,2022-02-22,4289,Home & Kitchen,256.43,5,3,North America,UPI,4.1,204,243.61,730.83
+1277,2023-05-15,4498,Home & Kitchen,254.46,30,3,North America,Cash on Delivery,4.3,228,178.12,534.36
+1278,2023-05-21,3062,Electronics,417.3,0,4,Europe,Wallet,2.8,143,417.3,1669.2
+1279,2022-12-30,4839,Books,269.5,20,1,Middle East,Cash on Delivery,3.3,400,215.6,215.6
+1280,2022-10-07,1825,Books,167.0,5,5,North America,Wallet,1.6,8,158.65,793.25
+1281,2023-08-16,3736,Fashion,464.73,15,2,North America,Cash on Delivery,4.8,233,395.02,790.04
+1282,2023-12-15,4406,Electronics,41.42,20,3,Middle East,Wallet,3.8,26,33.14,99.42
+1283,2022-06-07,3774,Beauty,330.6,30,5,Middle East,Credit Card,1.6,322,231.42,1157.1
+1284,2023-09-24,1536,Books,393.79,10,4,North America,Debit Card,1.5,170,354.41,1417.64
+1285,2022-02-28,1491,Fashion,30.36,30,4,Middle East,Wallet,4.9,333,21.25,85.0
+1286,2023-12-28,2859,Beauty,121.01,5,4,North America,Credit Card,5.0,440,114.96,459.84
+1287,2022-05-08,3339,Sports,115.5,0,3,Middle East,Credit Card,1.6,37,115.5,346.5
+1288,2023-12-22,3164,Home & Kitchen,445.19,5,4,Europe,Cash on Delivery,4.7,49,422.93,1691.72
+1289,2022-04-25,1591,Electronics,326.9,10,5,North America,Wallet,3.4,26,294.21,1471.05
+1290,2022-07-28,3734,Beauty,112.39,0,5,Middle East,Wallet,3.5,3,112.39,561.95
+1291,2023-06-10,3791,Books,455.34,20,4,Asia,Wallet,1.9,413,364.27,1457.08
+1292,2023-06-05,4898,Sports,125.63,0,2,Middle East,Cash on Delivery,5.0,135,125.63,251.26
+1293,2023-07-06,2492,Fashion,332.7,0,1,North America,Credit Card,3.3,67,332.7,332.7
+1294,2022-08-25,1947,Fashion,228.95,30,1,Asia,Cash on Delivery,2.6,125,160.26,160.26
+1295,2022-10-08,2575,Sports,53.32,5,3,North America,UPI,3.3,17,50.65,151.95
+1296,2022-12-25,1682,Electronics,377.86,15,4,North America,Debit Card,2.4,291,321.18,1284.72
+1297,2022-07-20,1628,Home & Kitchen,167.21,5,4,Middle East,UPI,1.9,245,158.85,635.4
+1298,2022-10-05,2719,Books,183.21,5,4,Europe,Debit Card,4.6,259,174.05,696.2
+1299,2022-08-23,1592,Home & Kitchen,111.21,30,5,Europe,UPI,4.5,56,77.85,389.25
+1300,2023-05-09,1386,Electronics,403.11,20,1,Asia,Debit Card,3.5,89,322.49,322.49
+1301,2022-01-04,2606,Electronics,84.21,20,1,Middle East,Wallet,3.4,28,67.37,67.37
+1302,2023-10-28,1651,Home & Kitchen,113.02,15,5,Middle East,Wallet,2.2,36,96.07,480.35
+1303,2023-03-18,3240,Beauty,206.31,20,5,North America,Cash on Delivery,1.7,439,165.05,825.25
+1304,2022-01-29,4754,Beauty,78.67,0,1,North America,Debit Card,3.6,2,78.67,78.67
+1305,2022-04-19,1100,Electronics,60.84,10,1,Asia,Credit Card,1.9,478,54.76,54.76
+1306,2023-09-02,2093,Beauty,263.24,5,5,Middle East,UPI,3.9,135,250.08,1250.4
+1307,2023-12-28,2197,Beauty,477.01,10,1,Asia,Credit Card,1.3,202,429.31,429.31
+1308,2022-03-16,3491,Sports,401.88,15,3,Europe,UPI,2.5,366,341.6,1024.8
+1309,2022-05-26,4772,Fashion,92.67,5,4,Asia,Debit Card,4.5,330,88.04,352.16
+1310,2022-05-08,1432,Home & Kitchen,295.86,20,3,Middle East,Debit Card,3.5,48,236.69,710.07
+1311,2022-02-11,2238,Fashion,397.81,15,4,Middle East,Wallet,2.0,190,338.14,1352.56
+1312,2022-12-22,1536,Fashion,76.74,20,2,Middle East,Cash on Delivery,2.3,9,61.39,122.78
+1313,2022-02-10,1600,Sports,45.55,5,2,Asia,Wallet,4.8,161,43.27,86.54
+1314,2022-02-03,2666,Electronics,446.1,20,3,Middle East,UPI,1.9,403,356.88,1070.64
+1315,2022-01-17,3755,Sports,126.3,5,4,Asia,Wallet,4.8,125,119.98,479.92
+1316,2023-11-08,1318,Electronics,251.45,20,1,Asia,Wallet,1.7,66,201.16,201.16
+1317,2022-06-02,4357,Electronics,108.33,20,1,Middle East,Credit Card,1.4,374,86.66,86.66
+1318,2023-01-13,3272,Fashion,28.59,30,1,North America,Wallet,1.7,227,20.01,20.01
+1319,2023-08-11,4420,Books,259.04,10,2,Asia,Credit Card,4.8,10,233.14,466.28
+1320,2023-08-22,3435,Fashion,220.36,15,4,North America,Debit Card,3.9,331,187.31,749.24
+1321,2023-09-21,1845,Sports,364.61,20,4,Asia,Wallet,1.9,241,291.69,1166.76
+1322,2022-12-08,4412,Fashion,429.42,5,1,Europe,UPI,2.5,234,407.95,407.95
+1323,2022-01-27,2862,Sports,75.1,0,4,Asia,Credit Card,1.8,474,75.1,300.4
+1324,2022-10-14,4732,Fashion,89.97,30,2,Middle East,UPI,4.2,113,62.98,125.96
+1325,2023-10-08,2527,Beauty,475.38,20,4,Middle East,UPI,3.7,178,380.3,1521.2
+1326,2022-06-17,1070,Sports,211.88,0,2,Asia,UPI,2.9,441,211.88,423.76
+1327,2023-09-02,2152,Beauty,476.59,15,5,Asia,Debit Card,4.1,200,405.1,2025.5
+1328,2022-09-25,1443,Electronics,172.52,10,5,Asia,Credit Card,2.4,354,155.27,776.35
+1329,2023-03-31,4361,Fashion,177.11,30,1,Asia,Wallet,3.0,169,123.98,123.98
+1330,2023-11-16,1598,Fashion,354.96,15,3,Middle East,Cash on Delivery,4.4,220,301.72,905.16
+1331,2023-02-05,1386,Electronics,53.0,20,3,Europe,Credit Card,4.4,130,42.4,127.2
+1332,2023-04-21,3065,Home & Kitchen,209.42,30,3,Europe,Cash on Delivery,4.3,104,146.59,439.77
+1333,2023-12-03,2578,Books,193.34,20,5,Asia,Wallet,1.5,448,154.67,773.35
+1334,2023-09-26,2099,Sports,22.49,15,4,Middle East,UPI,4.1,78,19.12,76.48
+1335,2023-07-12,2869,Books,159.75,10,5,Asia,Cash on Delivery,1.6,434,143.78,718.9
+1336,2023-07-30,1552,Home & Kitchen,202.26,30,4,Middle East,Debit Card,4.5,306,141.58,566.32
+1337,2022-05-10,3011,Electronics,33.71,15,3,Asia,Wallet,1.0,194,28.65,85.95
+1338,2022-12-29,3921,Home & Kitchen,14.97,20,4,North America,Debit Card,4.5,89,11.98,47.92
+1339,2023-12-06,2388,Books,301.93,15,3,Middle East,Credit Card,2.6,445,256.64,769.92
+1340,2023-11-24,4351,Home & Kitchen,106.89,20,5,North America,Cash on Delivery,3.9,300,85.51,427.55
+1341,2022-10-19,1279,Fashion,184.47,5,5,Asia,Cash on Delivery,2.9,228,175.25,876.25
+1342,2023-01-06,1770,Beauty,44.63,30,1,Asia,Debit Card,3.2,305,31.24,31.24
+1343,2022-01-29,2466,Fashion,54.94,10,4,Europe,Credit Card,1.3,450,49.45,197.8
+1344,2022-05-29,1953,Books,81.45,15,1,North America,Credit Card,3.3,316,69.23,69.23
+1345,2022-10-23,1328,Sports,19.76,15,5,Asia,Credit Card,2.6,16,16.8,84.0
+1346,2022-01-11,2559,Sports,382.38,0,1,Asia,Debit Card,3.3,473,382.38,382.38
+1347,2023-05-27,3555,Sports,453.55,10,2,North America,Cash on Delivery,3.8,468,408.2,816.4
+1348,2023-11-07,3497,Beauty,263.46,30,2,Europe,Wallet,2.9,254,184.42,368.84
+1349,2022-04-23,4446,Beauty,409.13,0,3,Middle East,UPI,3.5,405,409.13,1227.39
+1350,2022-07-06,4367,Home & Kitchen,72.1,0,4,Asia,Cash on Delivery,1.8,84,72.1,288.4
+1351,2022-08-15,4547,Fashion,227.39,20,2,Europe,Credit Card,1.0,358,181.91,363.82
+1352,2022-11-06,3886,Sports,75.78,30,3,Middle East,UPI,3.2,386,53.05,159.15
+1353,2022-04-08,3440,Home & Kitchen,497.67,0,1,Asia,Credit Card,1.4,258,497.67,497.67
+1354,2022-02-24,1108,Books,33.78,5,1,Middle East,Wallet,2.7,272,32.09,32.09
+1355,2023-09-15,1358,Beauty,224.78,0,2,North America,Cash on Delivery,4.8,320,224.78,449.56
+1356,2023-10-26,1955,Home & Kitchen,60.56,15,1,Europe,Credit Card,4.6,207,51.48,51.48
+1357,2023-02-10,3982,Beauty,38.99,0,2,Europe,Credit Card,1.1,344,38.99,77.98
+1358,2022-03-10,4360,Fashion,368.82,5,1,Middle East,Credit Card,3.1,195,350.38,350.38
+1359,2022-11-08,4489,Sports,44.66,30,4,Europe,Debit Card,2.4,314,31.26,125.04
+1360,2022-10-16,1317,Books,16.86,10,4,North America,Cash on Delivery,4.2,205,15.17,60.68
+1361,2023-07-02,1340,Fashion,475.08,20,5,Asia,Credit Card,3.6,271,380.06,1900.3
+1362,2022-05-28,2340,Home & Kitchen,96.46,5,2,Asia,UPI,2.6,125,91.64,183.28
+1363,2023-04-12,1348,Home & Kitchen,423.0,15,5,Asia,Cash on Delivery,3.8,209,359.55,1797.75
+1364,2022-09-01,3074,Electronics,476.73,15,2,North America,UPI,2.7,263,405.22,810.44
+1365,2023-05-06,1637,Fashion,377.23,0,3,North America,Wallet,4.1,449,377.23,1131.69
+1366,2023-05-22,1400,Books,56.39,0,1,Asia,UPI,3.1,440,56.39,56.39
+1367,2022-12-31,3363,Sports,89.38,0,2,North America,Debit Card,2.4,346,89.38,178.76
+1368,2023-04-27,4753,Beauty,93.67,0,2,Middle East,UPI,3.1,449,93.67,187.34
+1369,2022-07-20,2582,Electronics,328.7,30,3,Europe,Wallet,3.7,323,230.09,690.27
+1370,2022-06-03,1367,Books,93.88,20,5,North America,Credit Card,4.9,144,75.1,375.5
+1371,2023-03-26,3390,Sports,19.84,0,3,Middle East,UPI,2.8,398,19.84,59.52
+1372,2023-05-16,3740,Fashion,231.99,30,5,Europe,Cash on Delivery,2.2,288,162.39,811.95
+1373,2022-03-14,2388,Beauty,296.59,10,4,Middle East,Debit Card,2.1,419,266.93,1067.72
+1374,2023-12-14,4988,Books,232.9,20,2,North America,UPI,1.4,164,186.32,372.64
+1375,2022-10-23,1903,Electronics,247.13,20,1,Europe,Debit Card,2.4,317,197.7,197.7
+1376,2022-01-17,2096,Sports,231.13,10,4,Europe,Wallet,2.4,419,208.02,832.08
+1377,2023-10-03,4193,Sports,136.39,30,5,North America,UPI,3.2,109,95.47,477.35
+1378,2022-08-05,4936,Beauty,478.17,20,4,Europe,Debit Card,2.3,229,382.54,1530.16
+1379,2022-03-02,1185,Fashion,419.85,20,1,Middle East,Wallet,4.6,294,335.88,335.88
+1380,2023-09-08,3883,Beauty,164.81,20,3,Europe,Wallet,2.0,98,131.85,395.55
+1381,2022-02-11,3366,Fashion,24.64,30,3,North America,UPI,3.4,312,17.25,51.75
+1382,2022-01-25,4002,Home & Kitchen,429.71,20,5,North America,Wallet,2.7,398,343.77,1718.85
+1383,2022-02-08,1593,Home & Kitchen,372.4,30,3,Asia,Wallet,1.0,224,260.68,782.04
+1384,2022-05-11,4039,Fashion,45.22,0,1,North America,Credit Card,3.8,301,45.22,45.22
+1385,2023-05-13,2565,Books,350.52,0,3,Middle East,UPI,1.1,142,350.52,1051.56
+1386,2022-08-17,1792,Electronics,229.04,5,2,North America,Wallet,4.6,104,217.59,435.18
+1387,2022-04-18,4704,Home & Kitchen,69.52,5,1,Middle East,Credit Card,1.0,491,66.04,66.04
+1388,2022-06-21,3400,Books,363.73,10,5,Middle East,Debit Card,4.6,174,327.36,1636.8
+1389,2023-03-11,1354,Beauty,181.07,5,5,Asia,UPI,2.2,275,172.02,860.1
+1390,2023-04-23,1105,Home & Kitchen,455.67,0,5,North America,Wallet,1.1,470,455.67,2278.35
+1391,2022-04-12,4895,Sports,26.23,10,1,Asia,Credit Card,3.1,446,23.61,23.61
+1392,2023-06-08,1417,Sports,468.98,0,4,Middle East,Debit Card,1.4,471,468.98,1875.92
+1393,2022-10-02,1641,Books,48.55,20,1,North America,UPI,1.4,85,38.84,38.84
+1394,2023-09-05,3252,Electronics,22.89,15,3,North America,UPI,3.0,65,19.46,58.38
+1395,2022-02-13,1564,Sports,292.99,15,4,Asia,Cash on Delivery,3.7,256,249.04,996.16
+1396,2022-01-17,4453,Beauty,307.23,30,1,Europe,Cash on Delivery,3.7,45,215.06,215.06
+1397,2022-11-26,4368,Home & Kitchen,102.84,5,3,Asia,Wallet,1.2,3,97.7,293.1
+1398,2023-07-23,2302,Sports,438.61,0,5,Europe,Debit Card,3.9,461,438.61,2193.05
+1399,2023-05-12,3236,Home & Kitchen,402.0,0,3,North America,Wallet,3.8,483,402.0,1206.0
+1400,2022-01-12,2750,Electronics,144.88,30,4,Europe,Debit Card,2.5,207,101.42,405.68
+1401,2022-11-14,3590,Fashion,224.32,10,2,North America,UPI,1.3,161,201.89,403.78
+1402,2023-08-15,4521,Sports,392.74,15,5,North America,Debit Card,1.9,218,333.83,1669.15
+1403,2022-08-04,1257,Home & Kitchen,417.51,5,2,Asia,Credit Card,3.6,272,396.63,793.26
+1404,2022-12-05,3500,Fashion,399.15,5,4,North America,Cash on Delivery,1.4,476,379.19,1516.76
+1405,2023-10-23,2595,Electronics,137.62,5,5,Middle East,Debit Card,1.3,52,130.74,653.7
+1406,2022-03-22,3125,Sports,383.83,5,1,Middle East,Credit Card,2.5,497,364.64,364.64
+1407,2023-12-28,2046,Electronics,318.14,0,1,Asia,Debit Card,2.8,254,318.14,318.14
+1408,2023-04-30,3550,Sports,265.49,20,1,Europe,Wallet,2.1,490,212.39,212.39
+1409,2023-01-09,3232,Books,481.97,10,3,North America,Debit Card,4.5,323,433.77,1301.31
+1410,2023-12-11,3594,Home & Kitchen,301.03,5,2,Asia,Debit Card,1.4,223,285.98,571.96
+1411,2022-07-19,4584,Beauty,435.03,10,3,Middle East,UPI,3.5,346,391.53,1174.59
+1412,2023-06-21,2640,Sports,377.41,15,1,Middle East,Wallet,3.0,60,320.8,320.8
+1413,2023-04-11,2711,Beauty,27.32,30,5,Middle East,UPI,2.7,497,19.12,95.6
+1414,2022-03-30,1048,Sports,137.13,30,2,Middle East,Debit Card,4.3,310,95.99,191.98
+1415,2022-09-25,1167,Electronics,306.54,5,4,Middle East,Cash on Delivery,1.8,359,291.21,1164.84
+1416,2023-10-17,2853,Beauty,221.96,5,5,Europe,Cash on Delivery,4.8,187,210.86,1054.3
+1417,2023-07-25,4854,Beauty,477.97,15,3,Middle East,Cash on Delivery,1.5,145,406.27,1218.81
+1418,2023-05-04,4741,Sports,293.89,5,4,North America,Credit Card,3.0,494,279.2,1116.8
+1419,2023-06-22,3068,Beauty,464.9,5,4,North America,Debit Card,1.5,303,441.66,1766.64
+1420,2022-02-16,1391,Books,106.92,15,5,Asia,Credit Card,4.0,24,90.88,454.4
+1421,2022-10-15,3950,Books,449.39,15,2,Middle East,UPI,1.2,221,381.98,763.96
+1422,2022-01-16,2128,Sports,270.89,0,1,Middle East,Credit Card,2.7,327,270.89,270.89
+1423,2023-12-12,4361,Electronics,110.97,10,3,Middle East,Debit Card,2.3,211,99.87,299.61
+1424,2023-02-05,2656,Sports,198.16,5,3,Europe,Cash on Delivery,1.6,309,188.25,564.75
+1425,2022-03-27,2727,Beauty,484.57,15,1,Middle East,Cash on Delivery,1.6,9,411.88,411.88
+1426,2022-09-07,2449,Electronics,479.94,15,3,North America,Credit Card,1.1,445,407.95,1223.85
+1427,2023-01-26,1228,Electronics,15.88,20,1,North America,Debit Card,4.6,278,12.7,12.7
+1428,2022-12-01,3031,Electronics,157.17,10,4,Asia,Debit Card,1.6,78,141.45,565.8
+1429,2023-09-21,4252,Books,450.17,20,5,Europe,Debit Card,4.1,13,360.14,1800.7
+1430,2023-06-03,1351,Books,21.1,5,1,North America,Credit Card,3.4,0,20.05,20.05
+1431,2022-05-17,3272,Home & Kitchen,478.68,15,3,Asia,Cash on Delivery,3.1,333,406.88,1220.64
+1432,2023-11-19,1233,Sports,197.05,5,4,North America,Wallet,2.9,195,187.2,748.8
+1433,2023-05-13,1265,Beauty,61.83,30,3,North America,UPI,2.4,444,43.28,129.84
+1434,2023-12-28,1857,Sports,154.07,30,3,Europe,Debit Card,2.1,267,107.85,323.55
+1435,2023-04-22,3361,Fashion,405.04,0,1,Middle East,Credit Card,2.5,262,405.04,405.04
+1436,2023-08-17,1498,Books,499.23,10,2,Asia,Wallet,3.5,484,449.31,898.62
+1437,2022-08-11,1876,Sports,71.24,5,1,Europe,Debit Card,2.1,176,67.68,67.68
+1438,2023-01-07,4289,Sports,320.59,30,3,Europe,Cash on Delivery,2.4,320,224.41,673.23
+1439,2023-02-06,3258,Fashion,463.03,10,2,Middle East,Wallet,4.7,312,416.73,833.46
+1440,2023-03-19,1098,Beauty,450.36,15,4,Middle East,Debit Card,1.5,366,382.81,1531.24
+1441,2023-05-05,2644,Beauty,194.76,30,1,Middle East,Credit Card,3.8,415,136.33,136.33
+1442,2023-09-07,2411,Books,433.56,5,3,North America,Wallet,1.9,440,411.88,1235.64
+1443,2022-09-30,3392,Fashion,99.84,20,1,Asia,Credit Card,1.4,492,79.87,79.87
+1444,2023-06-10,4324,Sports,317.9,0,2,Europe,Debit Card,2.4,94,317.9,635.8
+1445,2022-06-08,3951,Electronics,301.01,30,3,Asia,UPI,4.4,447,210.71,632.13
+1446,2022-06-01,1523,Electronics,392.53,20,4,North America,Debit Card,3.4,144,314.02,1256.08
+1447,2023-09-12,3165,Sports,118.35,0,5,Middle East,UPI,5.0,76,118.35,591.75
+1448,2022-07-07,3647,Books,316.28,0,3,Asia,Cash on Delivery,1.6,58,316.28,948.84
+1449,2022-04-08,1855,Fashion,307.16,10,5,Europe,UPI,2.6,293,276.44,1382.2
+1450,2022-05-11,3256,Books,46.69,5,4,Asia,Debit Card,4.9,6,44.36,177.44
+1451,2022-06-20,2432,Electronics,168.64,5,3,Middle East,Wallet,3.1,118,160.21,480.63
+1452,2022-07-02,1480,Beauty,107.68,15,5,Middle East,Cash on Delivery,3.3,174,91.53,457.65
+1453,2022-12-30,3970,Books,499.8,30,5,Asia,Credit Card,2.6,276,349.86,1749.3
+1454,2022-02-08,2665,Electronics,495.35,30,4,Asia,Credit Card,3.9,324,346.74,1386.96
+1455,2023-06-11,1328,Beauty,129.95,0,5,Asia,Cash on Delivery,1.5,419,129.95,649.75
+1456,2023-05-12,4254,Sports,405.22,20,5,North America,Debit Card,4.7,122,324.18,1620.9
+1457,2023-05-31,2977,Books,409.15,20,1,Europe,Credit Card,4.1,78,327.32,327.32
+1458,2022-12-15,1416,Books,468.27,5,2,Asia,Credit Card,3.8,209,444.86,889.72
+1459,2023-02-01,4154,Electronics,68.94,20,5,Asia,Credit Card,4.8,493,55.15,275.75
+1460,2023-12-23,3301,Electronics,335.46,15,1,Asia,Cash on Delivery,4.4,278,285.14,285.14
+1461,2022-06-10,1944,Beauty,106.91,30,5,North America,Credit Card,3.7,154,74.84,374.2
+1462,2022-01-16,3052,Home & Kitchen,330.54,30,3,Europe,Cash on Delivery,5.0,107,231.38,694.14
+1463,2023-05-08,3350,Beauty,436.73,30,2,North America,UPI,4.5,459,305.71,611.42
+1464,2023-03-02,1979,Books,45.22,20,3,Europe,Debit Card,3.0,420,36.18,108.54
+1465,2022-04-18,4607,Books,320.31,30,2,Asia,Debit Card,3.4,170,224.22,448.44
+1466,2023-03-26,2656,Books,271.11,30,4,Asia,Cash on Delivery,4.3,111,189.78,759.12
+1467,2022-11-07,3654,Sports,91.92,0,2,Middle East,Debit Card,1.7,435,91.92,183.84
+1468,2022-06-19,2451,Electronics,122.59,15,1,North America,UPI,3.1,292,104.2,104.2
+1469,2023-06-30,4011,Books,262.65,10,5,North America,Credit Card,1.9,489,236.38,1181.9
+1470,2023-02-18,3783,Books,430.94,20,4,Europe,Cash on Delivery,2.2,478,344.75,1379.0
+1471,2022-09-08,4822,Beauty,339.21,30,3,Asia,Credit Card,2.7,493,237.45,712.35
+1472,2022-05-21,2250,Electronics,18.59,0,5,Middle East,UPI,2.4,135,18.59,92.95
+1473,2022-10-01,2677,Beauty,67.47,20,2,Europe,Debit Card,3.9,230,53.98,107.96
+1474,2023-02-20,2586,Home & Kitchen,441.92,15,5,North America,Credit Card,3.1,343,375.63,1878.15
+1475,2023-08-31,1389,Beauty,328.05,5,2,Europe,UPI,1.1,56,311.65,623.3
+1476,2022-02-08,4728,Beauty,13.94,10,5,North America,Cash on Delivery,3.0,328,12.55,62.75
+1477,2022-01-29,1849,Home & Kitchen,300.09,0,2,North America,Wallet,4.7,3,300.09,600.18
+1478,2023-04-22,4911,Beauty,88.45,0,3,Asia,Debit Card,3.6,51,88.45,265.35
+1479,2022-11-14,1818,Books,460.36,15,2,North America,Cash on Delivery,4.0,111,391.31,782.62
+1480,2022-09-02,4635,Books,65.6,10,4,North America,Credit Card,3.7,202,59.04,236.16
+1481,2023-11-28,1011,Fashion,43.1,10,5,Europe,Wallet,1.4,482,38.79,193.95
+1482,2022-09-29,3384,Electronics,324.18,0,5,North America,Cash on Delivery,4.3,6,324.18,1620.9
+1483,2023-03-16,3654,Books,397.41,20,5,Asia,Wallet,4.7,54,317.93,1589.65
+1484,2022-08-27,4954,Sports,140.54,5,3,Middle East,Cash on Delivery,2.0,379,133.51,400.53
+1485,2023-01-12,3176,Electronics,154.16,30,1,Europe,UPI,1.4,367,107.91,107.91
+1486,2022-09-23,1010,Beauty,181.61,10,5,Middle East,Cash on Delivery,4.0,77,163.45,817.25
+1487,2022-12-25,1489,Fashion,384.08,20,2,Europe,UPI,1.4,22,307.26,614.52
+1488,2022-12-06,3319,Sports,134.69,30,5,Middle East,Wallet,3.1,360,94.28,471.4
+1489,2023-01-24,4428,Books,48.64,10,2,Europe,Wallet,2.8,300,43.78,87.56
+1490,2023-07-31,3928,Sports,158.04,20,3,Europe,Credit Card,4.1,116,126.43,379.29
+1491,2023-11-20,4163,Beauty,483.19,5,3,Asia,Cash on Delivery,1.6,483,459.03,1377.09
+1492,2022-01-03,3056,Fashion,220.1,5,5,Asia,Wallet,1.1,250,209.1,1045.5
+1493,2023-03-05,3934,Sports,282.19,0,3,Asia,Credit Card,2.4,373,282.19,846.57
+1494,2022-05-22,2146,Beauty,382.34,30,3,North America,Debit Card,2.7,384,267.64,802.92
+1495,2023-01-11,3823,Electronics,281.47,30,3,Middle East,Wallet,1.4,388,197.03,591.09
+1496,2023-11-01,3328,Beauty,330.14,30,4,North America,Cash on Delivery,4.1,216,231.1,924.4
+1497,2022-11-20,3505,Beauty,440.77,30,1,Europe,Cash on Delivery,4.6,344,308.54,308.54
+1498,2022-05-26,3983,Beauty,189.62,10,1,Middle East,Wallet,4.5,70,170.66,170.66
+1499,2022-10-20,3498,Fashion,60.18,20,2,Asia,UPI,1.9,479,48.14,96.28
+1500,2023-10-27,4702,Sports,51.76,30,5,Asia,UPI,1.2,490,36.23,181.15
+1501,2023-03-08,4478,Beauty,392.41,10,5,Europe,Credit Card,4.3,154,353.17,1765.85
+1502,2023-12-06,4773,Fashion,329.19,30,2,Europe,UPI,3.9,213,230.43,460.86
+1503,2023-08-08,3838,Fashion,285.41,10,5,North America,Wallet,3.6,202,256.87,1284.35
+1504,2023-02-03,1811,Home & Kitchen,465.35,30,4,Middle East,Debit Card,3.2,432,325.74,1302.96
+1505,2022-12-10,1055,Beauty,315.29,5,3,Middle East,Cash on Delivery,4.2,29,299.53,898.59
+1506,2022-05-20,1707,Books,28.6,15,5,North America,UPI,3.9,218,24.31,121.55
+1507,2022-07-06,3426,Fashion,236.98,5,4,Europe,UPI,4.2,333,225.13,900.52
+1508,2022-03-02,4573,Beauty,111.37,0,4,North America,Cash on Delivery,3.7,89,111.37,445.48
+1509,2023-01-15,2009,Books,312.54,30,1,Asia,Credit Card,2.1,447,218.78,218.78
+1510,2023-12-11,1022,Electronics,97.91,20,4,North America,Wallet,4.6,288,78.33,313.32
+1511,2023-03-16,4848,Books,324.27,15,2,Asia,Debit Card,3.5,87,275.63,551.26
+1512,2022-11-15,4316,Fashion,442.25,15,1,Asia,Wallet,3.2,146,375.91,375.91
+1513,2022-10-29,1771,Fashion,43.2,15,5,Europe,Wallet,2.5,222,36.72,183.6
+1514,2022-12-10,4489,Fashion,133.19,30,4,Middle East,Cash on Delivery,5.0,404,93.23,372.92
+1515,2022-01-11,1230,Sports,338.38,20,4,Asia,Wallet,1.6,107,270.7,1082.8
+1516,2022-03-03,1209,Home & Kitchen,357.05,20,1,Asia,UPI,3.3,4,285.64,285.64
+1517,2022-08-14,2185,Books,295.46,30,4,Europe,Credit Card,2.3,73,206.82,827.28
+1518,2022-06-02,2400,Sports,73.85,30,5,Europe,UPI,1.6,217,51.69,258.45
+1519,2023-12-12,3913,Beauty,125.1,5,3,North America,Credit Card,1.8,493,118.84,356.52
+1520,2023-07-18,2193,Beauty,454.14,0,3,North America,UPI,4.9,64,454.14,1362.42
+1521,2023-07-25,1898,Fashion,410.52,30,1,North America,Wallet,1.7,469,287.36,287.36
+1522,2023-08-07,4410,Books,475.26,20,2,North America,Credit Card,2.4,263,380.21,760.42
+1523,2023-10-22,4873,Sports,207.49,20,2,Middle East,Wallet,4.5,436,165.99,331.98
+1524,2023-07-29,2497,Electronics,222.58,15,1,North America,Cash on Delivery,1.1,351,189.19,189.19
+1525,2022-11-06,2250,Books,133.14,30,3,Middle East,Debit Card,2.6,397,93.2,279.6
+1526,2022-08-31,1872,Beauty,264.64,20,3,North America,Credit Card,4.8,358,211.71,635.13
+1527,2023-05-08,3410,Fashion,415.78,10,5,Middle East,UPI,2.1,82,374.2,1871.0
+1528,2023-01-01,4550,Books,127.6,15,2,North America,UPI,1.3,28,108.46,216.92
+1529,2022-11-26,2578,Home & Kitchen,74.62,15,3,Middle East,Wallet,1.4,150,63.43,190.29
+1530,2022-04-17,1474,Fashion,376.51,15,5,Asia,Cash on Delivery,1.7,166,320.03,1600.15
+1531,2022-08-14,1194,Home & Kitchen,348.23,0,2,Middle East,Credit Card,3.3,175,348.23,696.46
+1532,2022-08-06,3980,Sports,415.46,5,1,North America,UPI,4.3,236,394.69,394.69
+1533,2023-05-21,2035,Fashion,377.01,0,5,North America,Debit Card,1.7,67,377.01,1885.05
+1534,2022-09-16,4566,Beauty,212.55,5,3,Middle East,Debit Card,1.4,224,201.92,605.76
+1535,2023-06-01,3006,Electronics,82.61,30,4,Europe,Debit Card,4.1,451,57.83,231.32
+1536,2022-02-23,3831,Books,358.69,30,4,Asia,Cash on Delivery,3.5,480,251.08,1004.32
+1537,2022-02-16,4133,Sports,439.81,0,1,North America,Debit Card,3.6,187,439.81,439.81
+1538,2023-12-28,1528,Books,80.64,30,1,Europe,Cash on Delivery,4.7,146,56.45,56.45
+1539,2023-11-20,1270,Fashion,261.74,5,1,Europe,Cash on Delivery,4.5,449,248.65,248.65
+1540,2023-06-05,3585,Sports,167.79,10,3,Asia,Credit Card,1.9,347,151.01,453.03
+1541,2022-04-09,2580,Electronics,262.13,30,4,Asia,Wallet,1.1,340,183.49,733.96
+1542,2022-01-20,2921,Electronics,20.51,5,2,North America,Wallet,3.7,295,19.48,38.96
+1543,2023-07-27,3704,Sports,179.99,20,5,Europe,Credit Card,1.9,291,143.99,719.95
+1544,2023-05-05,3112,Beauty,244.69,5,3,Europe,Wallet,1.1,401,232.46,697.38
+1545,2023-02-23,3909,Home & Kitchen,79.68,10,2,North America,UPI,2.2,100,71.71,143.42
+1546,2023-11-21,4551,Books,206.71,10,1,Middle East,Wallet,4.7,349,186.04,186.04
+1547,2022-03-03,2821,Fashion,92.13,10,3,North America,Cash on Delivery,3.7,180,82.92,248.76
+1548,2022-05-25,1489,Electronics,111.75,0,3,Europe,Wallet,4.7,113,111.75,335.25
+1549,2022-08-04,4139,Books,488.94,30,2,Europe,Wallet,2.4,202,342.26,684.52
+1550,2022-01-03,1361,Books,302.9,30,4,North America,Debit Card,4.0,5,212.03,848.12
+1551,2022-06-09,4883,Books,197.76,10,2,Europe,Credit Card,2.6,455,177.98,355.96
+1552,2022-04-30,4679,Sports,263.03,30,4,Middle East,UPI,2.3,190,184.12,736.48
+1553,2022-03-30,3619,Electronics,194.62,30,5,North America,Cash on Delivery,1.0,481,136.23,681.15
+1554,2022-11-25,1994,Beauty,302.91,20,5,Europe,Cash on Delivery,1.1,123,242.33,1211.65
+1555,2023-08-03,1768,Books,5.24,5,4,Middle East,Debit Card,4.9,366,4.98,19.92
+1556,2022-12-23,2042,Electronics,121.88,20,5,Asia,Cash on Delivery,1.7,122,97.5,487.5
+1557,2023-09-02,1544,Electronics,494.51,5,4,Europe,Cash on Delivery,4.4,234,469.78,1879.12
+1558,2022-09-24,1978,Fashion,60.61,10,4,Middle East,Debit Card,3.0,256,54.55,218.2
+1559,2023-09-09,1931,Beauty,44.07,5,2,North America,Credit Card,4.5,342,41.87,83.74
+1560,2022-11-19,1090,Beauty,249.12,0,1,Middle East,Cash on Delivery,2.0,158,249.12,249.12
+1561,2023-09-27,4020,Beauty,148.96,15,5,Middle East,Credit Card,1.3,492,126.62,633.1
+1562,2023-06-25,3010,Sports,269.23,0,2,North America,Wallet,3.1,488,269.23,538.46
+1563,2023-10-11,1237,Electronics,480.56,20,2,Middle East,Wallet,4.4,177,384.45,768.9
+1564,2022-07-14,3509,Electronics,67.45,10,3,Asia,UPI,1.3,23,60.71,182.13
+1565,2022-11-28,4095,Beauty,222.79,15,5,Asia,UPI,4.8,37,189.37,946.85
+1566,2022-06-19,2250,Sports,380.61,30,5,Asia,Wallet,2.0,173,266.43,1332.15
+1567,2023-06-05,1850,Electronics,84.57,0,1,Asia,Debit Card,4.3,257,84.57,84.57
+1568,2023-04-08,4452,Beauty,357.49,10,5,Asia,Debit Card,4.4,23,321.74,1608.7
+1569,2022-02-09,3968,Fashion,203.1,15,2,Asia,Wallet,1.6,203,172.64,345.28
+1570,2023-06-21,3954,Home & Kitchen,312.3,20,2,Asia,UPI,2.6,119,249.84,499.68
+1571,2022-09-18,1776,Sports,265.18,0,3,North America,UPI,2.9,289,265.18,795.54
+1572,2023-01-30,4077,Home & Kitchen,228.03,10,4,Asia,Debit Card,1.5,378,205.23,820.92
+1573,2022-08-14,3617,Home & Kitchen,242.12,15,1,North America,UPI,2.9,122,205.8,205.8
+1574,2022-05-04,3659,Home & Kitchen,77.89,15,1,Middle East,Cash on Delivery,1.5,370,66.21,66.21
+1575,2022-02-07,1633,Fashion,219.92,15,4,North America,Credit Card,1.7,331,186.93,747.72
+1576,2022-11-24,4428,Electronics,377.77,0,2,Europe,Wallet,2.2,44,377.77,755.54
+1577,2022-09-08,4228,Fashion,448.84,20,1,Middle East,Debit Card,1.3,314,359.07,359.07
+1578,2022-06-25,2224,Books,315.21,20,5,Middle East,Cash on Delivery,3.4,89,252.17,1260.85
+1579,2023-08-25,2248,Sports,414.52,30,5,Middle East,Debit Card,4.2,89,290.16,1450.8
+1580,2023-03-30,1982,Electronics,256.24,5,3,North America,Debit Card,4.9,320,243.43,730.29
+1581,2022-02-06,3510,Beauty,112.0,5,3,Asia,Wallet,1.7,357,106.4,319.2
+1582,2022-11-12,4850,Books,363.36,20,1,North America,Cash on Delivery,1.4,481,290.69,290.69
+1583,2023-11-19,1662,Books,352.42,10,4,North America,Wallet,1.7,114,317.18,1268.72
+1584,2023-08-16,4993,Sports,8.6,15,2,Europe,Cash on Delivery,4.8,478,7.31,14.62
+1585,2022-04-24,4328,Fashion,242.35,10,4,Asia,Cash on Delivery,2.4,372,218.12,872.48
+1586,2022-02-09,1989,Books,468.69,10,2,North America,Debit Card,3.9,448,421.82,843.64
+1587,2022-10-28,2616,Fashion,492.26,10,4,North America,Debit Card,1.7,3,443.03,1772.12
+1588,2022-08-12,3478,Books,231.18,30,4,Asia,Wallet,2.5,465,161.83,647.32
+1589,2022-11-14,3925,Fashion,362.29,15,2,Middle East,Debit Card,3.9,468,307.95,615.9
+1590,2022-12-15,1424,Electronics,13.73,10,4,Asia,Credit Card,1.9,106,12.36,49.44
+1591,2022-04-25,2430,Books,137.7,0,3,Middle East,UPI,1.9,57,137.7,413.1
+1592,2023-11-29,2635,Fashion,362.27,10,3,Middle East,Wallet,2.1,384,326.04,978.12
+1593,2022-11-19,1104,Home & Kitchen,328.23,20,5,Middle East,Cash on Delivery,3.6,195,262.58,1312.9
+1594,2023-07-22,3299,Home & Kitchen,331.98,0,3,Asia,Cash on Delivery,2.3,196,331.98,995.94
+1595,2022-02-09,3692,Books,349.77,5,1,North America,Cash on Delivery,1.4,200,332.28,332.28
+1596,2022-02-09,2122,Sports,217.53,10,2,Asia,UPI,3.5,2,195.78,391.56
+1597,2022-10-16,1177,Fashion,469.26,20,2,North America,Credit Card,2.1,9,375.41,750.82
+1598,2022-09-19,2288,Electronics,186.24,30,1,Europe,Credit Card,1.2,115,130.37,130.37
+1599,2022-08-04,2155,Sports,451.53,0,2,North America,Cash on Delivery,1.5,110,451.53,903.06
+1600,2022-05-27,2222,Sports,34.85,30,4,Middle East,UPI,1.7,382,24.4,97.6
+1601,2022-12-02,4776,Books,425.35,15,3,Asia,Wallet,2.9,242,361.55,1084.65
+1602,2022-06-17,1719,Electronics,155.13,10,3,North America,UPI,1.2,294,139.62,418.86
+1603,2022-04-02,4128,Fashion,331.58,5,2,Europe,Credit Card,4.7,101,315.0,630.0
+1604,2022-12-19,3939,Home & Kitchen,32.21,20,2,Europe,Cash on Delivery,3.0,43,25.77,51.54
+1605,2023-07-25,1408,Fashion,44.62,30,3,North America,Debit Card,1.7,92,31.23,93.69
+1606,2023-07-25,4001,Sports,33.21,0,3,Asia,Cash on Delivery,4.5,375,33.21,99.63
+1607,2023-11-12,3309,Electronics,245.03,15,5,Middle East,UPI,2.3,319,208.28,1041.4
+1608,2022-12-29,3789,Home & Kitchen,211.01,0,4,Asia,Credit Card,3.2,96,211.01,844.04
+1609,2023-07-11,1653,Books,162.98,15,2,Middle East,Credit Card,3.8,18,138.53,277.06
+1610,2022-12-11,3622,Home & Kitchen,225.75,20,5,Europe,UPI,4.5,361,180.6,903.0
+1611,2023-11-24,3165,Sports,160.22,0,3,Asia,Wallet,3.6,404,160.22,480.66
+1612,2022-06-19,4556,Sports,436.38,0,4,Asia,Credit Card,3.3,51,436.38,1745.52
+1613,2022-12-22,4018,Books,283.59,30,1,Asia,Debit Card,3.3,197,198.51,198.51
+1614,2022-07-10,4392,Sports,158.56,0,5,Middle East,Credit Card,2.5,200,158.56,792.8
+1615,2023-10-29,1307,Books,230.07,20,1,Asia,UPI,3.2,230,184.06,184.06
+1616,2023-02-26,1489,Home & Kitchen,434.24,0,5,Asia,Debit Card,1.7,146,434.24,2171.2
+1617,2023-12-01,2344,Home & Kitchen,207.52,30,3,Asia,Wallet,2.2,494,145.26,435.78
+1618,2022-01-07,3804,Sports,216.45,30,5,Europe,Credit Card,3.8,212,151.51,757.55
+1619,2022-05-13,4964,Electronics,172.16,0,5,Asia,UPI,4.8,466,172.16,860.8
+1620,2023-07-11,4427,Home & Kitchen,133.93,0,4,Asia,Credit Card,3.5,351,133.93,535.72
+1621,2022-01-31,3695,Beauty,238.52,10,5,North America,Debit Card,1.2,304,214.67,1073.35
+1622,2023-06-19,1607,Home & Kitchen,369.61,0,1,North America,Debit Card,4.0,303,369.61,369.61
+1623,2023-03-02,3784,Electronics,187.15,30,2,Europe,UPI,4.1,53,131.0,262.0
+1624,2023-01-29,4591,Beauty,117.26,20,3,Europe,Debit Card,1.8,381,93.81,281.43
+1625,2023-11-03,2549,Beauty,331.7,20,1,Middle East,Debit Card,4.8,76,265.36,265.36
+1626,2022-12-29,1023,Fashion,405.24,0,5,Europe,Wallet,4.2,292,405.24,2026.2
+1627,2023-03-13,2215,Beauty,15.79,15,1,Middle East,UPI,2.8,229,13.42,13.42
+1628,2023-11-01,1752,Sports,318.05,0,4,Europe,Cash on Delivery,4.4,209,318.05,1272.2
+1629,2023-07-05,4048,Books,450.96,10,3,Middle East,Wallet,4.4,63,405.86,1217.58
+1630,2022-03-23,1348,Electronics,48.76,5,4,Middle East,Debit Card,4.2,348,46.32,185.28
+1631,2022-12-22,1024,Fashion,450.13,5,2,Europe,Wallet,1.5,12,427.62,855.24
+1632,2022-09-15,4461,Home & Kitchen,63.29,10,1,North America,Cash on Delivery,2.7,203,56.96,56.96
+1633,2023-12-19,4712,Beauty,498.43,15,5,Middle East,UPI,4.0,13,423.67,2118.35
+1634,2023-08-12,2014,Sports,258.32,0,4,North America,Debit Card,2.2,387,258.32,1033.28
+1635,2023-06-08,1598,Fashion,366.34,0,3,Europe,UPI,2.6,125,366.34,1099.02
+1636,2022-10-22,2768,Books,36.08,20,5,Asia,UPI,1.3,397,28.86,144.3
+1637,2022-08-12,1800,Fashion,55.73,30,3,Europe,Cash on Delivery,2.5,184,39.01,117.03
+1638,2023-06-09,3957,Books,481.83,0,3,Middle East,Cash on Delivery,4.3,194,481.83,1445.49
+1639,2022-02-15,1958,Fashion,494.33,10,3,North America,UPI,1.8,371,444.9,1334.7
+1640,2023-10-29,2591,Sports,142.18,30,5,North America,Debit Card,1.9,237,99.53,497.65
+1641,2022-04-23,4261,Fashion,174.25,0,5,North America,UPI,3.5,340,174.25,871.25
+1642,2022-08-21,2051,Home & Kitchen,9.94,20,5,North America,Wallet,1.9,395,7.95,39.75
+1643,2022-01-17,3588,Sports,478.23,10,3,Europe,Cash on Delivery,3.2,406,430.41,1291.23
+1644,2022-12-26,3538,Home & Kitchen,459.23,5,5,Middle East,Credit Card,1.8,416,436.27,2181.35
+1645,2022-08-11,3535,Sports,62.4,20,3,Europe,Credit Card,3.2,449,49.92,149.76
+1646,2023-12-01,1790,Sports,185.71,20,5,Europe,UPI,4.8,250,148.57,742.85
+1647,2023-03-24,1171,Home & Kitchen,483.49,0,1,North America,Cash on Delivery,1.6,123,483.49,483.49
+1648,2022-12-31,3085,Sports,67.27,15,4,Asia,UPI,2.7,497,57.18,228.72
+1649,2023-11-06,1298,Fashion,437.5,5,1,Middle East,Credit Card,3.9,18,415.62,415.62
+1650,2022-11-22,4337,Beauty,104.84,10,2,North America,UPI,3.7,168,94.36,188.72
+1651,2023-04-12,4098,Fashion,38.82,10,1,North America,Debit Card,1.9,146,34.94,34.94
+1652,2023-02-18,1647,Home & Kitchen,75.38,20,4,Asia,Debit Card,4.7,241,60.3,241.2
+1653,2023-03-31,1747,Fashion,356.38,15,2,North America,Credit Card,4.3,483,302.92,605.84
+1654,2023-08-09,2780,Beauty,72.96,0,4,Asia,Debit Card,4.0,257,72.96,291.84
+1655,2022-08-21,2475,Sports,6.85,5,5,Middle East,Cash on Delivery,4.5,235,6.51,32.55
+1656,2022-08-12,2492,Books,388.97,10,3,Middle East,Wallet,1.9,413,350.07,1050.21
+1657,2023-02-16,2108,Electronics,329.47,5,5,North America,Debit Card,4.5,478,313.0,1565.0
+1658,2023-07-26,1925,Home & Kitchen,439.69,30,4,North America,Cash on Delivery,4.9,339,307.78,1231.12
+1659,2022-12-01,3060,Fashion,290.95,10,4,Middle East,Wallet,1.5,233,261.86,1047.44
+1660,2022-08-10,4641,Beauty,27.56,10,2,Asia,Cash on Delivery,2.2,262,24.8,49.6
+1661,2022-02-06,3306,Home & Kitchen,15.68,10,2,Asia,Credit Card,3.7,162,14.11,28.22
+1662,2022-10-05,1979,Sports,393.73,30,1,Europe,UPI,1.5,165,275.61,275.61
+1663,2022-07-15,2123,Home & Kitchen,445.51,10,3,North America,Wallet,2.8,352,400.96,1202.88
+1664,2023-04-29,1615,Books,401.14,20,5,Middle East,Debit Card,2.5,180,320.91,1604.55
+1665,2022-08-30,2284,Sports,190.15,5,3,Asia,Cash on Delivery,4.7,444,180.64,541.92
+1666,2022-11-20,3325,Electronics,332.72,0,1,North America,Debit Card,1.7,280,332.72,332.72
+1667,2022-07-11,1953,Fashion,43.51,10,4,Europe,Cash on Delivery,3.9,380,39.16,156.64
+1668,2022-01-17,4137,Fashion,360.53,20,5,North America,Debit Card,3.9,383,288.42,1442.1
+1669,2023-06-08,4672,Home & Kitchen,128.55,20,5,Asia,Wallet,4.8,463,102.84,514.2
+1670,2023-02-05,3855,Beauty,467.48,10,3,Middle East,Credit Card,4.1,118,420.73,1262.19
+1671,2023-12-06,2623,Home & Kitchen,172.17,30,4,Asia,Cash on Delivery,2.2,114,120.52,482.08
+1672,2022-01-22,4449,Books,172.95,0,3,Middle East,Debit Card,3.0,221,172.95,518.85
+1673,2023-04-19,2540,Electronics,146.73,15,3,Asia,Credit Card,1.4,204,124.72,374.16
+1674,2022-04-30,3703,Books,318.59,5,5,North America,Wallet,1.3,176,302.66,1513.3
+1675,2022-07-29,2140,Beauty,52.95,15,4,Europe,Debit Card,2.5,491,45.01,180.04
+1676,2022-11-02,3830,Fashion,31.48,20,4,Europe,Wallet,1.9,358,25.18,100.72
+1677,2022-09-27,1498,Beauty,349.58,0,5,Europe,UPI,2.2,213,349.58,1747.9
+1678,2023-12-05,3252,Books,473.08,20,4,Asia,Wallet,3.1,389,378.46,1513.84
+1679,2023-11-18,1586,Fashion,373.14,10,3,Asia,Wallet,3.6,395,335.83,1007.49
+1680,2022-10-12,2103,Electronics,128.68,0,3,Middle East,UPI,4.7,454,128.68,386.04
+1681,2023-12-17,4089,Home & Kitchen,184.27,0,1,Asia,UPI,2.4,422,184.27,184.27
+1682,2023-11-07,2752,Electronics,105.67,20,4,Middle East,Credit Card,2.6,287,84.54,338.16
+1683,2022-08-15,1613,Home & Kitchen,343.63,0,4,Asia,Cash on Delivery,3.4,6,343.63,1374.52
+1684,2023-01-16,4047,Electronics,122.49,10,3,Europe,UPI,4.3,498,110.24,330.72
+1685,2023-04-05,1643,Sports,287.79,15,3,Europe,UPI,2.6,402,244.62,733.86
+1686,2022-01-07,3868,Fashion,420.54,20,4,North America,Credit Card,1.3,140,336.43,1345.72
+1687,2022-01-29,1057,Fashion,260.62,5,4,Middle East,UPI,1.9,151,247.59,990.36
+1688,2022-02-02,2135,Fashion,298.78,20,4,Middle East,Wallet,4.5,409,239.02,956.08
+1689,2023-10-08,1596,Sports,484.23,30,5,North America,Credit Card,4.7,431,338.96,1694.8
+1690,2022-03-20,4914,Sports,163.01,20,4,Asia,UPI,3.5,78,130.41,521.64
+1691,2023-04-04,2849,Home & Kitchen,399.72,15,3,Europe,Cash on Delivery,1.3,46,339.76,1019.28
+1692,2023-07-24,4699,Sports,344.97,10,1,North America,Credit Card,4.7,268,310.47,310.47
+1693,2023-06-22,3362,Fashion,61.02,5,3,Europe,UPI,3.1,488,57.97,173.91
+1694,2023-04-27,1161,Beauty,494.93,30,2,Europe,Cash on Delivery,1.5,129,346.45,692.9
+1695,2023-03-06,2821,Home & Kitchen,346.34,20,4,Asia,Wallet,1.4,233,277.07,1108.28
+1696,2022-10-12,2973,Fashion,11.9,5,5,North America,Wallet,4.7,47,11.3,56.5
+1697,2023-05-31,1323,Fashion,362.56,10,2,Europe,UPI,1.1,229,326.3,652.6
+1698,2022-04-09,3765,Sports,71.28,20,2,Europe,Credit Card,4.6,486,57.02,114.04
+1699,2023-02-01,4402,Electronics,150.19,15,5,Asia,Cash on Delivery,3.3,134,127.66,638.3
+1700,2023-05-04,3627,Beauty,177.44,10,5,Europe,Cash on Delivery,4.3,462,159.7,798.5
+1701,2022-02-08,4993,Beauty,158.33,10,3,North America,Credit Card,4.0,78,142.5,427.5
+1702,2022-09-28,1898,Sports,373.5,0,4,North America,UPI,1.8,457,373.5,1494.0
+1703,2022-06-06,1759,Home & Kitchen,377.87,0,2,Middle East,Credit Card,3.6,51,377.87,755.74
+1704,2022-03-16,1501,Beauty,266.59,30,4,Middle East,Wallet,2.1,151,186.61,746.44
+1705,2022-05-10,1056,Fashion,285.67,5,3,Middle East,Cash on Delivery,3.8,111,271.39,814.17
+1706,2023-11-18,2188,Home & Kitchen,160.24,0,4,North America,Credit Card,1.8,174,160.24,640.96
+1707,2022-03-25,4237,Sports,16.49,15,2,Asia,Wallet,3.1,219,14.02,28.04
+1708,2022-01-22,3344,Books,179.1,5,4,Europe,Wallet,4.5,55,170.14,680.56
+1709,2023-04-04,2027,Electronics,9.66,0,4,North America,UPI,3.1,239,9.66,38.64
+1710,2023-06-23,3457,Electronics,433.07,5,3,Asia,UPI,1.5,77,411.42,1234.26
+1711,2023-12-08,1806,Books,322.18,0,2,Asia,Cash on Delivery,4.6,140,322.18,644.36
+1712,2023-01-17,2900,Sports,489.74,30,5,Europe,Credit Card,4.1,447,342.82,1714.1
+1713,2023-03-16,2129,Home & Kitchen,95.54,30,1,Middle East,Credit Card,3.7,276,66.88,66.88
+1714,2023-08-27,1619,Books,330.62,20,5,Europe,UPI,4.1,185,264.5,1322.5
+1715,2022-01-21,4753,Beauty,98.02,30,5,North America,UPI,2.9,234,68.61,343.05
+1716,2022-10-30,1778,Fashion,321.3,30,1,Middle East,Credit Card,2.0,96,224.91,224.91
+1717,2022-03-25,1778,Books,248.43,30,5,North America,Credit Card,3.3,133,173.9,869.5
+1718,2023-10-21,3613,Books,334.02,20,5,Europe,Cash on Delivery,3.1,330,267.22,1336.1
+1719,2023-03-29,4045,Beauty,364.03,10,4,Asia,Credit Card,3.1,141,327.63,1310.52
+1720,2023-01-22,1165,Home & Kitchen,263.8,30,3,Europe,Wallet,4.4,471,184.66,553.98
+1721,2023-05-22,2277,Fashion,249.41,15,1,North America,UPI,2.2,323,212.0,212.0
+1722,2022-09-14,3835,Fashion,39.5,10,4,Europe,UPI,4.9,390,35.55,142.2
+1723,2023-07-24,1665,Electronics,185.05,10,2,North America,Cash on Delivery,4.8,406,166.54,333.08
+1724,2023-06-11,1127,Fashion,154.47,10,5,Middle East,Cash on Delivery,3.1,118,139.02,695.1
+1725,2022-06-11,4557,Fashion,314.66,15,1,Europe,Wallet,4.0,166,267.46,267.46
+1726,2022-06-12,1075,Fashion,141.61,15,3,Middle East,Wallet,2.3,305,120.37,361.11
+1727,2023-06-08,1886,Fashion,120.02,10,5,Middle East,Wallet,2.7,144,108.02,540.1
+1728,2022-09-28,2244,Beauty,425.1,20,5,North America,Cash on Delivery,3.1,322,340.08,1700.4
+1729,2023-05-07,3829,Sports,415.08,30,1,Europe,Debit Card,4.6,179,290.56,290.56
+1730,2022-07-27,3481,Electronics,167.63,20,5,Europe,Wallet,4.5,113,134.1,670.5
+1731,2023-06-23,1634,Sports,47.43,5,3,Asia,Credit Card,3.8,77,45.06,135.18
+1732,2023-08-07,4608,Books,251.31,20,4,Europe,Debit Card,1.5,329,201.05,804.2
+1733,2022-03-01,4510,Electronics,228.37,5,2,Europe,Wallet,3.4,190,216.95,433.9
+1734,2023-03-06,4506,Home & Kitchen,435.57,15,1,Asia,Cash on Delivery,4.5,444,370.23,370.23
+1735,2023-10-19,4689,Sports,275.73,20,4,Middle East,Wallet,4.0,302,220.58,882.32
+1736,2023-08-28,2641,Sports,471.67,10,3,North America,Credit Card,4.1,192,424.5,1273.5
+1737,2022-11-05,1614,Books,244.26,30,4,North America,Debit Card,1.6,193,170.98,683.92
+1738,2023-06-04,1985,Electronics,335.31,5,5,Europe,Credit Card,1.3,172,318.54,1592.7
+1739,2023-08-14,4849,Electronics,242.46,30,5,North America,Wallet,4.6,174,169.72,848.6
+1740,2022-01-27,3573,Electronics,163.95,15,5,North America,Cash on Delivery,3.3,349,139.36,696.8
+1741,2023-11-17,2156,Electronics,18.59,15,5,Middle East,Cash on Delivery,1.3,177,15.8,79.0
+1742,2023-07-16,1440,Electronics,397.7,5,4,North America,Wallet,2.8,337,377.82,1511.28
+1743,2022-07-18,2557,Sports,452.05,30,2,Asia,Debit Card,3.3,399,316.44,632.88
+1744,2023-01-22,3634,Electronics,368.13,5,5,North America,Wallet,1.8,394,349.72,1748.6
+1745,2022-12-15,4868,Beauty,139.82,0,2,Europe,Debit Card,1.1,93,139.82,279.64
+1746,2023-11-24,3438,Beauty,409.39,0,1,Asia,Credit Card,3.6,210,409.39,409.39
+1747,2023-06-20,1243,Books,308.37,0,3,Middle East,UPI,3.8,60,308.37,925.11
+1748,2023-01-13,1767,Fashion,343.06,5,5,Asia,Credit Card,4.1,218,325.91,1629.55
+1749,2023-07-12,4217,Electronics,37.8,15,5,Europe,Wallet,5.0,208,32.13,160.65
+1750,2023-06-11,1414,Sports,293.01,15,2,Asia,UPI,1.2,386,249.06,498.12
+1751,2022-06-02,3474,Fashion,282.77,5,4,Middle East,Wallet,4.9,493,268.63,1074.52
+1752,2022-07-25,4283,Beauty,332.53,0,2,Middle East,UPI,4.5,51,332.53,665.06
+1753,2023-03-31,1248,Home & Kitchen,386.96,10,2,Asia,UPI,4.6,127,348.26,696.52
+1754,2022-09-30,4106,Sports,205.29,0,3,North America,Cash on Delivery,2.5,61,205.29,615.87
+1755,2022-08-24,3886,Electronics,81.71,15,1,Europe,Wallet,3.7,119,69.45,69.45
+1756,2023-06-05,3300,Sports,462.31,5,1,Asia,Credit Card,1.9,84,439.19,439.19
+1757,2023-11-09,1861,Books,389.4,5,5,Middle East,UPI,4.0,108,369.93,1849.65
+1758,2023-12-27,2795,Fashion,272.48,20,1,Europe,Cash on Delivery,3.5,282,217.98,217.98
+1759,2023-05-16,1818,Books,180.49,15,1,North America,Credit Card,4.7,81,153.42,153.42
+1760,2022-04-27,1861,Electronics,492.07,10,3,Europe,Credit Card,1.3,338,442.86,1328.58
+1761,2023-01-21,4357,Fashion,51.26,10,2,Middle East,UPI,2.2,57,46.13,92.26
+1762,2022-12-10,4933,Sports,467.63,10,4,Middle East,Cash on Delivery,4.1,473,420.87,1683.48
+1763,2023-08-07,4764,Sports,205.05,20,4,North America,Debit Card,1.5,260,164.04,656.16
+1764,2023-01-30,1209,Fashion,52.93,20,4,Europe,Cash on Delivery,2.2,295,42.34,169.36
+1765,2022-03-05,3026,Sports,192.69,0,4,Middle East,UPI,2.4,474,192.69,770.76
+1766,2023-12-18,3157,Electronics,376.08,10,1,Asia,UPI,3.3,75,338.47,338.47
+1767,2023-12-22,3377,Home & Kitchen,215.26,10,3,North America,Cash on Delivery,3.1,124,193.73,581.19
+1768,2022-03-13,3189,Electronics,249.05,5,1,Asia,Credit Card,4.6,15,236.6,236.6
+1769,2022-10-01,1675,Books,412.61,10,3,Europe,Debit Card,4.7,236,371.35,1114.05
+1770,2022-11-16,3134,Beauty,309.68,0,2,North America,Debit Card,3.8,383,309.68,619.36
+1771,2022-12-04,3187,Beauty,335.7,20,2,Asia,Cash on Delivery,1.6,343,268.56,537.12
+1772,2023-01-01,2355,Beauty,81.24,30,4,Middle East,Cash on Delivery,4.6,320,56.87,227.48
+1773,2023-05-10,3721,Fashion,129.97,15,2,Europe,Credit Card,4.9,99,110.47,220.94
+1774,2023-08-30,1025,Fashion,208.57,15,3,Europe,Cash on Delivery,2.9,243,177.28,531.84
+1775,2022-06-15,3693,Electronics,59.37,15,4,Europe,Credit Card,2.4,99,50.46,201.84
+1776,2023-06-28,4940,Fashion,143.16,0,1,Middle East,Debit Card,3.4,229,143.16,143.16
+1777,2022-01-11,2650,Sports,417.58,0,3,North America,Wallet,3.2,349,417.58,1252.74
+1778,2022-10-28,4764,Books,15.96,20,3,Asia,Debit Card,3.7,115,12.77,38.31
+1779,2023-12-30,3958,Sports,30.21,20,1,Asia,Debit Card,1.2,46,24.17,24.17
+1780,2022-04-12,1361,Electronics,345.09,5,4,North America,Credit Card,1.2,62,327.84,1311.36
+1781,2023-03-01,2894,Books,196.14,0,5,Asia,UPI,3.7,210,196.14,980.7
+1782,2023-01-27,2682,Beauty,387.65,30,3,North America,Credit Card,3.4,165,271.35,814.05
+1783,2022-08-02,1359,Books,466.26,5,5,Middle East,Debit Card,2.6,71,442.95,2214.75
+1784,2023-11-22,2966,Sports,137.03,15,3,Middle East,Cash on Delivery,1.9,388,116.48,349.44
+1785,2022-03-29,4286,Beauty,23.31,15,5,Asia,Debit Card,3.3,273,19.81,99.05
+1786,2023-07-07,1995,Fashion,230.68,30,4,Europe,Debit Card,3.5,216,161.48,645.92
+1787,2023-02-05,1076,Electronics,482.29,15,5,Middle East,Wallet,2.6,425,409.95,2049.75
+1788,2023-08-11,3142,Home & Kitchen,274.99,5,2,Asia,UPI,2.4,294,261.24,522.48
+1789,2022-02-15,1956,Books,191.84,10,2,North America,Debit Card,1.4,397,172.66,345.32
+1790,2023-11-03,4044,Electronics,278.24,20,2,Europe,Cash on Delivery,3.9,22,222.59,445.18
+1791,2023-04-08,1217,Sports,86.86,20,3,North America,Credit Card,3.6,17,69.49,208.47
+1792,2023-08-15,4946,Home & Kitchen,376.92,30,2,Middle East,Cash on Delivery,2.0,486,263.84,527.68
+1793,2022-11-06,3415,Electronics,341.82,5,1,Asia,Cash on Delivery,2.8,127,324.73,324.73
+1794,2022-03-27,3099,Home & Kitchen,363.44,5,5,Middle East,UPI,4.4,472,345.27,1726.35
+1795,2022-04-02,4345,Electronics,154.64,10,5,Asia,Credit Card,3.7,7,139.18,695.9
+1796,2023-10-22,2467,Beauty,407.69,15,2,North America,Cash on Delivery,2.6,486,346.54,693.08
+1797,2023-11-04,1686,Home & Kitchen,447.03,30,5,North America,Debit Card,1.4,207,312.92,1564.6
+1798,2023-12-15,3872,Electronics,477.99,5,4,Asia,Cash on Delivery,1.6,110,454.09,1816.36
+1799,2022-08-30,1032,Home & Kitchen,321.08,15,4,Asia,Credit Card,4.2,232,272.92,1091.68
+1800,2022-01-02,3919,Beauty,177.35,10,2,Asia,Wallet,1.7,194,159.62,319.24
+1801,2022-08-13,4487,Home & Kitchen,196.81,20,5,North America,Cash on Delivery,3.5,150,157.45,787.25
+1802,2023-08-12,3691,Home & Kitchen,284.99,5,2,Middle East,Debit Card,2.3,162,270.74,541.48
+1803,2022-04-26,1424,Electronics,289.85,10,3,Asia,Debit Card,1.3,452,260.86,782.58
+1804,2023-10-28,1786,Books,397.24,5,5,North America,Cash on Delivery,4.8,13,377.38,1886.9
+1805,2022-04-13,4078,Beauty,47.04,0,1,Middle East,Credit Card,5.0,82,47.04,47.04
+1806,2022-07-13,3542,Sports,285.46,0,1,North America,Cash on Delivery,4.0,359,285.46,285.46
+1807,2022-06-15,1738,Electronics,177.54,20,5,Asia,Wallet,1.5,210,142.03,710.15
+1808,2022-03-31,1766,Fashion,417.8,15,5,North America,Wallet,3.5,44,355.13,1775.65
+1809,2023-11-17,2817,Home & Kitchen,179.27,30,1,North America,UPI,4.8,72,125.49,125.49
+1810,2022-05-02,2771,Fashion,236.57,30,4,Europe,Cash on Delivery,4.9,39,165.6,662.4
+1811,2022-05-23,4926,Sports,117.69,5,1,North America,Wallet,1.1,7,111.81,111.81
+1812,2022-04-16,2377,Electronics,151.39,10,4,Middle East,Cash on Delivery,1.6,359,136.25,545.0
+1813,2023-03-04,3743,Sports,280.03,15,4,Middle East,Credit Card,3.7,409,238.03,952.12
+1814,2022-11-01,1198,Sports,215.82,5,2,North America,Wallet,3.5,345,205.03,410.06
+1815,2022-11-13,1714,Books,104.75,15,4,Middle East,Credit Card,1.0,26,89.04,356.16
+1816,2023-09-27,3482,Beauty,239.57,5,2,North America,Cash on Delivery,3.4,165,227.59,455.18
+1817,2022-01-09,4207,Electronics,86.84,15,1,North America,Credit Card,2.6,108,73.81,73.81
+1818,2022-03-14,4980,Books,441.46,5,3,Asia,UPI,1.0,35,419.39,1258.17
+1819,2022-12-25,1287,Sports,462.48,30,5,Middle East,UPI,4.0,10,323.74,1618.7
+1820,2022-08-11,3024,Electronics,117.08,15,3,North America,Wallet,4.8,465,99.52,298.56
+1821,2023-02-20,4873,Sports,30.9,0,1,Middle East,UPI,4.1,214,30.9,30.9
+1822,2023-07-07,4729,Books,463.88,10,4,Asia,Credit Card,4.3,305,417.49,1669.96
+1823,2023-01-05,3766,Fashion,159.42,15,1,Asia,Wallet,2.4,0,135.51,135.51
+1824,2023-12-17,3614,Books,98.04,30,3,Asia,Cash on Delivery,1.7,279,68.63,205.89
+1825,2022-09-21,1810,Beauty,460.06,20,3,North America,Debit Card,3.3,89,368.05,1104.15
+1826,2023-11-21,3455,Fashion,441.9,15,2,Asia,Cash on Delivery,2.7,307,375.61,751.22
+1827,2022-11-14,3030,Home & Kitchen,31.32,10,1,Europe,UPI,2.6,77,28.19,28.19
+1828,2022-03-25,1916,Fashion,107.79,10,1,Europe,UPI,2.3,147,97.01,97.01
+1829,2022-11-14,2937,Fashion,407.22,5,2,Europe,Wallet,3.1,355,386.86,773.72
+1830,2022-04-21,3957,Home & Kitchen,137.26,20,2,North America,Debit Card,2.8,281,109.81,219.62
+1831,2022-09-08,2785,Fashion,335.88,5,3,Europe,Wallet,2.2,330,319.09,957.27
+1832,2023-01-18,2972,Fashion,24.82,30,3,Europe,UPI,4.1,145,17.37,52.11
+1833,2022-01-07,4858,Sports,421.61,0,1,North America,Debit Card,2.0,475,421.61,421.61
+1834,2023-04-04,1716,Home & Kitchen,214.0,0,4,Middle East,Wallet,3.6,71,214.0,856.0
+1835,2022-03-25,1824,Sports,237.68,0,1,Middle East,Wallet,1.8,80,237.68,237.68
+1836,2022-07-27,2727,Home & Kitchen,405.09,20,5,North America,Credit Card,4.6,225,324.07,1620.35
+1837,2023-01-25,4407,Beauty,229.82,20,3,Asia,Cash on Delivery,1.7,412,183.86,551.58
+1838,2022-11-10,2025,Fashion,56.54,20,5,Asia,Wallet,4.9,436,45.23,226.15
+1839,2022-01-22,3232,Fashion,254.66,15,5,Europe,Cash on Delivery,1.6,362,216.46,1082.3
+1840,2023-02-14,3721,Fashion,231.09,10,2,Asia,Debit Card,1.7,172,207.98,415.96
+1841,2023-05-30,2584,Beauty,227.77,0,4,Asia,Debit Card,3.5,366,227.77,911.08
+1842,2022-05-07,3649,Sports,100.41,30,3,North America,Cash on Delivery,2.3,27,70.29,210.87
+1843,2023-12-01,4509,Fashion,86.17,10,2,Asia,Debit Card,1.9,261,77.55,155.1
+1844,2022-01-14,1762,Home & Kitchen,390.05,10,1,Middle East,Credit Card,1.2,292,351.04,351.04
+1845,2022-01-12,1021,Home & Kitchen,311.49,10,4,North America,Debit Card,2.1,166,280.34,1121.36
+1846,2022-03-28,3259,Home & Kitchen,8.14,0,3,North America,Cash on Delivery,3.2,2,8.14,24.42
+1847,2023-06-08,3524,Home & Kitchen,418.47,5,2,Middle East,UPI,2.4,488,397.55,795.1
+1848,2023-06-21,1465,Sports,65.08,30,4,Asia,Wallet,1.7,157,45.56,182.24
+1849,2022-10-28,4036,Sports,370.15,30,3,Europe,Cash on Delivery,4.0,16,259.1,777.3
+1850,2022-08-31,4305,Sports,52.55,5,3,Europe,Credit Card,2.2,204,49.92,149.76
+1851,2022-05-02,1171,Books,485.83,15,4,North America,Wallet,1.5,497,412.96,1651.84
+1852,2022-05-27,4674,Home & Kitchen,450.75,30,3,Europe,UPI,3.8,284,315.52,946.56
+1853,2023-07-21,3722,Beauty,95.59,15,1,Asia,Cash on Delivery,1.5,439,81.25,81.25
+1854,2022-12-22,1796,Sports,9.17,5,5,Asia,UPI,1.2,298,8.71,43.55
+1855,2023-11-16,2541,Sports,34.53,5,2,Middle East,Cash on Delivery,4.9,490,32.8,65.6
+1856,2023-09-23,1243,Books,405.33,0,3,North America,Credit Card,1.2,261,405.33,1215.99
+1857,2022-11-05,1420,Sports,43.01,0,3,Asia,Cash on Delivery,3.8,111,43.01,129.03
+1858,2023-11-26,3426,Fashion,390.18,10,2,Asia,Debit Card,2.7,379,351.16,702.32
+1859,2022-10-15,4544,Home & Kitchen,410.8,5,2,Asia,Wallet,5.0,352,390.26,780.52
+1860,2022-11-03,1340,Sports,156.92,30,5,Europe,Credit Card,2.5,485,109.84,549.2
+1861,2023-08-17,4001,Fashion,368.89,5,1,Asia,Wallet,3.7,498,350.45,350.45
+1862,2023-12-24,2983,Home & Kitchen,411.05,20,1,Asia,Cash on Delivery,3.2,162,328.84,328.84
+1863,2023-10-24,3718,Home & Kitchen,391.41,15,5,Europe,Debit Card,1.2,491,332.7,1663.5
+1864,2023-07-03,1122,Sports,99.82,10,5,North America,Cash on Delivery,2.3,372,89.84,449.2
+1865,2022-12-18,1871,Books,227.4,15,1,Asia,Cash on Delivery,2.9,88,193.29,193.29
+1866,2022-11-08,1433,Home & Kitchen,38.78,20,5,North America,Cash on Delivery,2.1,405,31.02,155.1
+1867,2022-02-28,3235,Home & Kitchen,265.03,20,2,Asia,Credit Card,4.7,407,212.02,424.04
+1868,2023-10-05,2037,Electronics,223.95,20,4,Europe,Debit Card,4.9,104,179.16,716.64
+1869,2023-12-15,1069,Beauty,451.8,10,5,North America,UPI,1.2,99,406.62,2033.1
+1870,2022-02-04,1650,Beauty,13.95,20,4,North America,Cash on Delivery,1.9,180,11.16,44.64
+1871,2023-03-21,4482,Fashion,267.47,20,4,North America,UPI,2.9,105,213.98,855.92
+1872,2022-04-03,4941,Fashion,367.49,5,5,North America,Credit Card,3.5,284,349.12,1745.6
+1873,2022-07-26,3884,Books,234.66,5,1,Asia,Cash on Delivery,4.2,103,222.93,222.93
+1874,2022-12-19,3638,Fashion,122.85,5,1,North America,Credit Card,3.6,338,116.71,116.71
+1875,2022-11-28,4877,Electronics,306.87,20,2,Middle East,Wallet,2.7,417,245.5,491.0
+1876,2023-12-26,3365,Fashion,493.62,30,2,Europe,Cash on Delivery,3.7,127,345.53,691.06
+1877,2022-06-08,3484,Home & Kitchen,25.3,20,3,North America,UPI,2.9,378,20.24,60.72
+1878,2022-01-24,2615,Fashion,102.04,0,4,Europe,Debit Card,2.4,190,102.04,408.16
+1879,2023-02-08,4217,Sports,247.85,10,5,Middle East,Wallet,1.0,443,223.06,1115.3
+1880,2023-05-31,2908,Fashion,300.81,30,4,Middle East,Cash on Delivery,4.7,266,210.57,842.28
+1881,2022-12-30,4808,Home & Kitchen,313.95,15,4,Middle East,Credit Card,2.9,237,266.86,1067.44
+1882,2023-01-17,1226,Electronics,34.8,5,5,Asia,UPI,2.3,418,33.06,165.3
+1883,2023-06-16,2405,Beauty,65.85,30,5,Asia,Debit Card,1.2,339,46.09,230.45
+1884,2022-06-01,3038,Electronics,472.62,10,5,Europe,UPI,4.0,410,425.36,2126.8
+1885,2023-07-16,3227,Electronics,42.3,15,1,Middle East,Wallet,1.2,305,35.96,35.96
+1886,2023-11-20,1535,Books,212.46,0,2,Europe,UPI,2.3,377,212.46,424.92
+1887,2023-08-31,2122,Books,290.74,10,4,Middle East,Credit Card,2.0,276,261.67,1046.68
+1888,2023-09-09,4462,Home & Kitchen,160.51,0,4,North America,UPI,1.0,238,160.51,642.04
+1889,2023-02-24,1269,Books,131.56,15,3,North America,Wallet,1.9,307,111.83,335.49
+1890,2022-09-07,3993,Sports,148.65,10,3,Asia,Credit Card,3.4,318,133.78,401.34
+1891,2022-04-27,2117,Beauty,144.89,5,3,Middle East,UPI,4.2,429,137.65,412.95
+1892,2023-05-27,2815,Home & Kitchen,192.8,20,1,Europe,Wallet,4.5,46,154.24,154.24
+1893,2023-08-01,4534,Sports,62.46,20,3,Asia,Wallet,3.5,245,49.97,149.91
+1894,2022-12-01,4852,Books,427.5,15,3,Asia,UPI,4.1,42,363.38,1090.14
+1895,2023-02-22,1658,Fashion,380.91,0,2,Middle East,Cash on Delivery,2.7,261,380.91,761.82
+1896,2022-10-22,3332,Sports,21.88,10,1,North America,Cash on Delivery,4.4,426,19.69,19.69
+1897,2023-01-06,4093,Books,381.83,15,1,North America,Debit Card,1.0,36,324.56,324.56
+1898,2022-07-05,3049,Beauty,414.89,20,5,Middle East,Credit Card,4.3,183,331.91,1659.55
+1899,2022-09-03,3150,Books,461.4,15,5,North America,UPI,1.1,106,392.19,1960.95
+1900,2023-09-29,2996,Home & Kitchen,308.41,0,3,Asia,Cash on Delivery,2.2,344,308.41,925.23
+1901,2022-09-25,4107,Sports,427.15,20,2,North America,Wallet,3.0,43,341.72,683.44
+1902,2023-10-05,2829,Fashion,380.76,20,1,Middle East,Debit Card,2.9,176,304.61,304.61
+1903,2022-08-25,3321,Sports,17.58,10,2,Asia,Credit Card,3.4,205,15.82,31.64
+1904,2023-06-14,4122,Home & Kitchen,406.46,15,3,Europe,UPI,4.5,367,345.49,1036.47
+1905,2023-07-06,2166,Fashion,292.6,30,2,Europe,Cash on Delivery,2.2,209,204.82,409.64
+1906,2022-01-21,1895,Sports,327.03,15,4,Europe,Cash on Delivery,2.9,422,277.98,1111.92
+1907,2023-06-04,2506,Fashion,443.04,10,3,Asia,UPI,2.8,257,398.74,1196.22
+1908,2022-04-10,2971,Beauty,10.16,10,3,North America,UPI,1.3,46,9.14,27.42
+1909,2023-04-23,1016,Sports,58.41,20,1,Europe,Cash on Delivery,2.6,27,46.73,46.73
+1910,2023-08-22,2903,Electronics,289.03,5,2,North America,Debit Card,1.4,144,274.58,549.16
+1911,2022-10-25,2612,Beauty,207.77,5,2,Middle East,Cash on Delivery,3.9,400,197.38,394.76
+1912,2023-06-10,2301,Electronics,211.93,0,4,Europe,Wallet,3.3,377,211.93,847.72
+1913,2022-11-30,4706,Sports,159.54,0,5,Asia,Debit Card,3.4,91,159.54,797.7
+1914,2022-01-02,4509,Electronics,410.18,10,1,Middle East,UPI,1.9,371,369.16,369.16
+1915,2023-01-10,1435,Sports,56.26,15,1,Europe,UPI,2.4,69,47.82,47.82
+1916,2022-10-20,4455,Beauty,268.82,30,4,Asia,Cash on Delivery,1.7,391,188.17,752.68
+1917,2023-07-07,3004,Books,231.82,5,2,Asia,Debit Card,1.3,154,220.23,440.46
+1918,2022-11-14,1857,Beauty,277.9,10,5,North America,Debit Card,1.4,417,250.11,1250.55
+1919,2023-05-17,3733,Home & Kitchen,30.03,30,5,North America,Cash on Delivery,2.7,57,21.02,105.1
+1920,2023-01-16,2155,Home & Kitchen,338.51,20,1,Asia,Debit Card,2.0,40,270.81,270.81
+1921,2023-09-15,1262,Home & Kitchen,11.69,30,5,North America,Debit Card,3.7,489,8.18,40.9
+1922,2022-01-14,3441,Home & Kitchen,266.28,20,4,Asia,Debit Card,3.7,496,213.02,852.08
+1923,2023-05-19,4854,Electronics,136.43,30,4,Middle East,Cash on Delivery,2.8,390,95.5,382.0
+1924,2022-08-19,2945,Electronics,159.96,5,4,North America,Credit Card,2.8,181,151.96,607.84
+1925,2022-03-25,3255,Beauty,370.51,30,2,North America,Credit Card,2.7,99,259.36,518.72
+1926,2022-05-10,1807,Fashion,493.01,20,5,Europe,Cash on Delivery,3.8,107,394.41,1972.05
+1927,2022-05-25,4297,Fashion,240.3,15,1,North America,UPI,2.2,350,204.26,204.26
+1928,2022-01-28,4772,Sports,336.41,5,4,Asia,UPI,4.2,320,319.59,1278.36
+1929,2022-03-07,3512,Electronics,127.99,5,1,Asia,Debit Card,1.1,85,121.59,121.59
+1930,2022-06-12,1357,Books,279.23,0,2,North America,Debit Card,1.6,73,279.23,558.46
+1931,2022-08-17,4215,Electronics,54.49,10,1,North America,Cash on Delivery,3.7,36,49.04,49.04
+1932,2022-09-18,3401,Books,425.87,5,5,Europe,Cash on Delivery,4.8,58,404.58,2022.9
+1933,2023-03-25,2274,Fashion,230.58,0,4,Middle East,Debit Card,3.3,241,230.58,922.32
+1934,2023-02-28,1375,Electronics,183.93,30,3,Middle East,Wallet,2.9,40,128.75,386.25
+1935,2023-04-05,1988,Sports,259.13,10,1,Asia,UPI,3.1,165,233.22,233.22
+1936,2023-11-07,4316,Beauty,456.91,0,5,North America,Wallet,1.3,245,456.91,2284.55
+1937,2022-10-28,1017,Home & Kitchen,389.34,10,4,Asia,UPI,4.8,163,350.41,1401.64
+1938,2022-10-30,2738,Fashion,80.6,0,3,Middle East,Debit Card,2.6,393,80.6,241.8
+1939,2022-10-14,3763,Electronics,385.16,15,4,Europe,Cash on Delivery,4.8,400,327.39,1309.56
+1940,2023-01-30,3532,Electronics,199.47,30,2,Asia,Credit Card,4.2,308,139.63,279.26
+1941,2022-01-10,2025,Home & Kitchen,200.53,15,1,Europe,UPI,4.4,8,170.45,170.45
+1942,2023-12-08,3997,Fashion,380.12,10,5,North America,Wallet,3.4,363,342.11,1710.55
+1943,2023-09-22,3423,Beauty,232.54,5,1,North America,UPI,2.6,478,220.91,220.91
+1944,2022-09-27,1913,Beauty,40.87,20,4,Asia,Wallet,4.6,283,32.7,130.8
+1945,2023-08-15,1565,Beauty,127.15,5,5,Middle East,Wallet,5.0,355,120.79,603.95
+1946,2023-08-28,4237,Fashion,447.84,10,3,Asia,Cash on Delivery,3.5,33,403.06,1209.18
+1947,2022-12-27,3912,Sports,298.01,20,4,North America,UPI,2.7,18,238.41,953.64
+1948,2022-09-14,2352,Beauty,431.8,20,5,Europe,UPI,3.5,287,345.44,1727.2
+1949,2022-05-13,4726,Books,156.05,0,4,Asia,Wallet,2.5,274,156.05,624.2
+1950,2022-10-03,2471,Electronics,346.03,5,2,North America,UPI,2.8,197,328.73,657.46
+1951,2023-11-14,4163,Books,393.72,10,3,Asia,Debit Card,2.0,206,354.35,1063.05
+1952,2023-05-28,4591,Fashion,95.53,5,5,Europe,Wallet,2.7,119,90.75,453.75
+1953,2022-11-09,2275,Beauty,16.54,0,2,Europe,Cash on Delivery,3.8,172,16.54,33.08
+1954,2023-07-30,1611,Beauty,319.04,0,3,North America,Wallet,1.7,193,319.04,957.12
+1955,2022-10-11,2062,Beauty,290.56,5,4,North America,UPI,4.5,359,276.03,1104.12
+1956,2022-05-01,1435,Home & Kitchen,24.72,0,2,Asia,Wallet,4.1,143,24.72,49.44
+1957,2022-04-17,1647,Home & Kitchen,208.34,15,5,Middle East,UPI,1.6,374,177.09,885.45
+1958,2023-11-18,3409,Sports,283.89,30,4,Europe,Credit Card,1.5,65,198.72,794.88
+1959,2022-07-23,3609,Beauty,109.98,20,3,North America,UPI,4.7,148,87.98,263.94
+1960,2022-06-14,1082,Electronics,52.79,30,3,Middle East,Credit Card,2.0,146,36.95,110.85
+1961,2022-11-01,2789,Home & Kitchen,401.64,20,2,North America,Debit Card,1.9,312,321.31,642.62
+1962,2023-05-12,2731,Sports,462.89,20,1,Europe,Credit Card,3.1,458,370.31,370.31
+1963,2023-09-24,2050,Fashion,226.51,20,2,Middle East,UPI,4.4,67,181.21,362.42
+1964,2023-07-10,2612,Beauty,71.32,15,2,Asia,Credit Card,3.0,302,60.62,121.24
+1965,2022-06-05,4877,Electronics,213.54,30,2,Europe,Wallet,1.9,195,149.48,298.96
+1966,2023-01-02,4838,Home & Kitchen,143.17,5,3,Europe,Credit Card,2.2,421,136.01,408.03
+1967,2023-12-20,1020,Fashion,247.8,30,3,Middle East,UPI,2.2,399,173.46,520.38
+1968,2023-09-12,2241,Home & Kitchen,9.47,5,2,Europe,Wallet,1.9,297,9.0,18.0
+1969,2022-09-08,2068,Sports,434.15,10,5,North America,Debit Card,3.0,137,390.74,1953.7
+1970,2022-11-30,1953,Sports,33.76,20,5,Asia,UPI,2.7,335,27.01,135.05
+1971,2023-10-04,2430,Fashion,217.78,20,3,Europe,Cash on Delivery,1.8,385,174.22,522.66
+1972,2023-05-26,3741,Beauty,332.26,20,2,Europe,UPI,2.0,2,265.81,531.62
+1973,2022-10-20,1797,Electronics,327.32,30,4,Middle East,Credit Card,4.5,268,229.12,916.48
+1974,2022-01-20,3526,Books,152.61,15,4,Middle East,Debit Card,4.2,208,129.72,518.88
+1975,2022-10-09,3910,Home & Kitchen,252.29,5,5,North America,Wallet,1.2,69,239.68,1198.4
+1976,2022-01-01,1655,Electronics,250.97,20,4,Middle East,UPI,3.1,454,200.78,803.12
+1977,2022-04-29,4635,Books,69.98,0,5,Middle East,Debit Card,4.9,221,69.98,349.9
+1978,2022-02-04,1762,Beauty,189.34,30,5,Asia,Wallet,2.0,435,132.54,662.7
+1979,2022-07-17,1617,Sports,64.04,0,3,North America,UPI,2.6,375,64.04,192.12
+1980,2023-04-30,4880,Fashion,33.26,10,3,Asia,Cash on Delivery,2.6,43,29.93,89.79
+1981,2022-02-28,1710,Beauty,32.54,5,1,Asia,Wallet,1.6,112,30.91,30.91
+1982,2022-06-10,1336,Electronics,220.32,0,2,Europe,Debit Card,1.7,15,220.32,440.64
+1983,2023-11-22,4863,Electronics,366.16,30,1,Asia,UPI,4.3,463,256.31,256.31
+1984,2022-07-25,4219,Home & Kitchen,492.35,10,2,Middle East,Wallet,2.6,54,443.12,886.24
+1985,2022-01-12,4686,Sports,287.75,0,4,Middle East,Wallet,3.5,351,287.75,1151.0
+1986,2023-05-05,2434,Books,153.17,5,5,Asia,Wallet,1.7,399,145.51,727.55
+1987,2022-10-03,4585,Books,107.52,0,1,North America,Credit Card,2.7,343,107.52,107.52
+1988,2023-11-24,1767,Home & Kitchen,348.94,10,2,Europe,Credit Card,4.1,262,314.05,628.1
+1989,2022-08-30,4643,Sports,30.63,0,1,Asia,Cash on Delivery,1.4,450,30.63,30.63
+1990,2022-08-04,3866,Beauty,134.84,30,2,Middle East,Wallet,4.5,339,94.39,188.78
+1991,2022-09-08,3432,Books,345.83,10,2,Middle East,UPI,4.3,392,311.25,622.5
+1992,2022-05-06,2505,Sports,225.29,10,5,North America,UPI,4.2,304,202.76,1013.8
+1993,2022-08-05,2626,Beauty,252.6,20,4,Europe,Cash on Delivery,4.2,328,202.08,808.32
+1994,2022-11-02,4172,Fashion,487.86,20,1,Asia,Credit Card,3.4,109,390.29,390.29
+1995,2022-07-04,4185,Electronics,205.29,15,2,Europe,Credit Card,2.3,220,174.5,349.0
+1996,2022-02-08,2020,Fashion,299.59,5,2,Asia,Credit Card,4.8,442,284.61,569.22
+1997,2022-08-11,4333,Home & Kitchen,499.31,15,2,Europe,Cash on Delivery,3.4,397,424.41,848.82
+1998,2022-07-03,4493,Books,344.75,10,4,Middle East,Cash on Delivery,2.4,314,310.28,1241.12
+1999,2023-05-10,2077,Fashion,259.66,0,1,Middle East,UPI,2.9,282,259.66,259.66
+2000,2023-03-03,4259,Electronics,165.33,10,2,Europe,UPI,4.8,253,148.8,297.6

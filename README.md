@@ -1,8 +1,8 @@
 # AI Data Analyst
 
-Python · pandas · Streamlit · Plotly · Qwen (via xKiro) · pytest
+Python · pandas · FastAPI · Streamlit · Plotly · Qwen (via xKiro) · pytest
 
-A streamlit app that answers plain language questions about a CSV file,
+A streamlit app and a FastAPI API that answers plain language questions about a CSV file,
 built on one rule:
 **The model proposes, Python decides what runs.**
 The model understands the question and chooses one of six approved
@@ -89,14 +89,27 @@ Then open the address shown in the terminal (usually http://localhost:8501).
 
 ## API
 
-The project also provides a FastAPI API for uploading CSV files and asking questions about the uploaded data.
+The same analysis is also available as a FastAPI API, so another app (a web
+page, a mobile app, or a script) can use it without the Streamlit page.
 
 ### Run the API
 
-From the project folder, run:
+From the project folder, with the API key set as above:
 
 ```bash
 uvicorn api:app --reload
+```
+
+Then open http://127.0.0.1:8000/docs to try the endpoints in the browser.
+
+### Endpoints
+
+The file is uploaded once, then any number of questions can be asked about it.
+
+| Method | Path | What it does |
+|---|---|---|
+| `POST` | `/datasets` | Uploads a CSV file, runs the same file checks as the app, and returns a `dataset_id` with the row count, the columns and the first five rows |
+| `POST` | `/datasets/{dataset_id}/ask` | Asks one question about an uploaded file. Body: `{"question": "..."}` |
 
 
 ---
@@ -269,6 +282,7 @@ rejection is kept for clearly broken files.
 
 ```
 ai-data-analyst/
+├── api.py                    FastAPI
 ├── app.py                    Streamlit page: shows things, decides nothing
 ├── .streamlit/
 │   └── secrets.toml.example  copy to secrets.toml and add the API key

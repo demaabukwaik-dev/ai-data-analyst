@@ -87,6 +87,21 @@ Then open the address shown in the terminal (usually http://localhost:8501).
 
 ---
 
+## API
+
+The project also provides a FastAPI API for uploading CSV files and asking questions about the uploaded data.
+
+### Run the API
+
+From the project folder, run:
+
+```bash
+uvicorn api:app --reload
+
+
+---
+
+
 ## Data
 
 The sample file `data/amazon_sales_sample.csv` holds the first 2,000 rows of

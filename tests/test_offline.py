@@ -20,7 +20,6 @@ def ids(df):
 
 # helpers
 
-
 def F(column, op, value, part=None):
     """A filter, written the way the model writes it."""
     f = {"column": column, "op": op, "value": value}

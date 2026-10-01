@@ -5,7 +5,10 @@ from agent.tools import DATE_PARTS, OPERATORS
 from agent.utils import identifier_columns, is_date, is_number, is_text
 
 ALLOWED_AGGS = ["sum", "mean", "median", "min", "max", "count", "nunique"]
-FILTER_PARTS = ["year", "month", "quarter", "day_of_week", "weekend"]
+
+# A filter may use every date part except "week" (see DATE_PARTS in tools.py).
+FILTER_PARTS = [part for part in DATE_PARTS if part != "week"]
+
 DAY_NAMES = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 def measure_question(df, group_by):
@@ -62,7 +65,6 @@ def check_measure(args, allowed, df, ids):
             )
 
 
-
 def check_group_by(args, allowed, df):
     group_by = args.get("group_by")
     part = args.get("date_part")
@@ -84,6 +86,7 @@ def check_group_by(args, allowed, df):
         raise CannotAnswer(f"Unsupported date grouping: {part}.")
 
     date_columns = [c for c in group_by if is_date(df[c])]
+
     if len(date_columns) != 1:
         raise CannotAnswer("A date part needs exactly one date column to group by.")
 
@@ -134,22 +137,7 @@ def check_show_rows(args, df):
         args["limit"] = min(limit, MAX_ROWS_SHOWN)
 
 
-def _check_dates(values, column):
-    for v in values:
-        if not isinstance(v, str):
-            raise CannotAnswer(f"The filter on '{column}' needs a date like "
-                               f"'2023-01-31', not {v!r}.")
-        try:
-            pd.to_datetime(v)
-        except Exception:
-            raise CannotAnswer(f"Could not read the date {v!r} in the filter on '{column}'.")
-
-
-def _check_numbers(values, column):
-    for v in values:
-        if isinstance(v, bool) or not isinstance(v, (int, float)):
-            raise CannotAnswer(f"The filter on '{column}' needs a number, not {v!r}.")
-
+# helper methods for check_filters
 
 def _check_text_filter(values, op, series, column):
     if op not in ["==", "!=", "in"]:
@@ -167,11 +155,29 @@ def _check_text_filter(values, op, series, column):
                 "Please check the spelling."
             )
 
+def _check_numbers(values, column):
+    for v in values:
+        if isinstance(v, bool) or not isinstance(v, (int, float)):
+            raise CannotAnswer(f"The filter on '{column}' needs a number, not {v!r}.")
+
+
+def _check_dates(values, column):
+    for v in values:
+        if not isinstance(v, str):
+            raise CannotAnswer(f"The filter on '{column}' needs a date like "
+                               f"'2023-01-31', not {v!r}.")
+        try:
+            pd.to_datetime(v)
+        except Exception:
+            raise CannotAnswer(f"Could not read the date {v!r} in the filter on '{column}'.")
+
+
 
 def _valid_part_value(part, value):
     """Is this a real year, month, quarter, day name, or Weekend/Weekday?"""
 
     is_int = isinstance(value, int) and not isinstance(value, bool)
+    
     if part == "year":
         return is_int
     if part == "month":
@@ -197,21 +203,6 @@ def _check_part(part, values, op, column):
     if part in ["day_of_week", "weekend"] and op not in ["==", "!=", "in"]:
         raise CannotAnswer(f"A {part} can only be matched with ==, != or in.")
     
-
-def check_filters(args, df):
-    """Every filter must name a real column, use a known operator, and hold
-    values that suit the column."""
-    filters = args.get("filters")
-
-    if filters is None:
-        args["filters"] = []          
-        return
-    if not isinstance(filters, list):
-        raise CannotAnswer(BROKEN_REPLY)
-
-    for f in filters:
-        _check_one_filter(f, df)
-
 
 def _check_one_filter(f, df):
     if not isinstance(f, dict):
@@ -246,6 +237,23 @@ def _check_one_filter(f, df):
 
     else:
         _check_text_filter(values, op, df[column], column)
+
+
+def check_filters(args, df):
+    """Every filter must name a real column, use a known operator, and hold
+    values that suit the column."""
+    filters = args.get("filters")
+
+    if filters is None:
+        args["filters"] = []          
+        return
+    
+    if not isinstance(filters, list):
+        raise CannotAnswer(BROKEN_REPLY)
+
+    for f in filters:
+        _check_one_filter(f, df)
+
 
 
 def check_mapped_text_used(name, args, column_map, df):

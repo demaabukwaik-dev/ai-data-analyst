@@ -4,6 +4,7 @@ from pandas.tseries.api import guess_datetime_format
 from agent.config import (REJECT_DUPLICATE_ROWS_SHARE, REJECT_EMPTY_CELLS_SHARE, MIN_FILE_ROWS,
                           WARN_DUPLICATE_ROWS_SHARE, WARN_EMPTY_COLUMN_SHARE)
 from agent.utils import is_text
+import os , tempfile
 
 NA_MARKERS = {"", "nan", "na", "n/a", "null", "none", "-", "--", "?"}
 NUM_RE = r"[+-]?[$€£₪]?\d{1,3}(,\d{3})+(\.\d+)?%?|[+-]?[$€£₪]?\d+(\.\d+)?%?"
@@ -90,6 +91,7 @@ def load_csv(path):
         return None, f"The file has only {len(df)} rows. At least {MIN_FILE_ROWS} are needed."
 
     df = df.drop(columns=[c for c in df.columns if c.startswith("Unnamed")])
+    
     normalise_types(df)
 
     missing = df.isna().mean().mean()
@@ -102,6 +104,17 @@ def load_csv(path):
                       f"(limit {REJECT_DUPLICATE_ROWS_SHARE:.0%}).")
 
     return df, None
+
+
+def load_uploaded_csv(name, content):
+    """An uploaded file has no path on disk, so it is saved to a temporary
+    file for load_csv, then removed."""
+    with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(name)[1]) as tmp:
+        tmp.write(content)
+    try:
+        return load_csv(tmp.name)
+    finally:
+        os.remove(tmp.name)
 
 
 def quality_warnings(df):

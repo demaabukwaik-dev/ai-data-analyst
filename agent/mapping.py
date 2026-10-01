@@ -110,8 +110,8 @@ def _attach_dtypes(column_map, df):
 
 def resolve_columns(question, df, state):
     columns = list(df.columns)
-
     values = small_text_values(df)
+    
     column_map = _map_whole_question(question, columns, values, state)  
     kind, reason = validate_column_map(column_map, df)             
     _stop_for_map_problem(kind, reason, columns)

@@ -80,6 +80,14 @@ def group_keys(data, args):
     return keys
 
 
+
+
+def _grouped_values(data, args):
+    grouped = data.groupby(group_keys(data, args))
+    result = grouped[args["column"]].agg(args["agg"])
+    return result.rename(f"{args['agg']} of {args['column']}")
+
+
 # one function per tool
 
 def run_count_rows(data, args):
@@ -90,21 +98,13 @@ def run_aggregate(data, args):
     return data[args["column"]].agg(args["agg"])
 
 
-def _grouped_values(data, args):
-    grouped = data.groupby(group_keys(data, args))
-    result = grouped[args["column"]].agg(args["agg"])
-    return result.rename(f"{args['agg']} of {args['column']}")
-
-
 def run_group(data, args):
     return _grouped_values(data, args)
 
 
 def run_top_n(data, args):
     result = _grouped_values(data, args)
-    result = result.sort_values(
-        ascending=(args["order"] == "asc")
-    )
+    result = result.sort_values(ascending=(args["order"] == "asc"))
     return result.head(args["n"])
 
 

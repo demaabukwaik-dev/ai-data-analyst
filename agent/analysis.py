@@ -37,7 +37,7 @@ def ask_model_for_tool(question, column_map, df, state):
 def use_column_names(args, column_map, df):
     """Replace concept names with their real columns and set date parts when needed."""
     
-    names = {}
+    names = {}  
     for concept, entry in column_map.items():
         if concept not in df.columns:
             names[concept] = entry["column"]
@@ -68,6 +68,7 @@ def validate_tool_call(name, args, column_map, df):
 
     allowed = [entry["column"] for entry in column_map.values()]
     ids = identifier_columns(df)
+
     use_column_names(args, column_map, df)
     check_tool(name, args, allowed, df, ids)
     check_mapped_text_used(name, args, column_map, df)

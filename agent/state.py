@@ -30,4 +30,6 @@ def new_state():
         "classifier_attempts": [],
         "map_attempts": [],
         "tool_attempts": [],
+        "generated_code": None,
     }
+

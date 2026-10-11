@@ -314,7 +314,7 @@ The next action is decided by code from the state, never by the model:
 | T1 | Normal valid input | "Total revenue by region" | Table and bar chart, values equal a pandas groupby().sum() |
 | T2 | Required field missing | No file uploaded, or an empty question | "Upload a CSV file in the sidebar to start.", an empty question is not sent |
 | T3 | Ambiguous / incomplete request | "Which category is the best?" | Asks what to measure and lists the choices, no number is shown |
-| T4 | Boundary or unsupported request | "Revenue by week of year" (52 weeks) | Refused: too many groups (limit 50), suggesting a higher-level grouping |
+| T4 | Boundary or unsupported request | "Revenue by week of year" (52 weeks) | Too many groups to show (limit 50): the grouping is offered as a download | "This grouping gives 52 groups, too many to show here (limit 50). You can download them all below, or ask for a higher-level grouping or the top groups." and a "Download all 52 groups" button | Pass |
 | T5 | Invalid file / tool error | Upload an empty CSV | "The file is empty.", nothing else runs |
 | T6 | Out of scope | "Export the full table to CSV" | "Not allowed" with the reason |
 | T7 | Missing column | "Total revenue by city" | "'city' has no usable column", with the available columns |

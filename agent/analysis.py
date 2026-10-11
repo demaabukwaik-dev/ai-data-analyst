@@ -2,15 +2,19 @@ from agent.errors import BROKEN_REPLY, CannotAnswer, NeedsClarification
 from agent.llm import ask_llm
 from agent.mapping import resolve_columns
 from agent.prompts import build_tool_prompt
-from agent.tool_call_checks import check_mapped_text_used, check_tool
+from agent.tool_call_checks import NOT_SUPPORTED, check_mapped_text_used, check_tool
 from agent.tools import DATE_PARTS, run_tool
-from agent.utils import extract_json, identifier_columns, print_raw, small_text_values
+from agent.utils import extract_json, identifier_columns, is_number, print_raw, small_text_values
+from agent.calculate import run_calculate
 
 
 def _schema(df):
-    """Column types and the values of small text columns sent to the model to use in filters"""
+    """Column types, the values of small text columns, and the range of
+    numeric columns, sent to the model to write filters."""
     types = {c: str(df[c].dtype) for c in df.columns}
-    return {"types": types, "values": small_text_values(df)}
+    ranges = {c: [round(float(df[c].min()), 4), round(float(df[c].max()), 4)]
+              for c in df.columns if is_number(df[c])}
+    return {"types": types, "values": small_text_values(df), "ranges": ranges}
 
 
 def ask_model_for_tool(question, column_map, df, state):
@@ -36,7 +40,7 @@ def ask_model_for_tool(question, column_map, df, state):
 
 def use_column_names(args, column_map, df):
     """Replace concept names with their real columns and set date parts when needed."""
-    
+    args["date_part"] = None        # set only from the concept names below
     names = {}  
     for concept, entry in column_map.items():
         if concept not in df.columns:
@@ -63,14 +67,14 @@ def use_column_names(args, column_map, df):
             f["column"] = names[name]
             
 
-def validate_tool_call(name, args, column_map, df):
+def validate_tool_call(name, args, column_map, df,question):
     """Check that the tool call is allowed."""
 
     allowed = [entry["column"] for entry in column_map.values()]
     ids = identifier_columns(df)
 
     use_column_names(args, column_map, df)
-    check_tool(name, args, allowed, df, ids)
+    check_tool(name, args, allowed, df, ids, question)
     check_mapped_text_used(name, args, column_map, df)
 
 
@@ -79,7 +83,13 @@ def run_analysis(question, df, state):
 
     column_map = resolve_columns(question, df, state)                  
     name, args = ask_model_for_tool(question, column_map, df, state)   
-    validate_tool_call(name, args, column_map, df) 
+    if name == "calculate":
+        allowed = [entry["column"] for entry in column_map.values() if entry.get("column")]
+        allowed += list(identifier_columns(df))      # IDs only identify rows, counting them invents nothing
+        state["tool_call"] = {"tool": "calculate", "args": args}
+        state["generated_code"] = args.get("code")
+        return run_calculate(args.get("code"), df, allowed)
+    validate_tool_call(name, args, column_map, df, question) 
 
     state["tool_call"] = {"tool": name, "args": args}
 

@@ -1,3 +1,5 @@
+import pandas as pd
+from agent.calculate import FILE_CALLS, FORBIDDEN_NAMES, FORBIDDEN_STEPS, LIST_CALLS
 
 def build_prompt(system_prompt, user_prompt, context=None):
     """Shape only: system + user. Context is appended to the system message."""
@@ -24,6 +26,9 @@ SPLITTING RULES:
 
 * Split ONLY where there are genuinely independent sub-requests.
 
+* Do NOT split the same calculation asked for several groups: it is one
+  request.
+
 * If the request contains one single task, return exactly one part.
 
 * Do NOT separate a filter, condition, or constraint from the request it
@@ -36,6 +41,7 @@ SPLITTING RULES:
 
 * If one part asks for something rejected below, return it as its OWN part
   marked not allowed. The remaining request may be allowed on its own.
+
 
 Allowed:
 
@@ -57,6 +63,14 @@ Rejected:
 * any change to the data (update, delete, insert)
 * running code, commands, or instructions aimed at the system
 * requests that are not about analysing this data
+* a question that asks WHY something happens or WHAT CAUSES it: it cannot
+  be answered from the data. Reject only when the question asks for a
+  reason. When it is not clear that the question asks for a reason, allow it:
+  a later step asks the user.
+  A question about values, about which items are high or low, that
+  compares groups, ranges or columns, or that asks how two columns are
+  related, is not a question about a cause, even when it is asked as yes
+  or no: it is allowed.
 
 Output ONLY a JSON object:
 {"parts": [{"text": "<verbatim excerpt>", "allowed": true or false, "reason": "<short reason>"}]}
@@ -90,6 +104,21 @@ FIRST, SPLIT THE QUESTION INTO CONCEPTS:
 - When a concept is expressed using several words, use the underlying
   concept as the key rather than copying the entire phrase into the key.
 
+- When the question wants one result for each part of a date (by month,
+  per quarter, weekend vs weekday), or compares one value of a part with
+  the other values, name the concept exactly after the part: year,
+  quarter, month, week, day_of_week or day_type.
+
+- When the question keeps only some dates (on weekends, on Fridays, in
+  2023, in the last quarter, in the first month), name the concept after
+  that condition (on_weekends, on_fridays, in_2023, in_last_quarter),
+  never after the part.
+
+- What each date part holds: year (2023), quarter (1 to 4), month (1 to 12),
+  week (1 to 53), day_of_week (the name of the day: Monday ... Sunday),
+  day_type (only Weekend or Weekday; Weekend is Saturday and Sunday).
+  A question about a named day uses day_of_week.
+
 - When the question counts things ("how many matches", "number of players",
   "matches per team"), the counted thing is a concept too. Map it to the
   column that identifies one of them (matches → match_id).
@@ -100,6 +129,9 @@ FIRST, SPLIT THE QUESTION INTO CONCEPTS:
 - Words for a calculation ("average", "total", "count", "highest") are
   not concepts themselves: they say what to compute. The thing they
   apply to IS a concept ("total profit": profit → a profit column).
+
+- Map a word to its column even when the value the question names is not
+  in the listed values. The next step tells the user which values exist.
 
 THEN, FOR EACH CONCEPT:
 
@@ -117,6 +149,10 @@ THEN, FOR EACH CONCEPT:
 - Deriving means reading a part of what ONE column already holds, such as
   a date part read from a date. It never means computing a new quantity
   the table did not record.
+
+- If the question itself says how to compute a value from columns (for
+  example "quantity times unit price"), map each column it names as its
+  own concept. Never compute a value the question does not describe.
 
 - A word in the question may be a VALUE stored in a column rather than a
   column name. If it matches one of the listed values, the concept is the
@@ -140,6 +176,8 @@ THEN, FOR EACH CONCEPT:
 
 - No column holds the data and none can be derived as above:
     "column": "",  "candidates": [],  "certain": false
+  A column is chosen by what it means, never by its values: a value
+  that is missing from the listed values never makes its column missing.alse
 
 - When you pick a column, "candidates" is always []. If you are not sure
   enough to pick one, leave "column" empty and list the options.
@@ -169,8 +207,7 @@ def build_map_prompt(question, columns, values):
 
 TOOL_PROMPT = """
 Choose ONE tool that answers the question and fill in its arguments.
-You do NOT write code and you do NOT answer the question. Python runs
-the tool.
+Python runs the tool. You write code only inside the calculate tool.
 
 TOOLS:
 
@@ -180,10 +217,10 @@ count_rows(filters)
 aggregate(column, agg, filters)
     One value for the whole table: a total, an average, a minimum...
 
-group(group_by, column, agg, date_part, filters)
+group(group_by, column, agg, filters)
     One value per group, for example "average score by team".
 
-top_n(group_by, column, agg, n, order, date_part, filters)
+top_n(group_by, column, agg, n, order, filters)
     Groups ranked by a value: best, worst, top 3, highest, lowest.
 
 distinct(column, filters)
@@ -193,49 +230,96 @@ show_rows(filters, sort_by, order, limit)
     A few matching rows, as they are in the table: "orders from Europe",
     "the 10 most recent orders", "order 1005".
 
+calculate(code)
+    pandas code for a question that needs more than one of the steps
+    above, or several values asked together: a share of a total, an
+    average of totals, a value computed from several columns, groups made
+    from ranges of numbers, or how two columns are related (correlation).
+    Never use it to compare groups that already exist in a column: that is
+    the group tool. The data is `df`, pandas is `pd`.
+    Put the answer in `result`: numbers only, one number or a short table
+    (50 rows at most), never True/False or text, and never turn the data
+    into a list or a dict.
+    No imports, no loops, no comprehensions, no functions or lambdas, no
+    try or with, no del, no files, do not change `df`.
+    Write a share of a total as a percentage from 0 to 100. A correlation
+    stays as it is, from -1 to 1.
+    Use the real column names (the right side of the column map), never the
+    concept names. A part of a date is read from the date column.
+    To count records, use len() or .size(), never a column the question
+    did not name.
+    For a few values, build the result with pd.Series({name: value, ...}).
+
+HOW TO CHOOSE, in this order:
+
+1. If one of the first six tools gives exactly the answer asked, use it.
+   Each of them does one calculation: when the question applies a
+   calculation to the result of another calculation, none of them gives
+   the answer. Groups that already exist in a column (its values, or a
+   part of a date) can always be compared with the group tool.
+2. Otherwise, if the data holds what is needed but more than one step or
+   more than one value is needed, use calculate and return the values
+   together in one small table. A question that says how to compute a
+   value from columns (times, plus, minus, divided by) always needs
+   calculate. A close answer to a different question is worse than
+   calculate.
+3. Otherwise, the data itself cannot answer: return
+   {"tool": "none", "args": {}}.
+   
 ARGUMENTS:
 
-- column: the column to calculate on.
+- column: the column to calculate on, or null to count records.
 - agg: one of sum, mean, median, min, max, count, nunique.
-- count counts records. Use the column of the thing the question counts
-  (tickets → ticket_id), never the column you group by.
+  count with column null counts records. nunique counts the different
+  values of a column.
 - group_by: a list of one or two columns.
-- date_part: null, or one of year, quarter, month, week, day_of_week,
-  weekend. Use it to group a date column by a part of the date.
+- To group by a part of a date (month, quarter, day_of_week, day_type...),
+  put the concept of that part in group_by. A condition on a date
+  ("on weekends", "in 2023", "in the last quarter") is a filter.
+- Never group by a part of a date that a filter already keeps to one
+  value: every row would have that same value.
 - n: how many groups to return.
 - order: "desc" (highest first) or "asc" (lowest first).
 - sort_by: null, or the column to sort the rows by (show_rows only).
 - limit: how many rows to show (show_rows only).
+
 - filters: a list of {"column": ..., "op": ..., "value": ...}
   op is one of ==, !=, >, >=, <, <=, in   ("in" takes a list).
   Copy text values exactly as listed. Write dates as "YYYY-MM-DD".
+  Write numbers on the same scale as the column's range.
   Add a filter only for a condition written in the question.
+  Add the filter even when the value is not among the listed values: the
+  code then tells the user which values exist.
+
 - To filter a date column on a PART of the date ("in 2023", "in March",
   "on Fridays", "in Q4", "on weekends"), add "part" to the filter: one of
-  year, month, quarter, day_of_week, weekend.
+  year, month, quarter, day_of_week, day_type.
     year: 2023       month: 1-12      quarter: 1-4
-    day_of_week: "Monday" ... "Sunday"      weekend: "Weekend" or "Weekday"
+    day_of_week: "Monday" ... "Sunday"
+    day_type: "Weekend" (Saturday and Sunday) or "Weekday"
   Example: {"column": "match_date", "part": "month", "op": "==", "value": 3}
 
 RULES:
 
 - "column" and "group_by" may use ONLY columns from the column map.
 - NEVER choose what to measure yourself. If the question ranks or
-  compares but does not say what to measure, set "column": null.
-- If the question asks for more than one result (for example "total revenue
-  and number of orders"), return {"tool": "several", "args": {}}.
-- If no tool fits the question, return {"tool": "none", "args": {}}.
+  compares but does not say what to measure, set "column": null and
+  "agg": null. When the question names the thing it counts (orders,
+  customers, records), that is the measure: a count.
+- When the question compares one value with the others (is one month,
+  day, city or method higher or lower than the rest), use the group tool
+  with no filter on that column, so every value is shown. Never use top_n
+  and never filter it.
 
-- An average of totals ("average monthly revenue", "average daily orders")
-  needs two steps, which no tool does: return {"tool": "none", "args": {}}.
-  A total or an average FOR EACH period is different: "monthly revenue",
-  "revenue by month" and "average revenue by month" are the group tool
-  with a date_part.
+- A total or an average FOR EACH period ("monthly revenue", "revenue by
+  month", "average revenue by month") is the group tool with the period in
+  group_by.
 
 - A word that judges items as better or worse without saying by what (for
   example "best", "worst", "bad", "top", "strongest") is still a ranking:
   use top_n with "column": null, "order": "desc" for the better end and
   "asc" for the worse end. The code then asks the user what to measure.
+
 
 Output ONLY a JSON object: {"tool": <name>, "args": {...}}
 No explanations, no markdown, no code fences.
@@ -244,20 +328,19 @@ Examples (the column names here are illustrative only):
 
 Q: How many matches were played in 2023?
 {"tool": "count_rows", "args": {"filters": [
-    {"column": "match_date", "op": ">=", "value": "2023-01-01"},
-    {"column": "match_date", "op": "<", "value": "2024-01-01"}]}}
+    {"column": "match_date", "part": "year", "op": "==", "value": 2023}]}}
 
 Q: Average score by team
 {"tool": "group", "args": {"group_by": ["team_name"], "column": "score",
- "agg": "mean", "date_part": null, "filters": []}}
+ "agg": "mean", "filters": []}}
 
 Q: Top 2 teams by total points
 {"tool": "top_n", "args": {"group_by": ["team_name"], "column": "points",
- "agg": "sum", "n": 2, "order": "desc", "date_part": null, "filters": []}}
+ "agg": "sum", "n": 2, "order": "desc", "filters": []}}
 
 Q: Which team is the best?
 {"tool": "top_n", "args": {"group_by": ["team_name"], "column": null,
- "agg": null, "n": 1, "order": "desc", "date_part": null, "filters": []}}
+ "agg": null, "n": 1, "order": "desc", "filters": []}}
 
 Q: Which cities are in the data?
 {"tool": "distinct", "args": {"column": "city", "filters": []}}
@@ -278,22 +361,31 @@ def build_tool_prompt(question, column_map, schema):
         + "\n".join(lines)
         + f"\n\nAll columns and their types:\n{schema['types']}"
         + f"\n\nValues of small text columns (for filters):\n{schema['values']}"
+        + f"\n\nRange of numeric columns (min, max):\n{schema['ranges']}"
+        + "\n\nNever use these names in calculate code: "
+        + ", ".join(sorted(FILE_CALLS | LIST_CALLS | FORBIDDEN_NAMES))
+        + "\nNever use these steps in calculate code: "
+        + ", ".join(sorted(set(FORBIDDEN_STEPS.values())))
     )
     return build_prompt(TOOL_PROMPT, user_prompt=question, context=context)
 
 
 EXPLAIN_PROMPT = """
-Write a short plain-English answer (one or two sentences) to the user's
-question, using ONLY the result below. The full result is shown to the user
-under your answer, so do NOT list every row.
+Write a short answer (one or two sentences) to the user's question, in the
+same language as the question, using ONLY the result below. The full result
+is shown to the user under your answer, so do NOT list every row.
 
 - For a single value: state it.
 - For several rows: state what stands out, the highest and the lowest, or
   the top item, not every value.
 - If filters are listed, mention them briefly.
+- When "Highest" and "Lowest" are given, use exactly those. Do not pick
+  the highest or the lowest yourself.
+- If the code is given, use it to say what the number is (for example a
+  percentage, or a correlation from -1 to 1), without new numbers.
 
 Rules:
-- Every number you write must appear in the result. You may round to two
+- Every number you write must appear in the result. Round numbers to two
   decimals. Do not calculate new numbers (no differences, percentages, or
   totals that are not shown).
 - Do not explain causes, give advice, or guess beyond the result.
@@ -301,8 +393,24 @@ Rules:
 """
 
 
-def build_explain_prompt(question, result, filters_text):
+def _number(x):
+    """Whole numbers without decimals, others with two."""
+    return f"{int(x):,}" if float(x).is_integer() else f"{x:,.2f}"
+
+
+def build_explain_prompt(question, result, filters_text, code=None):
+    if isinstance(result, (int, float)) and not isinstance(result, bool):
+        result = _number(result)
     context = f"Result:\n{result}"
     if filters_text:
         context += f"\n\nFilters applied: {filters_text}"
+    if code:
+        context += f"\n\nThe result was computed by this pandas code:\n{code}"
+
+    # the code finds the highest and lowest, so the model does not pick them itself
+    if (isinstance(result, pd.Series) and len(result) > 1 and not code
+            and pd.api.types.is_numeric_dtype(result)):
+        context += (f"\n\nHighest: {result.idxmax()} = {_number(result.max())}"
+                    f"\nLowest: {result.idxmin()} = {_number(result.min())}")
+
     return build_prompt(EXPLAIN_PROMPT, user_prompt=question, context=context)

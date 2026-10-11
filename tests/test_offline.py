@@ -1,3 +1,4 @@
+import pandas as pd
 import pytest
 from agent.analysis import use_column_names
 from agent.config import MAX_ROWS_SHOWN, SAMPLE_DATA_PATH
@@ -6,6 +7,7 @@ from agent.errors import CannotAnswer, NeedsClarification
 from agent.tool_call_checks import check_mapped_text_used, check_tool
 from agent.tools import run_tool
 from agent.utils import identifier_columns, is_date
+from agent.calculate import is_rows_of, run_calculate
 
 @pytest.fixture(scope="module")
 def df():
@@ -63,6 +65,28 @@ def test_types_are_converted(tmp_path):
     assert is_date(data["day"])
 
 
+# converting columns that are mostly numbers or dates
+
+def test_mostly_numbers_are_converted_with_a_warning(tmp_path):
+    rows = "".join(f"{i},{i}.5\n" for i in range(38)) + "38,N/A price\n39,12o\n"
+    data, error = load_csv(write_csv(tmp_path, "id,price\n" + rows))
+    assert str(data["price"].dtype) == "float64"
+    assert any("'price': 2 values are not numbers" in w for w in quality_warnings(data))
+
+
+def test_too_many_bad_numbers_stay_text(tmp_path):
+    rows = "".join(f"{i},{i}.5\n" for i in range(30)) + "".join(f"{i},n{i}\n" for i in range(30, 40))
+    data, error = load_csv(write_csv(tmp_path, "id,price\n" + rows))
+    assert not pd.api.types.is_numeric_dtype(data["price"])
+
+
+def test_mostly_dates_are_converted_with_a_warning(tmp_path):
+    rows = "".join(f"{i},2023-01-{i % 28 + 1:02d}\n" for i in range(38)) + "38,unknown\n39,2023-13-45\n"
+    data, error = load_csv(write_csv(tmp_path, "id,day\n" + rows))
+    assert is_date(data["day"])
+    assert any("'day': 2 values are not dates" in w for w in quality_warnings(data))
+
+
 # data quality
 
 def test_empty_column_gives_a_warning(tmp_path):
@@ -95,11 +119,20 @@ def test_sample_data_has_no_warnings(df):
     assert quality_warnings(df) == []
 
 
+# ID columns
+
+def test_unique_decimals_are_not_ids():
+    # in a small file every price can be different, it is still a measure, not an ID
+    data = pd.DataFrame({"region": ["Europe", "Asia", "Europe"],
+                         "price": [12.5, 8.99, 240.0]})
+    assert "price" not in identifier_columns(data)
+
+
 # tools: what is answered, asked, or refused 
 
 @pytest.mark.parametrize("tool, args, allowed", [
     ("count_rows", {"filters": []}, []),
-    ("count_rows", {"filters": [F("payment_method", "==", "UPI")]}, []),
+    ("count_rows", {"filters": [F("payment_method", "==", "UPI")]}, ["payment_method"]),
     ("aggregate", {"column": "rating", "agg": "mean"}, ["rating"]),
     ("group", {"group_by": ["customer_region"], "column": "total_revenue", "agg": "sum"},
      ["customer_region", "total_revenue"]),
@@ -108,10 +141,10 @@ def test_sample_data_has_no_warnings(df):
     ("top_n", {"group_by": ["product_category"], "column": "total_revenue", "agg": "sum", "n": 3},
      ["product_category", "total_revenue"]),
     ("distinct", {"column": "payment_method"}, ["payment_method"]),
-    ("show_rows", {"filters": [F("customer_region", "==", "Europe")]}, []),
+    ("show_rows", {"filters": [F("customer_region", "==", "Europe")]}, ["customer_region"]),
     ("show_rows", {"filters": [F("order_id", "==", 1005)]}, []),
     ("group", {"group_by": ["order_date"], "column": "order_id", "agg": "count",
-               "date_part": "weekend"}, ["order_date", "order_id"]),
+               "date_part": "day_type"}, ["order_date", "order_id"]),
 ])
 def test_valid_call_is_answered(df, ids, tool, args, allowed):
     run(tool, args, allowed, df, ids)
@@ -127,7 +160,8 @@ def test_valid_call_is_answered(df, ids, tool, args, allowed):
      ["product_category"]),
     # a value that does not exist
     ("aggregate", {"column": "rating", "agg": "mean",
-                   "filters": [F("product_category", "==", "Electronic")]}, ["rating"]),
+                   "filters": [F("product_category", "==", "Electronic")]},
+     ["rating", "product_category"]),
     # several questions at once
     ("several", {}, []),
 ])
@@ -141,20 +175,20 @@ def test_unclear_call_asks_the_user(df, ids, tool, args, allowed):
     ("aggregate", {"column": "order_id", "agg": "sum"}, ["order_id"]),        # sum of IDs
     ("aggregate", {"column": "payment_method", "agg": "mean"}, ["payment_method"]),
     ("aggregate", {"column": "total_revenue", "agg": "sum",
-                   "filters": [F("order_date", ">=", "2030-01-01")]}, ["total_revenue"]),
+                   "filters": [F("order_date", ">=", "2030-01-01")]}, ["total_revenue", "order_date"]),
     ("aggregate", {"column": "rating", "agg": "mean",
-                   "filters": [F("customer_region", ">", "Asia")]}, ["rating"]),
+                   "filters": [F("customer_region", ">", "Asia")]}, ["rating", "customer_region"]),
     ("aggregate", {"column": "rating", "agg": "mean",
-                   "filters": [F("price", ">", "400")]}, ["rating"]),
+                   "filters": [F("price", ">", "400")]}, ["rating", "price"]),
     ("aggregate", {"column": "rating", "agg": "mean",
-                   "filters": [F("order_date", ">", "last month")]}, ["rating"]),
+                   "filters": [F("order_date", ">", "last month")]}, ["rating", "order_date"]),
     ("aggregate", {"column": "total_revenue", "agg": "sum",
-                   "filters": [F("order_date", "==", 5)]}, ["total_revenue"]),
+                   "filters": [F("order_date", "==", 5)]}, ["total_revenue", "order_date"]),
     ("show_rows", {"filters": [], "sort_by": "ship_date"}, []),
     ("aggregate", {"column": "total_revenue", "agg": "sum",
-                   "filters": [F("order_date", "==", 13, "month")]}, ["total_revenue"]),
-    ("count_rows", {"filters": [F("order_date", "==", "Funday", "day_of_week")]}, []),
-    ("count_rows", {"filters": [F("customer_region", "==", 3, "month")]}, []),
+                   "filters": [F("order_date", "==", 13, "month")]}, ["total_revenue", "order_date"]),
+    ("count_rows", {"filters": [F("order_date", "==", "Funday", "day_of_week")]}, ["order_date"]),
+    ("count_rows", {"filters": [F("customer_region", "==", 3, "month")]}, ["customer_region"]),
 ])
 def test_unsupported_call_is_refused(df, ids, tool, args, allowed):
     with pytest.raises(CannotAnswer):
@@ -176,6 +210,38 @@ def test_grouping_by_id_is_refused(df, ids):
         run("group", args, ["order_id", "total_revenue"], df, ids)
 
 
+# what to measure: the user's words must say it 
+
+def test_counting_records_by_group(df, ids):
+    args = {"group_by": ["customer_region"], "column": None, "agg": "count",
+         "filters": []}
+    result = run("group", args, ["customer_region"], df, ids)
+    assert list(result) == list(df.groupby("customer_region").size())
+
+
+def test_top_group_by_records(df, ids):
+    args = {"group_by": ["customer_region"], "column": None, "agg": "count",
+            "n": 1, "order": "desc", "filters": []}
+    result = run("top_n", args, ["customer_region"], df, ids)
+    assert result.iloc[0] == df.groupby("customer_region").size().max()
+
+
+def test_counting_records_without_groups(df, ids):
+    args = {"column": None, "agg": "count",
+            "filters": [F("payment_method", "==", "UPI")]}
+    result = run("aggregate", args, ["payment_method"], df, ids)
+    assert result == (df["payment_method"] == "UPI").sum()
+
+
+
+def test_no_column_without_count_asks(df, ids):
+    # a sum or an average needs a column
+    args = {"group_by": ["customer_region"], "column": None, "agg": "sum",
+            "measure_words": "total", "filters": []}
+    with pytest.raises(NeedsClarification):
+        check_tool("group", args, ["customer_region"], df, ids, "total by region")
+
+
 # tool results match pandas 
 
 def test_top_3_matches_pandas(df, ids):
@@ -187,21 +253,21 @@ def test_top_3_matches_pandas(df, ids):
 
 def test_count_with_two_filters_matches_pandas(df, ids):
     args = {"filters": [F("customer_region", "==", "Europe"), F("payment_method", "==", "UPI")]}
-    result = run("count_rows", args, [], df, ids)
+    result = run("count_rows", args, ["customer_region", "payment_method"], df, ids)
     expected = ((df["customer_region"] == "Europe") & (df["payment_method"] == "UPI")).sum()
     assert result == expected
 
 
 def test_year_filter_matches_pandas(df, ids):
     args = {"column": "total_revenue", "agg": "sum", "filters": [F("order_date", "==", 2023, "year")]}
-    result = run("aggregate", args, ["total_revenue"], df, ids)
+    result = run("aggregate", args, ["total_revenue", "order_date"], df, ids)
     expected = df.loc[df["order_date"].dt.year == 2023, "total_revenue"].sum()
     assert round(result, 2) == round(expected, 2)
 
 
 def test_month_filter_matches_pandas(df, ids):
     args = {"column": "total_revenue", "agg": "sum", "filters": [F("order_date", "==", 3, "month")]}
-    result = run("aggregate", args, ["total_revenue"], df, ids)
+    result = run("aggregate", args, ["total_revenue", "order_date"], df, ids)
     expected = df.loc[df["order_date"].dt.month == 3, "total_revenue"].sum()
     assert round(result, 2) == round(expected, 2)
 
@@ -249,3 +315,44 @@ def test_counted_id_is_not_a_dropped_word(df):
     column_map = {"orders": {"column": "order_id"}, "region": {"column": "customer_region"}}
     args = {"filters": [F("customer_region", "==", "Europe")]}
     check_mapped_text_used("count_rows", args, column_map, df)
+
+
+def test_no_column_and_no_agg_asks(df, ids):
+    # "Which region is the best?": nothing says what to measure
+    args = {"group_by": ["customer_region"], "column": None, "agg": None, "filters": []}
+    with pytest.raises(NeedsClarification):
+        check_tool("group", args, ["customer_region"], df, ids)
+
+
+
+def test_grouping_by_many_numbers_is_refused(df, ids):
+    # a numeric column with many values is not a set of groups
+    args = {"group_by": ["price"], "column": "rating", "agg": "mean"}
+    with pytest.raises(CannotAnswer, match="'price'"):
+        run("group", args, ["price", "rating"], df, ids)
+
+
+
+def test_calculate_refuses_rows_of_the_data(df):
+    with pytest.raises(CannotAnswer, match="rows of the data"):
+        run_calculate("result = df.head(10)", df, list(df.columns))
+
+
+def test_calculate_allows_a_summary(df):
+    result = run_calculate("result = df.groupby('customer_region')['rating'].mean()",
+                           df, ["customer_region", "rating"])
+    assert len(result) == df["customer_region"].nunique()
+
+
+def test_calculate_refuses_one_group_per_row(df):
+    with pytest.raises(CannotAnswer, match="one group per row"):
+        run_calculate("result = df.groupby('order_id')['rating'].mean()",
+                      df, ["order_id", "rating"])
+
+
+def test_filter_on_unmentioned_column_is_refused(df, ids):
+    # "how many returns?": no column holds returns, the model filtered on
+    # another column the question never mentioned
+    args = {"filters": [F("payment_method", "==", "UPI")]}
+    with pytest.raises(CannotAnswer, match="did not mention"):
+        check_tool("count_rows", args, [], df, ids)

@@ -9,6 +9,8 @@ MIN_FILE_ROWS = 30                 # smaller files are rejected
 MAX_SUMMARY_ROWS = 50              # max groups or values shown in the chat, a longer grouping is offered as a download
 MAX_ROWS_SHOWN = 20                # show_rows never returns more than this
 MAX_AGENT_STEPS = 10               # safety limit on the loop
+MIN_SHARE_TO_CONVERT = 0.95         # a column must convert this share of values to be converted
+MAX_NUMERIC_GROUPS = 10     # a numeric column with more different values than this is not grouped by
 
 WARN_EMPTY_COLUMN_SHARE = 0.2      # a column this empty gets a warning
 WARN_DUPLICATE_ROWS_SHARE = 0.05   # this share of repeated rows gets a warning
@@ -18,4 +20,5 @@ REJECT_DUPLICATE_ROWS_SHARE = 0.5  # a file this repeated is rejected
 
 MAX_DOWNLOAD_SHARE = 0.5           # a download (matching rows or groups) must be smaller than this share of the file
 
-PRINT_MODEL_REPLIES = False        # True prints the model's raw replies to the terminal
+
+PRINT_MODEL_REPLIES = True        # True prints the model's raw replies to the terminal

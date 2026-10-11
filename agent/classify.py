@@ -42,6 +42,7 @@ def validate_parts(question, parts):
         if not isinstance(p.get("reason"), str):
             p["reason"] = "no reason given"
 
+
     return True, None
 
 
@@ -96,19 +97,13 @@ def _derive_state(state, question, parts):
     if not allowed_texts:
         state["rejection_reason"] = "; ".join(p["reason"] for p in parts)
 
-    # many allowed parts 
-    elif len(allowed_texts) > 1:
-        listed = "; ".join(allowed_texts)
-        raise NeedsClarification(f"Your request has {len(allowed_texts)} questions: "
-                                 f"{listed}. Please ask them one at a time.")
-
-    # one allowed part next to refused ones
-    elif state["denied_parts"]:
-        state["question_to_run"] = allowed_texts[0]
-
-    # nothing refused
-    else:
+    # nothing refused: the whole question goes on, the next steps decide how to answer it
+    elif not state["denied_parts"]:
         state["question_to_run"] = question
+
+    # some parts refused: only the allowed parts go on
+    else:
+        state["question_to_run"] = " ".join(allowed_texts)
 
 
 def classify_request(question, state):
@@ -121,4 +116,5 @@ def classify_request(question, state):
 
     _apply_out_of_scope_phrases(parts)
     _derive_state(state, question, parts)
-    return state
+
+    return state  

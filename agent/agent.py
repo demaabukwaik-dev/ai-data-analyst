@@ -8,10 +8,10 @@ from agent.state import new_state
 from agent.tools import filters_as_text
 from agent.config import MAX_AGENT_STEPS, MAX_SUMMARY_ROWS
 
-def explain_result(question, result, filters_text=""):
+def explain_result(question, result, filters_text , code=None):
     """A sentence in plain English, or None if the call fails."""
 
-    messages = build_explain_prompt(question, result, filters_text)
+    messages = build_explain_prompt(question, result, filters_text, code)
     try:
         sentence = ask_llm(messages, max_new_tokens=120)
     except Exception:
@@ -28,17 +28,21 @@ def write_answer(state, question):
     state["filters_text"] = filters_as_text(call["args"].get("filters") or [])
 
     if call["tool"] == "show_rows":
-        state["answer_text"] = (f"Showing {len(result):,} of "
-                                f"{result.attrs['total_matching']:,} matching rows.")
+        total = result.attrs["total_matching"]
+        if call["args"].get("more_than_shown") and total > len(result):
+            state["answer_text"] = f"Showing {len(result):,} of {total:,} matching rows."
+        else:
+            state["answer_text"] = f"Showing {len(result):,} rows."
 
-    elif call["tool"] == "group" and len(result) > MAX_SUMMARY_ROWS:
+    elif call["tool"] in ["group", "calculate"] and hasattr(result, "__len__") and len(result) > MAX_SUMMARY_ROWS:
         state["answer_text"] = (f"This grouping gives {len(result):,} groups, too many to "
                                 f"show here (limit {MAX_SUMMARY_ROWS}). You can download "
                                 "them all below, or ask for a higher-level grouping or the "
                                 "top groups.")
 
     else:
-        state["answer_text"] = explain_result(question, result, state["filters_text"])
+        state["answer_text"] = explain_result(question, result, state["filters_text"],
+                                          state.get("generated_code"))
 
 
 def next_action(state):

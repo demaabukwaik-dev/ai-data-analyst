@@ -10,7 +10,7 @@ DATE_PARTS = {
     "month":       lambda s: s.dt.month,
     "week":        lambda s: s.dt.isocalendar().week,
     "day_of_week": lambda s: s.dt.day_name(),
-    "weekend":     lambda s: s.dt.dayofweek.ge(5).map({True: "Weekend", False: "Weekday"}),
+    "day_type":     lambda s: s.dt.dayofweek.ge(5).map({True: "Weekend", False: "Weekday"}),
 }
 
 OPERATORS = {
@@ -80,13 +80,16 @@ def group_keys(data, args):
     return keys
 
 
-
-
 def _grouped_values(data, args):
+    """The measure computed for each group, named after what was computed."""
+
     grouped = data.groupby(group_keys(data, args))
+
+    if args.get("column") is None:
+        return grouped.size().rename("number of records")
+
     result = grouped[args["column"]].agg(args["agg"])
     return result.rename(f"{args['agg']} of {args['column']}")
-
 
 # one function per tool
 
@@ -95,6 +98,9 @@ def run_count_rows(data, args):
 
 
 def run_aggregate(data, args):
+    if args.get("column") is None:
+        return len(data)
+
     return data[args["column"]].agg(args["agg"])
 
 
@@ -145,7 +151,11 @@ def run_tool(name, args, df):
                            f"({filters_as_text(args['filters'])}).")
 
     if name == "aggregate":
-        return run_aggregate(data, args)
+        result = run_aggregate(data, args)
+        if pd.isna(result):
+            raise CannotAnswer(f"'{args['column']}' is empty in all the matching rows.")
+        return result
+    
     
     if name == "group":
         result = run_group(data, args)
@@ -166,3 +176,5 @@ def run_tool(name, args, df):
     
     if name == "show_rows":
         return run_show_rows(data, args)
+
+    

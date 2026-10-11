@@ -2,7 +2,7 @@ import csv
 import pandas as pd
 from pandas.tseries.api import guess_datetime_format
 from agent.config import (REJECT_DUPLICATE_ROWS_SHARE, REJECT_EMPTY_CELLS_SHARE, MIN_FILE_ROWS,
-                          WARN_DUPLICATE_ROWS_SHARE, WARN_EMPTY_COLUMN_SHARE)
+                          WARN_DUPLICATE_ROWS_SHARE, WARN_EMPTY_COLUMN_SHARE , MIN_SHARE_TO_CONVERT)
 from agent.utils import is_text
 import os , tempfile
 
@@ -10,40 +10,68 @@ NA_MARKERS = {"", "nan", "na", "n/a", "null", "none", "-", "--", "?"}
 NUM_RE = r"[+-]?[$€£₪]?\d{1,3}(,\d{3})+(\.\d+)?%?|[+-]?[$€£₪]?\d+(\.\d+)?%?"
 
 
+def _as_numbers(raw):
+    """The column as numbers. Values that are not numbers become empty.
+    None when it looks like a code column ("00123")."""
+    looks_numeric = raw.str.fullmatch(NUM_RE, na=False)
+    if raw[looks_numeric].str.match(r"0\d").any():
+        return None
+    cleaned = raw.str.replace(r"[,$€£₪%]", "", regex=True)
+    return pd.to_numeric(cleaned.where(looks_numeric), errors="coerce")
+
+
+def _as_dates(raw):
+    """The column as dates, in one format guessed from the first value
+    that has digits. Values that are not dates become empty."""
+    with_digits = raw.dropna()
+    with_digits = with_digits[with_digits.str.contains(r"\d")]
+    if with_digits.empty:
+        return None
+    fmt = guess_datetime_format(with_digits.iloc[0])
+    if not fmt:
+        return None
+    return pd.to_datetime(raw, format=fmt, errors="coerce")
+
+
 def normalise_types(df):
-    """Turn text columns into numbers or dates when EVERY non empty value
-    converts, otherwise leave the column as text. Returns what changed."""
+    """Turn text columns into numbers or dates when most values convert.
+    How many values did not convert is kept in df.attrs["not_converted"]."""
 
     changed = {}
+    not_converted = {}
 
     for c in df.columns:
         if not is_text(df[c]):
             continue
 
         raw = df[c].astype(str).str.strip()
-        missing = raw.str.lower().isin(NA_MARKERS)
-        vals = raw[~missing]
-        if vals.empty:
+        raw = raw.where(~raw.str.lower().isin(NA_MARKERS))    # missing markers become empty
+        filled = raw.notna().sum()
+        if filled == 0:
             continue
 
-        # numbers: "1,234", "$12.50", "15%".
-        # Codes like "00123" stay text, or their leading zeros would be lost.
+        for kind, word, convert in [("numeric", "numbers", _as_numbers),
+                                    ("datetime", "dates", _as_dates)]:
+            converted = convert(raw)
+            if converted is None:
+                continue
 
-        if vals.str.fullmatch(NUM_RE).all() and not vals.str.match(r"0\d").any():
-            cleaned = raw.str.replace(r"[,$€£₪%]", "", regex=True).where(~missing)
-            df[c] = pd.to_numeric(cleaned)
-            changed[c] = "numeric"
-            continue
+            bad_count = int(filled - converted.notna().sum())
+            if bad_count / filled > 1 - MIN_SHARE_TO_CONVERT:
+                continue
 
-        # dates: one format for the whole column, guessed from the first
-        # value must contain digits so "January" or "Monday" stay text
-        if vals.str.contains(r"\d").all():
-            fmt = guess_datetime_format(vals.iloc[0])
-            if fmt:
-                parsed = pd.to_datetime(raw.where(~missing), format=fmt, errors="coerce")
-                if parsed[~missing].notna().all():
-                    df[c] = parsed
-                    changed[c] = "datetime"
+            df[c] = converted
+            changed[c] = kind
+            if bad_count > 0:
+                not_converted[c] = {"kind": word, "count": bad_count}
+            break
+
+        else:
+            # the column stays text: markers like "--" or "?" become empty,
+            # so they are not counted as a real value
+            df[c] = raw
+
+    df.attrs["not_converted"] = not_converted
     return changed
 
 
@@ -130,5 +158,9 @@ def quality_warnings(df):
     duplicate = df.duplicated().mean()
     if duplicate > WARN_DUPLICATE_ROWS_SHARE:
         warnings.append(f"{duplicate:.0%} of the rows are exact duplicates.")
+
+    for column, info in df.attrs.get("not_converted", {}).items():
+      warnings.append(f"'{column}': {info['count']} values are not {info['kind']} "
+                      "and are left out of calculations.")
 
     return warnings

@@ -241,13 +241,19 @@ def show_result(state, number, ids, df):
     result = state["result"]
 
     if not isinstance(result, (pd.DataFrame, pd.Series)):
-        st.metric(value_label(state["tool_call"]["args"])
-                  if state["tool_call"]["tool"] == "aggregate" else "Rows", format_value(result))
+        tool = state["tool_call"]["tool"]
+        if tool == "aggregate":
+            label = value_label(state["tool_call"]["args"])
+        elif tool == "calculate":
+            label = "Result"
+        else:
+            label = "Rows"
+        st.metric(label, format_value(result))
         return
 
     table = as_table(state)
 
-    if state["tool_call"]["tool"] == "group" and len(table) > MAX_SUMMARY_ROWS:
+    if state["tool_call"]["tool"] in ["group", "calculate"] and len(table) > MAX_SUMMARY_ROWS:
         download(f"Download all {len(table):,} groups", table, f"answer_{number + 1}.csv", number)
         return
 
@@ -258,7 +264,9 @@ def show_result(state, number, ids, df):
         st.plotly_chart(fig, key=f"chart_{number}")
 
     if state["tool_call"]["tool"] == "show_rows":
-        offer_matching_rows(state, df, number)
+        args = state["tool_call"]["args"]
+        if args.get("more_than_shown") and result.attrs["total_matching"] > len(result):
+            offer_matching_rows(state, df, number)
     else:
         download("Download as CSV", table, f"answer_{number + 1}.csv", number)
 
@@ -273,6 +281,12 @@ def show_answer(entry, number, ids, df):
 
         if state["filters_text"]:
             st.caption(f"Filters used: {state['filters_text']}")
+
+        if state.get("generated_code"):
+            st.caption("No approved tool fits this question, so it was computed "
+                       "with code written by the model and checked before it ran.")
+            with st.expander("Code"):
+                st.code(state["generated_code"], language="python")
 
         show_result(state, number, ids, df)
 

@@ -1,8 +1,12 @@
 import pandas as pd
-from agent.config import MAX_SUMMARY_ROWS, MAX_ROWS_SHOWN
+from agent.config import MAX_NUMERIC_GROUPS, MAX_SUMMARY_ROWS, MAX_ROWS_SHOWN
 from agent.errors import BROKEN_REPLY, ONE_AT_A_TIME_REPLY, CannotAnswer, NeedsClarification
 from agent.tools import DATE_PARTS, OPERATORS
 from agent.utils import identifier_columns, is_date, is_number, is_text
+
+NOT_SUPPORTED = ("This question cannot be answered from this data, or it asks for "
+                 "different kinds of answers at once (for example a summary and "
+                 "rows). Please ask one thing at a time, using the columns in the file.")
 
 ALLOWED_AGGS = ["sum", "mean", "median", "min", "max", "count", "nunique"]
 
@@ -33,12 +37,28 @@ def measure_question(df, group_by):
     )
 
 
+
+
+
 # checks: one per part of a tool call 
 
-def check_measure(args, allowed, df, ids):
+def check_measure(args, allowed, df, ids, question=""):
     column = args.get("column")
     agg = args.get("agg")
     group_by = args.get("group_by") or []
+
+
+    # no column: only counting records is possible
+    if column is None:
+        if agg == "count":
+            return
+        raise NeedsClarification(measure_question(df, group_by))
+
+    # no column: only counting records is possible
+    if column is None:
+        if agg == "count":
+            return
+        raise NeedsClarification(measure_question(df, group_by))
 
     if column not in allowed or column in group_by:
         raise NeedsClarification(measure_question(df, group_by))
@@ -78,6 +98,10 @@ def check_group_by(args, allowed, df):
     for column in group_by:
         if column not in allowed:
             raise NeedsClarification("Could not tell what to group by. Please name the column.")
+
+        if is_number(df[column]) and df[column].nunique() > MAX_NUMERIC_GROUPS:
+            raise CannotAnswer(f"'{column}' has {df[column].nunique()} different values, too many to group by. "
+    f"Please ask about a range of it instead.")
 
     if part is None:
         return
@@ -129,6 +153,8 @@ def check_show_rows(args, df):
 
     if limit is None:
         args["limit"] = MAX_ROWS_SHOWN
+        args["more_than_shown"] = True        # no number given: the user asked for all the rows
+
 
     elif isinstance(limit, bool) or not isinstance(limit, int) or limit < 1:
         raise CannotAnswer("The number of rows must be a whole number above 0.")
@@ -150,10 +176,10 @@ def _check_text_filter(values, op, series, column):
 
     for value in values:
         if str(value) not in existing:
-            raise NeedsClarification(
-                f"'{value}' was not found in '{column}'. "
-                "Please check the spelling."
-            )
+            message = f"'{value}' was not found in '{column}'."
+            if len(existing) <= 20:
+                message += f" Available values: {', '.join(existing)}."
+            raise NeedsClarification(message)
 
 def _check_numbers(values, column):
     for v in values:
@@ -170,7 +196,6 @@ def _check_dates(values, column):
             pd.to_datetime(v)
         except Exception:
             raise CannotAnswer(f"Could not read the date {v!r} in the filter on '{column}'.")
-
 
 
 def _valid_part_value(part, value):
@@ -200,11 +225,11 @@ def _check_part(part, values, op, column):
         if not _valid_part_value(part, value):
             raise CannotAnswer(f"{value!r} is not a valid {part} for the filter on '{column}'.")
 
-    if part in ["day_of_week", "weekend"] and op not in ["==", "!=", "in"]:
+    if part in ["day_of_week", "day_type"] and op not in ["==", "!=", "in"]:
         raise CannotAnswer(f"A {part} can only be matched with ==, != or in.")
     
 
-def _check_one_filter(f, df):
+def _check_one_filter(f, df, allowed):
     if not isinstance(f, dict):
         raise CannotAnswer(BROKEN_REPLY)
 
@@ -216,6 +241,12 @@ def _check_one_filter(f, df):
     if column not in df.columns:
         raise CannotAnswer(f"A filter names a column that does not exist: {column}. "
                            f"Available columns: {', '.join(df.columns)}.")
+
+    if column not in allowed:
+        raise CannotAnswer(
+            f"A filter used '{column}', which the question did not mention. "
+            "If you asked two questions, please ask them one at a time.")
+
     if op not in OPERATORS:
         raise CannotAnswer(f"Unsupported filter operator: {op}.")
 
@@ -239,7 +270,7 @@ def _check_one_filter(f, df):
         _check_text_filter(values, op, df[column], column)
 
 
-def check_filters(args, df):
+def check_filters(args, df , allowed):
     """Every filter must name a real column, use a known operator, and hold
     values that suit the column."""
     filters = args.get("filters")
@@ -252,7 +283,7 @@ def check_filters(args, df):
         raise CannotAnswer(BROKEN_REPLY)
 
     for f in filters:
-        _check_one_filter(f, df)
+        _check_one_filter(f, df, allowed)
 
 
 
@@ -295,7 +326,7 @@ def check_mapped_text_used(name, args, column_map, df):
 
 # check the chosen tool 
 
-def check_tool(name, args, allowed, df, ids):
+def check_tool(name, args, allowed, df, ids, question=""):
     """Check the arguments of the chosen tool. Raises if anything is not
     allowed; returns nothing when the call is safe to run."""
     
@@ -306,15 +337,15 @@ def check_tool(name, args, allowed, df, ids):
         pass       
     
     elif name == "aggregate":
-        check_measure(args, allowed, df, ids)
+        check_measure(args, allowed, df, ids, question)
 
     elif name == "group":
         check_group_by(args, allowed, df)
-        check_measure(args, allowed, df, ids)
+        check_measure(args, allowed, df, ids, question)
 
     elif name == "top_n":
         check_group_by(args, allowed, df)
-        check_measure(args, allowed, df, ids)
+        check_measure(args, allowed, df, ids, question)
         check_top(args)
 
     elif name == "distinct":
@@ -324,8 +355,6 @@ def check_tool(name, args, allowed, df, ids):
         check_show_rows(args, df)
 
     else:
-        raise CannotAnswer("This type of analysis is not supported. Supported: "
-                           "counts, totals, averages, min/max, grouping, "
-                           "filtering, top N, distinct values, and showing matching rows.")
+        raise CannotAnswer(NOT_SUPPORTED)
 
-    check_filters(args, df)
+    check_filters(args, df, list(allowed) + list(ids))

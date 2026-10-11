@@ -1,12 +1,12 @@
-# PROJECT PALN - AI DATA ANALYST SYSTEM
+# PROJECT PLAN - AI DATA ANALYST SYSTEM
 
 ## 1. project name and problem
 
 **AI Data Analyst**: A web app that answers questions in plain english about a CSV file.
 
-**Problem**: A business user has a CSV file but cannot write Pandas queries, so it takes him a long time to make analysis expecially for repetitive requests.
+**Problem**: A business user has a CSV file but cannot write Pandas queries, so it takes him a long time to make analysis especially for repetitive requests.
 
-**Realistic example**: A sales maneger has a daily stand-up meeting and needs to check the previous day's sales before the meeting, she would need to send the requests along with the file to the data analyst and waiting for a reply, or she will write the pandas query herself with her narrow programming background. Using this system she will be able to only upload the file and get the analysis of her request during a short time. 
+**Realistic example**: A sales manager has a daily stand-up meeting and needs to check the previous day's sales before the meeting, she would need to send the requests along with the file to the data analyst and waiting for a reply, or she will write the pandas query herself with her narrow programming background. Using this system she will be able to only upload the file and get the analysis of her request during a short time. 
 
 ---
 
@@ -24,21 +24,22 @@
 1. Load a CSV file, check it is valid, and show its columns, types and display the first rows.
 2. Answer counts, totals, averages, medians, means, max and min values.
 3. Grouped comparisons (a total or average for each group) and rankings of groups (top or bottom N).
-4. Group or filter by parts of a date (year, quartar, month, weekday, weekend).
+4. Group or filter by parts of a date (year, quarter, month, weekday, weekend or weekday).
 5. Show a few rows that match a condition.
 6. List the different values in a column (which payment methods appear in the file).
-7. Ask the user to clarify when a question is ambiguous or names a column that does not exixt.  
+7. Ask the user to clarify when a question is ambiguous or names a column that does not exist.
+8. Answer questions that none of the tools answers, with short pandas code written by the model and checked before it runs: shares and percentages, correlation, a value the user describes from columns (quantity times price), a calculation on the result of another one (the average of daily totals), and several values together.
 
 
 **The system WILL NOT**
 1. Change, delete, or add data.
 2. Export or download the whole file.
-3. Run complex statistics beyond simple summaries (correlation, growth rates, forecasting).
-4. Compute new values form existing columns(revenue - cost).
-5. Answer several quesions in one request.
+3. Forecast, or explain why something happens.
+4. Compute a value the user did not describe.
+5. Answer different kinds of answers in one request (for example a count and some rows).
 
 
-**Example request outside scope:** "What is the correlation between price and rating?" The system replies that this type of analysis is not supported and lists what it can do.
+**Example request outside scope:** "What will sales be next year?" The system refuses it, because the data cannot answer it.
 
 ---
 
@@ -59,6 +60,7 @@
 | Question | Yes | Free text| `Total revenue by region` | missing: the question box does not send |
 | | | | | Ambiguous: the user is asked to choose (see section 7) |
 | | | | | Names a column that does not exist: "'city' has no usable column. Available columns: ..." |
+| | | | | Names a value that does not exist: "'Toys' was not found in 'product_category'. Available values: ..." |
 | | | | | Out of scope: "Not allowed: ..." with the reason |
 
 
@@ -71,8 +73,8 @@
 | product_category | Yes | Text | Electronics | Empty: the row is left out of the category groups |
 | customer_region | Yes | Text | Europe | Same as product_category |
 | payment_method | Yes | Text | UPI | Same as product_category |
-| order_date | Yes | Date | 2023-04-05 | Empty: the row is left out of date questions. Unreadable dates: the column is treated as text, and date questions are refused |
-| price | Yes | Number | 380.62 | Empty: skipped in sums and averages. Text instead of a number: the column is treated as text, and sums and averages are refused |
+| order_date | Yes | Date | 2023-04-05 | Empty: the row is left out of date questions. Unreadable dates: if almost all dates are readable, the few others are left empty with a warning; otherwise the column is treated as text, and date questions are refused |
+| price | Yes | Number | 380.62 | Empty: skipped in sums and averages. Text instead of a number: if almost all values are numbers, the few others are left empty with a warning; otherwise the column is treated as text, and sums and averages are refused |
 | discount_percent | Yes | Number | 10 | Same as price |
 | quantity_sold | Yes | Number | 3 | Same as price |
 | rating | Yes | Number | 3.9 | Same as price |
@@ -85,9 +87,10 @@
 | Situation | What happens |
 |---|---|
 | Text that holds numbers ("1,234", "$12.50", "15%") | Converted to numbers |
-| Text that hlods dates in one format | Converted to dates |
+| Text that holds dates in one format | Converted to dates |
+| A column where at least 95% of the values are numbers or dates | Converted, the other values are left empty, with a warning that says how many |
 | Codes with leading zeros ("00123") | Kept as text |
-| "N/A", "null", "-" and similar | Treated as missing |
+| "N/A", "null", "-", "--", "?" and similar | Treated as missing, in number, date and text columns |
 | A missing value in a row | The row is kept, sums and averages ignore the missing value |
 | A column more than 20% empty | File accepted, with a warning that names the column |
 | More than 5% of the rows are exact duplicates | File accepted, with a warning |
@@ -98,14 +101,14 @@
 
 ## 5. Output contract
 
-For every question, the user exactly sees on of these:
+For every question, the user exactly sees one of these:
 
 | Outcome | What is shown |
 |---|---|
-| **Answer** | A sentence in plain language, the filters used, the result (one number or a small table), a chart for grouped or ranked results, and a "Download as CSV" button for tables |
+| **Answer** | A sentence in plain language, the filters used, the result (one number or a small table), a chart for grouped or ranked results, a "Download as CSV" button for tables, and the code used when the answer comes from `calculate` |
 | **Clarification** | A yellow message that says what is unclear and lists the choices |
 | **Refusal** | A red message: "Not allowed: ..." with the reason |
-| **Cannot answer** | A red message that says why (not supported, no matching rows, too many groups) |
+| **Cannot answer** | A red message that says why (not supported, no matching rows, too many groups, code refused) |
 
 **Example output**: Total revenue by region in 2023
 
@@ -139,21 +142,20 @@ flowchart TD
     D --> E[Model classifies the request]
     E --> E2{Code checks the reply}
     E2 -- not allowed --> E3[Not allowed: reason]
-    E2 -- several questions --> E4[Ask to send one at a time]
-    E2 -- allowed --> F[Model maps words to columns]
+    E2 -- allowed, maybe without refused parts --> F[Model maps words to columns]
 
     F --> F2{Code checks the map}
     F2 -- ambiguous / missing column --> Q[Ask the user to clarify]
-    F2 -- clear --> G[Model chooses one approved tool and its arguments]
+    F2 -- clear --> G[Model chooses one approved tool, or writes calculate code]
 
-    G --> H{Code checks every argument}
+    G --> H{Code checks every argument, or every line of the code}
     H -- unclear --> Q
-    H -- not supported --> X[Cannot answer: reason]
-    H -- valid --> I[Run the fixed pandas operation]
+    H -- not supported / code refused --> X[Cannot answer: reason]
+    H -- valid --> I[Run the fixed pandas operation, or the code on a copy of the data]
 
     I -- no matching rows --> X
     I -- too many groups to show --> I2[Offer all groups as a download]
-    I -- result --> J[Sentence + filters + table + chart]
+    I -- result --> J[Sentence + filters + table + chart + code]
     J --> K[Save to the conversation history]
     I2 --> K
 
@@ -165,10 +167,9 @@ flowchart TD
 ## 7. Agent specification 
 
 
-**Goal**: Answer a user's plain question into one approved analysis on the file uploaded, or ask the user when the quedtion is not clear enough.
+**Goal**: Turn a user's plain question into one approved analysis on the file uploaded, or ask the user when the question is not clear enough.
 
-**Design**: The model does Not write python code itself, instead it chooses one tool from a predefined list and fills the arguments. The code checks every argument rhen runs the pandas code written.
-(nothing the model writes is executed).
+**Design**: The model first tries to choose one tool from a predefined list and fill its arguments. The code checks every argument, then runs the pandas code written in advance. When none of the tools gives exactly the answer, the model writes a few lines of pandas code (`calculate`). Python reads that code before it runs, refuses anything outside reading the data, and runs it on a copy of the data. The model proposes, Python decides what runs.
 
 
 ### 7.1 Available actions 
@@ -189,15 +190,25 @@ The model may choose only one of these tools:
 |---|---|---|
 | `count_rows` | filters | How many orders were paid with UPI? |
 | `aggregate` | column, agg, filters | Average rating for Electronics |
-| `group` | group_by, column, agg, date_part, filters | Total revenue by region |
+| `group` | group_by, column, agg, filters | Total revenue by region |
 | `top_n` | group_by, column, agg, n, order, filters | Top 3 categories by revenue |
 | `distinct` | column, filters | Which payment methods are there? |
 | `show_rows` | filters, sort_by, order, limit | Show the 5 most recent orders from Europe |
+| `calculate` | code | What share of orders were paid with UPI? |
+
+Each of the first six tools does one calculation. A question that applies a calculation to the result of another one goes to `calculate`.
 
 Every argument is checked in code before the tool runs:
 
 - No tool can change, delete, or export data.
-- The model cannot use a column the user did not mention.
+- The model cannot use a column the user did not mention, in the measure, the groups, the filters, or the code.
+- The part of a date (month, quarter...) is set by the code from the words of the question, not by the model.
+
+The `calculate` code is also checked before it runs:
+
+- No imports, files, loops, functions, hidden attributes, or names such as `exec`, `eval`, `open` or `os`.
+- It runs once, on a copy of the data, with a short list of builtins.
+- Its result must be a number or a short summary table, never the rows of the file.
 
 
 ### 7.3 State variables
@@ -205,11 +216,12 @@ Every argument is checked in code before the tool runs:
 | Variable | Meaning |
 |---|---|
 | `request_classified`| Has the request been judged|
-| `authorized`| Is the reuqest allowed |
+| `authorized`| Is the request allowed |
 | `question_to_run` | The only text that reaches the analysis |
 | `denied_parts` | Parts that were refused|
 | `column_map` | Which column each word of the question refers to |
 | `tool_call` | The tool and arguments chosen |
+| `generated_code` | The code written by the model, for `calculate` |
 | `analysis_done`, `result` | Whether the tool ran, and its result |
 | `answered`, `answer_text`, `filters_text` | The final answer shown to the user |
 | `stop_type`, `rejection_reason` | Why the run stopped if it did |
@@ -231,32 +243,36 @@ The next action is decided by code from the state, never by the model:
 
 | Situation | Example | What is asked |
 |---|---|---|
-| A word could mean several columns | A word that fits more than one column equally well | Which column is meant, listing the columns || No measure is named | "Which category is the best?" | What to measure: revenue, rating, quantity, or number of records |
+| A word could mean several columns | A word that fits more than one column equally well | Which column is meant, listing the columns |
+| No measure is named | "Which category is the best?" | What to measure: revenue, rating, quantity, or number of records |
 | A column does not exist | "Total revenue by city" | Shows the available columns |
-| A value does not exist | "What is the average rating for Toys?" | Asks the user to clarify instead of giving a number |
-| Several questions at once | "Total revenue and number of orders" | Ask them one at a time |
+| A value does not exist | "What is the average rating for Toys?" | Shows the available values of that column |
+| A word of the question was not used | "Average rating for gadgets", and the filter was left out | Asks how to use it, with the available values |
 
 ### 7.6 When the agent stops
 
-- The request is out of scope (export, change the data, run commands) → refused.
+- The request is out of scope (export, change the data, run commands, forecasting, asking why) → refused.
 - The analysis is not supported, no rows match, or there are too many groups → "Cannot answer" with the reason.
+- A numeric column with many values is used to group → "Cannot answer", asking for a range instead.
+- The request asks for different kinds of answers at once → "Cannot answer", asking for one thing at a time.
+- The `calculate` code is refused or fails → "Cannot answer", asking to rephrase. It is not retried.
 - The model service fails → error with "Try again".
 - Safety limit: the run stops after 10 steps.
 
 ---
 
-## 8. Data preperation 
+## 8. Data preparation 
 
-**Data used**: A public Amazon sales dataset, A sample of the first **2000 rows** is kept in the project (`data/amazon_sales_sample.csv`)Instructions for downloading the full file are in the README.
+**Data used**: A public Amazon sales dataset, A sample of the first **2000 rows** is kept in the project (`data/amazon_sales_sample.csv`). Instructions for downloading the full file are in the README.
 
 **Columns and types:** see section 4.2
 
-**Possible missing values:** empty cells, "N/A" or "null" or similar, dates in an unexpected format.
+**Possible missing values:** empty cells, "N/A", "null", "--", "?" or similar, dates in an unexpected format.
 
 **How the data will be checked when loaded:**
 1. File type, empty file, header only file, fewer than 30 rows.
 2. Repeated column names, and a single column.
-3. Types: numbers and dates stored as text are converted when every value converts.
+3. Types: numbers and dates stored as text are converted when at least 95% of the values convert. The other values are left empty, with a warning.
 4. Share of empty cells and duplicate rows: warning above 20% / 5%, rejection above 50%.
 
 
@@ -282,8 +298,9 @@ The next action is decided by code from the state, never by the model:
 │ │ order_id │ ID    │     │ │    [ result table ]                          │ │
 │ │ ...      │ ...   │     │ │    [ bar / line chart, labelled axes ] (7)   │ │
 │ └──────────┴───────┘     │ │    [ Download as CSV ]                       │ │
-│                          │ │    ▸ How the agent decided                   │ │
-│ [ Clear answers ]        │ │                                              │ │
+│                          │ │    ▸ Code (calculate only)                   │ │
+│ [ Clear answers ]        │ │    ▸ How the agent decided                   │ │
+│                          │ │                                              │ │
 │                          │ │ 👤 Which category is the best?               │ │
 │                          │ │ 🤖 ⚠ What do you want to measure? ...  (8)  │ │
 │                          │ └──────────────────────────────────────────────┘ │
@@ -314,7 +331,7 @@ The next action is decided by code from the state, never by the model:
 | T1 | Normal valid input | "Total revenue by region" | Table and bar chart, values equal a pandas groupby().sum() |
 | T2 | Required field missing | No file uploaded, or an empty question | "Upload a CSV file in the sidebar to start.", an empty question is not sent |
 | T3 | Ambiguous / incomplete request | "Which category is the best?" | Asks what to measure and lists the choices, no number is shown |
-| T4 | Boundary or unsupported request | "Revenue by week of year" (52 weeks) | Too many groups to show (limit 50): the grouping is offered as a download | "This grouping gives 52 groups, too many to show here (limit 50). You can download them all below, or ask for a higher-level grouping or the top groups." and a "Download all 52 groups" button | Pass |
+| T4 | Boundary or unsupported request | "Revenue by week of year" (52 weeks) | "This grouping gives 52 groups, too many to show here (limit 50). You can download them all below, or ask for a higher-level grouping or the top groups." and a "Download all 52 groups" button |
 | T5 | Invalid file / tool error | Upload an empty CSV | "The file is empty.", nothing else runs |
 | T6 | Out of scope | "Export the full table to CSV" | "Not allowed" with the reason |
 | T7 | Missing column | "Total revenue by city" | "'city' has no usable column", with the available columns |
@@ -347,15 +364,16 @@ The next action is decided by code from the state, never by the model:
 
 | Part | Known from Session 16 | To learn for this project | Documentation |
 |---|---|---|---|
-| Agent | State, choosing the next action from a fixed set (load, process, summarise, finish), turning a question into a pandas operation, handling ambiguity | Asking the model for a JSON tool call from a closed list, and checking every argument in code instead of running model-written code | https://github.com/openai/openai-python |
+| Agent | State, choosing the next action from a fixed set (load, process, summarise, finish), turning a question into a pandas operation, handling ambiguity | Asking the model for a JSON tool call from a closed list, and checking every argument in code | https://github.com/openai/openai-python |
+| Code checks | — | Python `ast`: reading model-written code as a tree before it runs, and `exec` with a short list of allowed builtins | https://docs.python.org/3/library/ast.html |
 | Interface | — | Streamlit: `file_uploader`, `chat_input`, `chat_message`, `session_state`, `secrets` | https://docs.streamlit.io/get-started · https://docs.streamlit.io/develop/api-reference |
 | Charts | — | Plotly Express bar and line charts with labelled axes | https://plotly.com/python/ |
 | Testing | — | pytest: test functions with `assert`, `parametrize` for many cases, `fixture` to load the data once, `pytest.raises` for expected errors | https://docs.pytest.org/ |
 
 **Where each part fits:**
-- **Streamlit (`app.py`)** only displays: upload, preview, question box, answers, charts, and history. It holds no decision logic.
-- **The agent (`agent/`)** decides: it classifies the request, maps words to columns, has the model choose a tool, checks it, and runs it.
-- **The tests (`tests/`)** check the data layer and the tools on their own with pytest, before they are connected to the model or the interface.
+- **Streamlit (`app.py`)** only displays: upload, preview, question box, answers, charts, the code used, and history. It holds no decision logic.
+- **The agent (`agent/`)** decides: it classifies the request, maps words to columns, has the model choose a tool or write code, checks it, and runs it.
+- **The tests (`tests/`)** check the data layer, the tools and the code checks on their own with pytest, before they are connected to the model or the interface.
 
 ---
 
@@ -372,8 +390,13 @@ The next action is decided by code from the state, never by the model:
 
 **Optional enhancements (only after the minimum version works):**
 - Showing matching rows, and downloading all matching rows.
-- Filters on parts of a date (month, weekday, weekend).
+- Filters on parts of a date (month, weekday, weekend or weekday).
 - Suggested questions built from the file's columns.
 - Data quality warnings for empty and duplicated data.
 - Progress steps while the agent works.
 - "Try again" after a model service failure.
+
+**Second stage (after testing on a new dataset):**
+- The `calculate` tool for questions that none of the tools answers, with code checks before it runs and the code shown to the user.
+- Converting columns that are mostly numbers or dates, with a warning for the rest.
+- Filters, measures and code may only use columns the question mentioned.

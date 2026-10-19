@@ -1,13 +1,15 @@
 import pandas as pd
 import pytest
+
 from agent.analysis import use_column_names
+from agent.calculate import run_calculate
 from agent.config import MAX_ROWS_SHOWN, SAMPLE_DATA_PATH
 from agent.data import load_csv, quality_warnings
 from agent.errors import CannotAnswer, NeedsClarification
 from agent.tool_call_checks import check_mapped_text_used, check_tool
 from agent.tools import run_tool
 from agent.utils import identifier_columns, is_date
-from agent.calculate import is_rows_of, run_calculate
+
 
 @pytest.fixture(scope="module")
 def df():
@@ -15,12 +17,13 @@ def df():
     assert error is None
     return data
 
+
 @pytest.fixture(scope="module")
 def ids(df):
     return identifier_columns(df)
 
 
-# helpers
+# helpers 
 
 def F(column, op, value, part=None):
     """A filter, written the way the model writes it."""
@@ -29,10 +32,12 @@ def F(column, op, value, part=None):
         f["part"] = part
     return f
 
+
 def write_csv(tmp_path, text, name="test.csv"):
     path = tmp_path / name
     path.write_text(text)
     return str(path)
+
 
 def run(tool, args, allowed, df, ids):
     """Check the tool call, then run it, as the agent does."""
@@ -65,7 +70,7 @@ def test_types_are_converted(tmp_path):
     assert is_date(data["day"])
 
 
-# converting columns that are mostly numbers or dates
+# columns that are mostly numbers or dates
 
 def test_mostly_numbers_are_converted_with_a_warning(tmp_path):
     rows = "".join(f"{i},{i}.5\n" for i in range(38)) + "38,N/A price\n39,12o\n"
@@ -87,7 +92,7 @@ def test_mostly_dates_are_converted_with_a_warning(tmp_path):
     assert any("'day': 2 values are not dates" in w for w in quality_warnings(data))
 
 
-# data quality
+# data quality 
 
 def test_empty_column_gives_a_warning(tmp_path):
     rows = "".join(f"{i},{'' if i % 10 < 6 else 'x'},{i % 7}\n" for i in range(60))
@@ -119,10 +124,10 @@ def test_sample_data_has_no_warnings(df):
     assert quality_warnings(df) == []
 
 
-# ID columns
+# ID columns 
 
 def test_unique_decimals_are_not_ids():
-    # in a small file every price can be different, it is still a measure, not an ID
+    # in a small file every price can be different; it is still a measure, not an ID
     data = pd.DataFrame({"region": ["Europe", "Asia", "Europe"],
                          "price": [12.5, 8.99, 240.0]})
     assert "price" not in identifier_columns(data)
@@ -142,6 +147,7 @@ def test_unique_decimals_are_not_ids():
      ["product_category", "total_revenue"]),
     ("distinct", {"column": "payment_method"}, ["payment_method"]),
     ("show_rows", {"filters": [F("customer_region", "==", "Europe")]}, ["customer_region"]),
+    # an ID filter needs no mapped word: "order 1005" names its column itself
     ("show_rows", {"filters": [F("order_id", "==", 1005)]}, []),
     ("group", {"group_by": ["order_date"], "column": "order_id", "agg": "count",
                "date_part": "day_type"}, ["order_date", "order_id"]),
@@ -195,6 +201,8 @@ def test_unsupported_call_is_refused(df, ids, tool, args, allowed):
         run(tool, args, allowed, df, ids)
 
 
+# groupings
+
 def test_long_grouping_is_returned(df, ids):
     # 52 weeks: too many to show, but returned so the app can offer a download
     args = {"group_by": ["order_date"], "column": "total_revenue", "agg": "sum",
@@ -210,11 +218,17 @@ def test_grouping_by_id_is_refused(df, ids):
         run("group", args, ["order_id", "total_revenue"], df, ids)
 
 
+def test_grouping_by_many_numbers_is_refused(df, ids):
+    # a numeric column with many values is not a set of groups
+    args = {"group_by": ["price"], "column": "rating", "agg": "mean"}
+    with pytest.raises(CannotAnswer, match="'price'"):
+        run("group", args, ["price", "rating"], df, ids)
+
+
 # what to measure: the user's words must say it 
 
 def test_counting_records_by_group(df, ids):
-    args = {"group_by": ["customer_region"], "column": None, "agg": "count",
-         "filters": []}
+    args = {"group_by": ["customer_region"], "column": None, "agg": "count", "filters": []}
     result = run("group", args, ["customer_region"], df, ids)
     assert list(result) == list(df.groupby("customer_region").size())
 
@@ -227,11 +241,9 @@ def test_top_group_by_records(df, ids):
 
 
 def test_counting_records_without_groups(df, ids):
-    args = {"column": None, "agg": "count",
-            "filters": [F("payment_method", "==", "UPI")]}
+    args = {"column": None, "agg": "count", "filters": [F("payment_method", "==", "UPI")]}
     result = run("aggregate", args, ["payment_method"], df, ids)
     assert result == (df["payment_method"] == "UPI").sum()
-
 
 
 def test_no_column_without_count_asks(df, ids):
@@ -240,6 +252,13 @@ def test_no_column_without_count_asks(df, ids):
             "measure_words": "total", "filters": []}
     with pytest.raises(NeedsClarification):
         check_tool("group", args, ["customer_region"], df, ids, "total by region")
+
+
+def test_no_column_and_no_agg_asks(df, ids):
+    # "Which region is the best?": nothing says what to measure
+    args = {"group_by": ["customer_region"], "column": None, "agg": None, "filters": []}
+    with pytest.raises(NeedsClarification):
+        check_tool("group", args, ["customer_region"], df, ids)
 
 
 # tool results match pandas 
@@ -277,7 +296,7 @@ def test_show_rows_is_capped(df, ids):
     assert len(result) == MAX_ROWS_SHOWN
 
 
-# model mistakes the code repairs or catches 
+# model mistakes the code repairs or catches
 
 def test_concept_name_becomes_column_name(df):
     column_map = {"year": {"column": "order_date"}, "revenue": {"column": "total_revenue"}}
@@ -317,26 +336,15 @@ def test_counted_id_is_not_a_dropped_word(df):
     check_mapped_text_used("count_rows", args, column_map, df)
 
 
-def test_no_column_and_no_agg_asks(df, ids):
-    # "Which region is the best?": nothing says what to measure
-    args = {"group_by": ["customer_region"], "column": None, "agg": None, "filters": []}
-    with pytest.raises(NeedsClarification):
-        check_tool("group", args, ["customer_region"], df, ids)
+def test_filter_on_unmentioned_column_is_refused(df, ids):
+    # "how many returns?": no column holds returns, so the model filtered on
+    # another column the question never mentioned
+    args = {"filters": [F("payment_method", "==", "UPI")]}
+    with pytest.raises(CannotAnswer, match="did not mention"):
+        check_tool("count_rows", args, [], df, ids)
 
 
-
-def test_grouping_by_many_numbers_is_refused(df, ids):
-    # a numeric column with many values is not a set of groups
-    args = {"group_by": ["price"], "column": "rating", "agg": "mean"}
-    with pytest.raises(CannotAnswer, match="'price'"):
-        run("group", args, ["price", "rating"], df, ids)
-
-
-
-def test_calculate_refuses_rows_of_the_data(df):
-    with pytest.raises(CannotAnswer, match="rows of the data"):
-        run_calculate("result = df.head(10)", df, list(df.columns))
-
+# calculate: checked code
 
 def test_calculate_allows_a_summary(df):
     result = run_calculate("result = df.groupby('customer_region')['rating'].mean()",
@@ -344,15 +352,12 @@ def test_calculate_allows_a_summary(df):
     assert len(result) == df["customer_region"].nunique()
 
 
+def test_calculate_refuses_rows_of_the_data(df):
+    with pytest.raises(CannotAnswer, match="rows of the data"):
+        run_calculate("result = df.head(10)", df, list(df.columns))
+
+
 def test_calculate_refuses_one_group_per_row(df):
     with pytest.raises(CannotAnswer, match="one group per row"):
         run_calculate("result = df.groupby('order_id')['rating'].mean()",
                       df, ["order_id", "rating"])
-
-
-def test_filter_on_unmentioned_column_is_refused(df, ids):
-    # "how many returns?": no column holds returns, the model filtered on
-    # another column the question never mentioned
-    args = {"filters": [F("payment_method", "==", "UPI")]}
-    with pytest.raises(CannotAnswer, match="did not mention"):
-        check_tool("count_rows", args, [], df, ids)

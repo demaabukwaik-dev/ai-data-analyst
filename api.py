@@ -4,11 +4,14 @@ import pandas as pd
 from fastapi import FastAPI, HTTPException, UploadFile
 from pydantic import BaseModel
 from agent.agent import run_agent
+from agent.context_manager import remember_turn
 from agent.data import load_uploaded_csv
+from agent.memory_store import MemoryStore
 
 app = FastAPI(title="AI Data Analyst API")
 
-datasets = {}       
+datasets = {}
+memories = {}       # one conversation memory per uploaded file
 
 
 class Question(BaseModel):
@@ -36,6 +39,7 @@ async def upload(file: UploadFile):
 
     dataset_id = str(uuid.uuid4())
     datasets[dataset_id] = df
+    memories[dataset_id] = MemoryStore()
 
     return {
             "dataset_id": dataset_id,
@@ -51,15 +55,21 @@ def ask(dataset_id: str, request: Question):
     if dataset_id not in datasets:
         raise HTTPException(404, "Unknown dataset. Upload the file again.")
 
-    state = run_agent(request.question, datasets[dataset_id])
+    memory = memories[dataset_id]
+    state = run_agent(request.question, datasets[dataset_id], memory=memory)
+    remember_turn(memory, state)
+
     if state["answered"]:
 
         return {
                 "outcome": "answer",
+                "understood_as": state["full_question"],
                 "answer": state["answer_text"],
                 "filters": state["filters_text"],
                 "result": to_json(state["result"]),
                 "tool_call": state["tool_call"]
                 }
     
-    return {"outcome": state["stop_type"] or "NotAllowed", "message": state["rejection_reason"]}
+    return {"outcome": state["stop_type"] or "NotAllowed",
+            "understood_as": state["full_question"],
+            "message": state["rejection_reason"]}

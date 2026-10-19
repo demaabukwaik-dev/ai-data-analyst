@@ -12,6 +12,7 @@ FORBIDDEN_STEPS = {
     ast.FunctionDef: "def", ast.ClassDef: "class", ast.Lambda: "lambda",
     ast.Delete: "del",
 }
+
 FORBIDDEN_NODES = tuple(FORBIDDEN_STEPS)
 
 
@@ -20,17 +21,18 @@ FORBIDDEN_NAMES = {
     "os", "sys", "subprocess", "shutil", "print", "getattr", "setattr",
 }
 
-FILE_CALLS = {        # reading or writing files
+FILE_CALLS = {       
     "read_csv", "read_excel", "read_json", "read_parquet", "read_pickle",
     "read_sql", "read_html", "read_table", "read_clipboard",
     "to_csv", "to_excel", "to_json", "to_parquet", "to_pickle", "to_sql",
     "to_clipboard",
 }
 
-LIST_CALLS = {        # turning the data into lists or text instead of numbers
+LIST_CALLS = {       
     "to_string", "to_markdown", "to_html", "to_dict", "to_records",
     "tolist", "to_list",
 }
+
 ALLOWED_BUILTINS = {"len": len, "min": min, "max": max, "sum": sum,
                     "round": round, "int": int, "float": float, "abs": abs}
 

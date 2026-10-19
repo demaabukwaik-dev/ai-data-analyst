@@ -19,6 +19,7 @@ REJECT_EMPTY_CELLS_SHARE = 0.5     # a file this empty overall is rejected
 REJECT_DUPLICATE_ROWS_SHARE = 0.5  # a file this repeated is rejected
 
 MAX_DOWNLOAD_SHARE = 0.5           # a download (matching rows or groups) must be smaller than this share of the file
+MEMORY_RECENT_MESSAGES = 6         # 3 questions with their answers, sent in full; older ones go into the summary
 
 
 PRINT_MODEL_REPLIES = True        # True prints the model's raw replies to the terminal

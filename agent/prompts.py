@@ -12,6 +12,80 @@ def build_prompt(system_prompt, user_prompt, context=None):
         {"role": "user",   "content": user_prompt},
     ]
 
+FOLLOW_UP_PROMPT = """
+You read a conversation between a user and a data analysis assistant.
+Decide whether the NEW MESSAGE can be understood on its own, or only
+together with the conversation. You do NOT answer the question and you
+do NOT write code.
+
+The new message CONTINUES the conversation when it cannot be understood
+on its own:
+- it adds or changes a filter, a group, a measure, a number or an order
+  of the last question ("and in 2023?", "only for the Lions", "the
+  average instead", "by month", "top 5").
+- it answers a question the assistant asked.
+- it corrects the last answer ("no, I meant ..."). Read what was
+  computed to see what the user corrects.
+- it points back to an earlier question ("the same as before, but ...").
+
+The new message is NEW when it says by itself what to compute and on
+what, even if it uses the same columns as before.
+
+When it continues the conversation, write ONE complete question:
+- Start from the question it continues and apply the new message. A new
+  condition is added. A changed condition, group, measure, number or
+  order replaces the old one.
+- "instead" means the new part replaces the same kind of part in the
+  question it continues: a group replaces the group, a measure replaces
+  the measure.
+- When the user corrects an answer, write the correction in the user's
+  own words inside the question, so the next steps do not repeat the
+  mistake.
+- When the user only says the answer is wrong, without saying what to
+  change, return the last question unchanged.
+- Use only what the user said in this conversation. Never add a measure,
+  a column, a value, a condition or a calculation the user did not state.
+- Keep every part of the new message, even a part that asks for
+  something else.
+- Keep column names and values exactly as they were written. Write the
+  question in the language of the new message.
+
+Output ONLY a JSON object:
+{"follow_up": true or false, "question": "<the complete question, or empty when follow_up is false>"}
+No explanations, no markdown, no code fences.
+
+Examples (the names here are illustrative only):
+
+User: Total points by team
+AI: The Lions scored the most points. (Computed: group: group_by=['team_name'], column=points, agg=sum)
+New message: and in 2023?
+{"follow_up": true, "question": "Total points by team in 2023"}
+
+User: Which team is the best?
+AI: What do you want to measure? Please choose one: points, goals, number of records.
+New message: goals
+{"follow_up": true, "question": "Which team is the best by goals?"}
+
+User: How many matches were played on Saturday?
+AI: 120 matches were played. (Computed: count_rows; filters: match_date (day_type) == Weekend)
+New message: no, only Saturday, not the whole weekend
+{"follow_up": true, "question": "How many matches were played on Saturday only, not the whole weekend?"}
+
+User: Total points by team
+AI: The Lions scored the most points. (Computed: group: group_by=['team_name'], column=points, agg=sum)
+New message: How many matches were played in March?
+{"follow_up": false, "question": ""}
+"""
+
+def build_follow_up_prompt(message, summary, recent_messages):
+    """Context = the summary of the older messages + the recent messages,
+    then the new message."""
+
+    context = "Conversation summary:\n" + (summary or "(none yet)")
+    context += "\n\nRecent messages, oldest first:\n" + recent_messages
+    return build_prompt(FOLLOW_UP_PROMPT, user_prompt=f"New message: {message}", context=context)
+
+
 CLASSIFY_PROMPT = """
 You are a request classifier for a data analytics agent. The user uploaded
 the data themselves and may look at any part of it.
@@ -123,8 +197,12 @@ FIRST, SPLIT THE QUESTION INTO CONCEPTS:
   "matches per team"), the counted thing is a concept too. Map it to the
   column that identifies one of them (matches → match_id).
 
-- Rows or records themselves are not a concept: "how many rows are there?"
-  names no column, so return an empty object {}.
+- Rows or records alone are not a concept: "how many rows are there?"
+  returns {}. If a row count has a condition, map the column used
+  by that condition.
+
+- A question about missing, null, or empty values in a column
+  must map that column, even when asking for a count.
 
 - Words for a calculation ("average", "total", "count", "highest") are
   not concepts themselves: they say what to compute. The thing they
@@ -265,7 +343,7 @@ HOW TO CHOOSE, in this order:
    calculate.
 3. Otherwise, the data itself cannot answer: return
    {"tool": "none", "args": {}}.
-   
+
 ARGUMENTS:
 
 - column: the column to calculate on, or null to count records.
@@ -414,3 +492,31 @@ def build_explain_prompt(question, result, filters_text, code=None):
                     f"\nLowest: {result.idxmin()} = {_number(result.min())}")
 
     return build_prompt(EXPLAIN_PROMPT, user_prompt=question, context=context)
+
+
+SUMMARY_PROMPT = """
+You maintain a short factual summary
+of a conversation between a user and a data analysis assistant.
+
+Current summary:
+{current_summary}
+
+Messages to summarize:
+{messages}
+
+Keep only:
+- what the user asked about: measures, groups, filters and values
+- corrections, and the meaning the user gave to words
+- questions the assistant asked that the user has not answered yet
+
+Do not keep the numbers of the answers: they are computed again
+when needed.
+Do not invent information.
+Keep the summary short.
+""".strip()
+
+
+def build_summary_prompt(current_summary, messages):
+    system_prompt = SUMMARY_PROMPT.format(current_summary=current_summary or "(empty)",
+                                          messages=messages)
+    return build_prompt(system_prompt, user_prompt="What is the summary of the conversation so far?")

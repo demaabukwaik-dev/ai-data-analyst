@@ -54,12 +54,6 @@ def check_measure(args, allowed, df, ids, question=""):
             return
         raise NeedsClarification(measure_question(df, group_by))
 
-    # no column: only counting records is possible
-    if column is None:
-        if agg == "count":
-            return
-        raise NeedsClarification(measure_question(df, group_by))
-
     if column not in allowed or column in group_by:
         raise NeedsClarification(measure_question(df, group_by))
 

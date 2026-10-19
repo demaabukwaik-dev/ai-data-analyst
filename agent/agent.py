@@ -7,6 +7,7 @@ from agent.prompts import build_explain_prompt
 from agent.state import new_state
 from agent.tools import filters_as_text
 from agent.config import MAX_AGENT_STEPS, MAX_SUMMARY_ROWS
+from agent.context_manager import read_conversation
 
 def explain_result(question, result, filters_text , code=None):
     """A sentence in plain English, or None if the call fails."""
@@ -48,6 +49,9 @@ def write_answer(state, question):
 def next_action(state):
     """The next step, read from the state."""
 
+    if not state["conversation_read"]:
+        return "read_conversation"
+
     if not state["request_classified"]:
         return "classify_request"
 
@@ -63,13 +67,17 @@ def next_action(state):
     return "finish"
 
 
-def execute_action(action, state, df, question):
+def execute_action(action, state, df, question, memory=None):
     """Do one step of the state and return the updated state."""
 
-    to_run = state["question_to_run"] or question     
+    to_run = state["question_to_run"] or state["full_question"] or question
 
-    if action == "classify_request":
-        classify_request(question, state)
+    if action == "read_conversation":
+        read_conversation(question, memory, state)
+        state["conversation_read"] = True
+
+    elif action == "classify_request":
+        classify_request(state["full_question"], state)
         state["request_classified"] = True
 
     elif action == "run_analysis":
@@ -115,8 +123,9 @@ def _handle_stop(state, exc):
     return False
 
 
-def run_agent(question, df, on_step=None):
-    """Answer one question and return the state."""
+def run_agent(question, df, on_step=None, memory=None):
+    """Answer one question and return the state. With a memory, the
+    question is first read together with the conversation."""
     
     state = new_state()
 
@@ -128,7 +137,7 @@ def run_agent(question, df, on_step=None):
             on_step(action)
 
         try:
-            state = execute_action(action, state, df, question)
+            state = execute_action(action, state, df, question, memory)
         except Exception as e:
             known = _handle_stop(state, e)
             if not known:

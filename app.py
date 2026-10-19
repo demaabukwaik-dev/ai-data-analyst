@@ -4,8 +4,10 @@ import plotly.express as px
 import streamlit as st
 from agent.agent import run_agent
 from agent.config import SAMPLE_DATA_PATH, MAX_DOWNLOAD_SHARE, MAX_SUMMARY_ROWS, MIN_FILE_ROWS
+from agent.context_manager import remember_turn
 from agent.data import load_csv, load_uploaded_csv, quality_warnings
 from agent.llm import get_api_key
+from agent.memory_store import MemoryStore
 from agent.tools import apply_filters
 from agent.utils import identifier_columns, is_date, is_number, is_text
 
@@ -14,6 +16,7 @@ st.set_page_config(page_title="AI Data Analyst", layout="wide")
 CHAT_HEIGHT = 650   
 
 STEP_LABELS = {
+    "read_conversation": "Reading the conversation",
     "classify_request": "Checking the request",
     "run_analysis": "Analysing the data",
     "answer_user": "Writing the answer",
@@ -32,6 +35,7 @@ def use_new_data(key, name, df, error):
     st.session_state.df = df
     st.session_state.load_error = error
     st.session_state.history = []
+    st.session_state.memory = MemoryStore()
 
 
 def ask(question):
@@ -41,6 +45,7 @@ def ask(question):
 
 def clear_answers():
     st.session_state.history = []
+    st.session_state.memory.clear_memory()
 
 
 # names and numbers 
@@ -274,6 +279,9 @@ def show_result(state, number, ids, df):
 def show_answer(entry, number, ids, df):
     state = entry["state"]
 
+    if state["is_follow_up"]:
+        st.caption(f"Understood as: {state['full_question']}")
+
     if state["answered"]:
 
         if state["answer_text"]:
@@ -313,11 +321,14 @@ def show_answer(entry, number, ids, df):
 # the page 
 
 st.title("AI Data Analyst")
-st.write("Upload a CSV file and ask questions about it in plain English. "
-         "Answers come from a fixed set of approved pandas operations; "
-         "nothing the model writes is run as code.")
+st.write("Upload a CSV file and ask questions about it in English or Arabic. "
+         "Answers come from approved pandas operations. When none of them fits, "
+         "the model writes a few lines of pandas code, which are checked before "
+         "they run and shown with the answer.")
 st.caption("You can ask for totals, averages, counts, highest and lowest values, "
-           "rankings, trends by date, and a few matching rows. "
+           "rankings, trends by date, and a few matching rows. You can follow up "
+           "on an answer (\"and in 2023?\", \"by city instead\") or correct it, and "
+           "the app shows how it understood your question. "
            "You cannot change, delete, or export the data.")
 
 if not get_api_key():
@@ -326,6 +337,9 @@ if not get_api_key():
 
 if "history" not in st.session_state:
     st.session_state.history = []
+
+if "memory" not in st.session_state:
+    st.session_state.memory = MemoryStore()
 
 with st.sidebar:
     st.header("Data")
@@ -368,6 +382,10 @@ with st.sidebar:
 
     if st.session_state.history:
         st.button("Clear answers", on_click=clear_answers)
+
+    if st.session_state.memory.get_summary():
+        with st.expander("Conversation summary"):
+            st.write(st.session_state.memory.get_summary())
 
     st.subheader("Columns")
     show_columns(df, ids)
@@ -415,13 +433,15 @@ with chat:
                         # the step replaces the label; nothing is added inside the box
                         if action in STEP_LABELS:
                             status.update(label=STEP_LABELS[action])
-                    state = run_agent(question, df, on_step=show_step)
+                    state = run_agent(question, df, on_step=show_step,
+                                      memory=st.session_state.memory)
                     status.update(label="Done", state="complete", expanded=False)
 
                 entry = {"question": question, "state": state}
                 show_answer(entry, number, ids, df)
 
             st.session_state.history.append(entry)
+            remember_turn(st.session_state.memory, state)      # after the answer is shown
 
         finally:
             st.session_state.pop("pending", None)

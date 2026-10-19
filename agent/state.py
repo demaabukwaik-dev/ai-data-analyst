@@ -27,9 +27,17 @@ def new_state():
         "stop_type": None,           
 
         # Raw model output, kept before extraction
+        "follow_up_attempts": [],
         "classifier_attempts": [],
         "map_attempts": [],
         "tool_attempts": [],
         "generated_code": None,
+
+
+        
+        # Reading the conversation
+        "conversation_read": False,
+        "full_question": None,       # the question after reading the conversation
+        "is_follow_up": False,
     }
 

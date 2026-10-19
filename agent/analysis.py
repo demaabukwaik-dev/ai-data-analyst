@@ -81,7 +81,8 @@ def validate_tool_call(name, args, column_map, df,question):
 def run_analysis(question, df, state):
     """Map the question, get the tool call, check it, and run it."""
 
-    column_map = resolve_columns(question, df, state)                  
+    column_map = resolve_columns(question, df, state)
+    print("DEBUG COLUMN MAP:", column_map)                  
     name, args = ask_model_for_tool(question, column_map, df, state)   
     if name == "calculate":
         allowed = [entry["column"] for entry in column_map.values() if entry.get("column")]
